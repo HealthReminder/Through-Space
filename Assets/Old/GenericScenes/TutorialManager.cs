@@ -27,7 +27,7 @@ public class TutorialManager : MonoBehaviour {
 		
 
 	IEnumerator TutorialSequence() {
-		FindObjectOfType<SoundtrackManager> ().PlaySet (1);
+		FindObjectOfType<SoundtrackManager> ().PlaySet ("Calm");
 		blackscreen1.color = new Color (0, 0, 0, 1);
 		player.isOn = false;
 		mainCamera.isOn = false;
@@ -274,7 +274,7 @@ public class TutorialManager : MonoBehaviour {
 		
 		}
 				text.Clear ();
-				FindObjectOfType<SoundtrackManager> ().PlaySet (2);
+				FindObjectOfType<SoundtrackManager> ().PlaySet ("Calm");
 				yield return new WaitForSeconds (1);
 				while (blackscreen1.color.a > 0) {
 					blackscreen1.color += new Color (0, 0, 0, -0.05f);
