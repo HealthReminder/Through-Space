@@ -34,6 +34,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	
 	
 	void Start () {
+		Time.timeScale = 1;	
 		//print(sj.connectet)
 		planetsAvailable = FindObjectsOfType<Planet>();
 		deathScreen = FindObjectOfType<Image> ();
@@ -61,35 +62,25 @@ public class PlayerBehaviour : MonoBehaviour {
 //			rb.AddForce (new Vector2(2, 0));
 //		}
 		//If the tlayer tress K or J change timeScale
-		if (Input.GetKey (KeyCode.K)) {
-			camBehaviour.isFollowEnabled = false;
-			Time.timeScale = 25;
-		}
-		if (Input.GetKeyUp (KeyCode.K)) {
-			camBehaviour.isFollowEnabled = false;
-			Time.timeScale = 5;
-		}
-		if (Input.GetKeyDown (KeyCode.J)) {
-			camBehaviour.isFollowEnabled = true;
-			Time.timeScale = 1;
-		}
+		
 
 		if(closestPlanet){
 			if (Input.GetMouseButtonDown (0)) {
-			if (attached == true) {
-				Detach ();
-			} else {
-				Attach ();
-			}
+				print("clicked");
+				if(camBehaviour.followCamera.pixelRect.Contains(Input.mousePosition)){
+					print("is in rect");
+					if (attached == true) {
+						Detach ();
+					} else {
+						Attach ();
+				} 
+			} else 
+				print("not in rect");
 		}
 		}
 		if(orbitingNow)
 			sj.connectedAnchor = orbitingNow.transform.position;
-				
-        if (Input.GetKey(KeyCode.Escape) || Input.GetKey(KeyCode.R))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+		
     }
 
 
