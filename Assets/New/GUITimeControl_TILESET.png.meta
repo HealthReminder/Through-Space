@@ -7,6 +7,7 @@ TextureImporter:
     21300004: GUITimeControl_TILESET_2
     21300006: GUITimeControl_TILESET_3
     21300008: GUITimeControl_TILESET_4
+    21300010: GUITimeControl_TILESET_5
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -210,13 +211,33 @@ TextureImporter:
         width: 38
         height: 123
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: fc0a8a840a13213499f182e66b549ade
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUITimeControl_TILESET_5
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 353
+        width: 27
+        height: 27
+      alignment: 9
+      pivot: {x: 0.019211946, y: 0.980792}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a106a57c087c15247870de0e99b69193
       vertices: []
       indices: 
       edges: []
