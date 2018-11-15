@@ -7,6 +7,6 @@ public class RotateZ : MonoBehaviour {
 	public float rotationSpeed;
 
 	void Update () {
-		transform.Rotate (0, 0, rotationSpeed/10);
+		transform.Rotate (0, 0, Time.deltaTime*rotationSpeed/1);
 	}
 }

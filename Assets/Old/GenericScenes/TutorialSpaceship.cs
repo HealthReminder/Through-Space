@@ -42,9 +42,7 @@ public class TutorialSpaceship : MonoBehaviour {
 		} else {
 			rb.AddForce (transform.right * (-3), ForceMode2D.Impulse);
 		}
-			
-		if(Camera.main.GetComponent<CameraBehaviour>() !=null)
-			Camera.main.GetComponent<CameraBehaviour> ().FindPlayer ();
+
 		Attach ();
 
 

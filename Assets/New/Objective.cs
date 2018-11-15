@@ -9,7 +9,7 @@ public class Objective : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D coll) {
 		if(coll.tag == "Player") {
 			if (nextScene != null) {
-                PlayerPrefs.SetString("NextScene", nextScene);
+                //PlayerPrefs.SetString("NextScene", nextScene);
                 StartCoroutine(FadeOut());
             }
 		}	
@@ -17,9 +17,10 @@ public class Objective : MonoBehaviour {
 
     IEnumerator FadeOut()
     {
-        Image fader = FindObjectOfType<FadeOutOutro>().GetComponent<Image>();
-       while(fader.color.a < 1) { fader.color += new Color(0, 0, 0, 0.01f);yield return null; }
-        SceneManager.LoadScene("Trip");
+//        Image fader = FindObjectOfType<FadeOutOutro>().GetComponent<Image>();
+      // while(fader.color.a < 1) { fader.color += new Color(0, 0, 0, 0.01f);yield return null; }
+       // SceneManager.LoadScene("Trip");
+       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         yield break;
     }
 }

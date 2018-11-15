@@ -24,15 +24,17 @@ public class PlayerBehaviour : MonoBehaviour {
 	public LineRenderer Lclosest;
 	public Image deathScreen;
 
-
+	[Header("Angle")]
 	float angle;
 	Vector2 v;
+	public CameraBehaviour camBehaviour;
 
 	
 
 	
 	
 	void Start () {
+		//print(sj.connectet)
 		planetsAvailable = FindObjectsOfType<Planet>();
 		deathScreen = FindObjectOfType<Image> ();
 		rb = this.GetComponent<Rigidbody2D> ();
@@ -50,8 +52,6 @@ public class PlayerBehaviour : MonoBehaviour {
 
 		StartCoroutine (FixRotation ());
 
-		FindObjectOfType<CameraBehaviour> ().FindPlayer();
-
 	}
 
 	void Update() {
@@ -60,6 +60,20 @@ public class PlayerBehaviour : MonoBehaviour {
 //		if (rb.velocity.x < 5) {
 //			rb.AddForce (new Vector2(2, 0));
 //		}
+		//If the tlayer tress K or J change timeScale
+		if (Input.GetKey (KeyCode.K)) {
+			camBehaviour.isFollowEnabled = false;
+			Time.timeScale = 25;
+		}
+		if (Input.GetKeyUp (KeyCode.K)) {
+			camBehaviour.isFollowEnabled = false;
+			Time.timeScale = 5;
+		}
+		if (Input.GetKeyDown (KeyCode.J)) {
+			camBehaviour.isFollowEnabled = true;
+			Time.timeScale = 1;
+		}
+
 		if(closestPlanet){
 			if (Input.GetMouseButtonDown (0)) {
 			if (attached == true) {
@@ -85,6 +99,8 @@ public class PlayerBehaviour : MonoBehaviour {
 			attached = true;
 			sj.enabled = true;	
 			sj.connectedAnchor = closestPlanet.transform.position;
+			sj.frequency = (float)closestPlanet.gravitationalForce/4;
+			//The distances must be lower for less dense planet
 			sj.distance = Vector2.Distance (transform.position, closestPlanet.transform.position);
 			orbitingNow = closestPlanet;
 		}
@@ -122,8 +138,8 @@ public class PlayerBehaviour : MonoBehaviour {
 			dist = Vector2.Distance(new Vector2(planetPos.x,planetPos.y), new Vector2(transform.position.x,transform.position.y));
 			Lclosest.SetPosition(0,transform.position);
 			Lclosest.SetPosition(1, closestPlanet.transform.position);
-			float k = Mathf.LerpUnclamped(0,closestPlanet.influenceRadius,dist);
-			k = k/100;
+			float k = dist/closestPlanet.influenceRadius;
+			Lclosest.colorGradient = new Gradient();
 			Lclosest.startColor = new Color(1,1,1,1-k);
 			Lclosest.endColor = new Color(1,1,1,1-k);
 			Lclosest.enabled = true;
@@ -148,7 +164,7 @@ public class PlayerBehaviour : MonoBehaviour {
 				//Find
 				float k = dist/orbitingNow.influenceRadius;
 				//k = k/10;
-				print(dist +" " + orbitingNow.influenceRadius+" "+k);
+//				print(dist +" " + orbitingNow.influenceRadius+" "+k);
 				Lgravitational.startColor = new Color(k,1-k,0,1);
 				Lgravitational.endColor = new Color(k,1-k,0,1);
 				Lgravitational.enabled = true;
@@ -190,6 +206,12 @@ public class PlayerBehaviour : MonoBehaviour {
 
 		canAttach = true;
 		yield break;
+	}
+	
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if(other.tag == "surface")
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
 	IEnumerator Die() {

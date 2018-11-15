@@ -211,7 +211,7 @@ public class TutorialManager : MonoBehaviour {
 				while (text.writing == true)
 					yield return null;
 				mainCamera.isOn = true;
-				mainCamera.canFocus = false;
+//				mainCamera.canFocus = false;
 				mainCamera.canZoom = true;
 				while (Input.GetAxis ("Mouse ScrollWheel") == 0)
 					yield return null;
@@ -382,7 +382,7 @@ public class TutorialManager : MonoBehaviour {
 			player.isOn = true;
 			mainCamera.canZoom = true;
 			mainCamera.isOn = true;
-			mainCamera.canFocus = true;
+//			mainCamera.canFocus = true;
 			uiInput.canInputNames = true;
 			uiInput.canInputAssist = true;
 			uiInput.canInputFields = true;

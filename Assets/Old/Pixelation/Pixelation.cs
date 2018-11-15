@@ -3,15 +3,19 @@ using UnityEngine;
 
 namespace Assets.Pixelation.Scripts
 {
-    [ExecuteInEditMode]
+   
+    //  [ExecuteInEditMode]
     [AddComponentMenu("Image Effects/Color Adjustments/Pixelation")]
+
     public class Pixelation : ImageEffectBase
     {
+       
         [Range(64.0f, 512.0f)] public float BlockCount = 128;
+         public Camera thisCam;
 
         private void OnRenderImage(RenderTexture source, RenderTexture destination)
         {
-            float k = Camera.main.aspect;
+            float k = thisCam.aspect;
             Vector2 count = new Vector2(BlockCount, BlockCount/k);
             Vector2 size = new Vector2(1.0f/count.x, 1.0f/count.y);
             //
