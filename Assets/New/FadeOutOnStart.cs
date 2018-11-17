@@ -13,10 +13,12 @@ public class FadeOutOnStart : MonoBehaviour {
 		StartCoroutine (FadeOut ());
 	}
 	IEnumerator FadeOut() {
+		sR.enabled = true;
 		while (sR.color.a > 0) {
 			sR.color += new Color (0, 0, 0, -0.01f);
 			yield return null;
 		}
+		sR.enabled = false;
 
 		//Destroy (this.gameObject);
 

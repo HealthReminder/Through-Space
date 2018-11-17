@@ -22,13 +22,16 @@ public class PlayerBehaviour : MonoBehaviour {
 	[Header("GUI")]
 	public LineRenderer Lgravitational;
 	public LineRenderer Lclosest;
-	public Image deathScreen;
+	
 
 	[Header("Angle")]
 	float angle;
 	Vector2 v;
 	public CameraBehaviour camBehaviour;
 
+	[Header("Death")]
+	public Image deathScreen;
+	public ParticleSystem deathparticle;
 	
 
 	
@@ -37,7 +40,6 @@ public class PlayerBehaviour : MonoBehaviour {
 		Time.timeScale = 1;	
 		//print(sj.connectet)
 		planetsAvailable = FindObjectsOfType<Planet>();
-		deathScreen = FindObjectOfType<Image> ();
 		rb = this.GetComponent<Rigidbody2D> ();
 		sj = this.GetComponent<SpringJoint2D> ();
 
@@ -170,7 +172,7 @@ public class PlayerBehaviour : MonoBehaviour {
 		attached = false;
 		sj.enabled = false;	
 		orbitingNow = null;
-		rb.AddForce (transform.right*(1), ForceMode2D.Impulse);
+		rb.AddForce (rb.velocity.normalized, ForceMode2D.Impulse);
 		StartCoroutine (DetachedCooldown ());
 	}
 
@@ -199,21 +201,28 @@ public class PlayerBehaviour : MonoBehaviour {
 		yield break;
 	}
 	
-	void OnTriggerEnter2D(Collider2D other)
+	void OnCollisionEnter2D(Collision2D collisionInfo)
 	{
-		if(other.tag == "surface")
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		if(collisionInfo.gameObject.tag == "surface")
+			StartCoroutine(Die());
 	}
 
 	IEnumerator Die() {
+		Time.timeScale = 1;
 		GetComponent<SpriteRenderer> ().enabled = false;
-		GetComponent<LineRenderer> ().enabled = false;
+		Lgravitational.enabled = false;
+		Lclosest.enabled = false;
 		GetComponent<Rigidbody2D> ().simulated = false;
+		deathparticle.gameObject.SetActive(true);
+		deathparticle.Play(true);
+		yield return new WaitForSeconds (0.5f);
+		deathScreen.enabled = true;
+		deathScreen.color = new Color(0,0,0,0);
 		while (deathScreen.color.a <1) {
 			deathScreen.color += new Color (0, 0,0, +0.025f);
 			yield return null;
 		}
-		yield return new WaitForSeconds (0.7f);
+		yield return new WaitForSeconds (0.5f);
 		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
 		yield break;
 	}
