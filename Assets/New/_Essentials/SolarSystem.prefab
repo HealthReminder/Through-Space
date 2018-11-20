@@ -410,7 +410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4003143649589394
 Transform:
   m_ObjectHideFlags: 1
@@ -432,7 +432,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1794565799064746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.698268, y: -0.59352255, z: 4.5147653}
+  m_LocalPosition: {x: 20.298254, y: -39.921776, z: 4.5147653}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4972410370811542}
@@ -1428,10 +1428,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  influenceRadius: 2
   howIsPronounced: 
-  system: 
-  layer: 
+  startSystem: {fileID: 4276054629017890}
+  influenceRadius: 2
+  gravitationalForce: 1
 --- !u!114 &114534290472057222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1444,10 +1444,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  influenceRadius: 5
   howIsPronounced: 
-  system: 
-  layer: 
+  startSystem: {fileID: 4276054629017890}
+  influenceRadius: 5
+  gravitationalForce: 1
 --- !u!114 &114556633884150144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1460,10 +1460,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  influenceRadius: 3
   howIsPronounced: 
-  system: 
-  layer: 
+  startSystem: {fileID: 4276054629017890}
+  influenceRadius: 3
+  gravitationalForce: 1
 --- !u!114 &114606271551599196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1476,10 +1476,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  influenceRadius: 2
   howIsPronounced: 
-  system: 
-  layer: 
+  startSystem: {fileID: 4276054629017890}
+  influenceRadius: 2
+  gravitationalForce: 1
 --- !u!114 &114706619317346894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1504,10 +1504,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  influenceRadius: 2
   howIsPronounced: 
-  system: 
-  layer: 
+  startSystem: {fileID: 4276054629017890}
+  influenceRadius: 2
+  gravitationalForce: 1
 --- !u!114 &114779009375758544
 MonoBehaviour:
   m_ObjectHideFlags: 1

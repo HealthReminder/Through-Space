@@ -6,48 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/GenericScenes/level1.unity
-    guid: 1e257067acad0f846bba749cfd408cb0
+    path: Assets/New/_Scenes/MainMenu.unity
+    guid: 790d83dd87dfe05449d83dbeb02ecbb5
   - enabled: 1
-    path: Assets/GenericScenes/level2.unity
-    guid: 02835a71d90db1d4b97fbdf1be55f44e
-  - enabled: 1
-    path: Assets/GenericScenes/level3.unity
-    guid: 0c293e840b8a3904e84d49ca6709cdf2
-  - enabled: 1
-    path: Assets/GenericScenes/level4.unity
-    guid: bcc13df83825cad458dc87160c1ac52c
-  - enabled: 1
-    path: Assets/GenericScenes/level5.unity
-    guid: 9f7ed714a3240b246bc0a26bc5f41427
-  - enabled: 1
-    path: Assets/GenericScenes/level6.unity
-    guid: bde13328352da0d43be800410309099f
-  - enabled: 1
-    path: Assets/GenericScenes/level7.unity
-    guid: 5850167e05ec43446a3dee3842cb4fba
-  - enabled: 1
-    path: Assets/GenericScenes/level8.unity
-    guid: cb4f726597abd1840a33a3e0789e2f64
-  - enabled: 1
-    path: Assets/GenericScenes/level9.unity
-    guid: e3dd89ace0fcbf645b6e9a43efaf1f81
-  - enabled: 1
-    path: Assets/GenericScenes/level10.unity
-    guid: dc8775b7212ffba4ab5187a7f2f12156
-  - enabled: 1
-    path: Assets/GenericScenes/level11.unity
-    guid: a2bc9b85abef5d441a4774981d15ca3a
-  - enabled: 1
-    path: Assets/GenericScenes/level12.unity
-    guid: 139b8e04892574849803f833e640225e
-  - enabled: 1
-    path: Assets/GenericScenes/ending.unity
-    guid: 98ba6c52ee4da034fb0a739fd10aded5
-  - enabled: 1
-    path: Assets/GenericScenes/title.unity
-    guid: 1390745a3634f744dae234aa566abb04
-  - enabled: 1
-    path: Assets/Transition/Trip.unity
-    guid: 2184eaf295d170742a7731148ec5b6f2
+    path: Assets/New/_Scenes/SpaceTravel.unity
+    guid: 3c911e51a81b97e428c3ca8ce6efc928
   m_configObjects: {}

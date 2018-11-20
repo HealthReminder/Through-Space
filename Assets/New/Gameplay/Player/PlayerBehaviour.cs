@@ -12,6 +12,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	[Header("planetary")]
 	public Planet closestPlanet, orbitingNow;
+	Transform orbitingStar;
 	Planet[] planetsAvailable;
 
 	[Header("Spring")]
@@ -29,28 +30,23 @@ public class PlayerBehaviour : MonoBehaviour {
 	Vector2 v;
 	public CameraBehaviour camBehaviour;
 
-	[Header("Death")]
+	[Header("Managers")]
+	SpaceTravelManager STMan;
 	public Image deathScreen;
 	public ParticleSystem deathparticle;
-	
+
+	public TimeController TMan;
 
 	
 	
 	void Start () {
+		STMan = FindObjectOfType<SpaceTravelManager>();
 		Time.timeScale = 1;	
 		//print(sj.connectet)
 		planetsAvailable = FindObjectsOfType<Planet>();
 		rb = this.GetComponent<Rigidbody2D> ();
 		sj = this.GetComponent<SpringJoint2D> ();
 
-
-		if (spawnWithForce) {
-			Detach ();
-			transform.rotation = Quaternion.Euler (new Vector3 (0, 0, 180));
-			rb.AddForce (transform.right * (9), ForceMode2D.Impulse);
-		} else {
-			rb.AddForce (transform.right * (-2), ForceMode2D.Impulse);
-		}
 		Attach ();
 
 		StartCoroutine (FixRotation ());
@@ -89,13 +85,20 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	void Attach() {
 		if (closestPlanet) {
+			
 			attached = true;
 			sj.enabled = true;	
 			sj.connectedAnchor = closestPlanet.transform.position;
 			sj.frequency = (float)closestPlanet.gravitationalForce/4;
 			//The distances must be lower for less dense planet
+			//sj.distance = Vector2.Distance (transform.position+new Vector3(rb.velocity.x,rb.velocity.y,0)*3, closestPlanet.transform.position);
 			sj.distance = Vector2.Distance (transform.position, closestPlanet.transform.position);
 			orbitingNow = closestPlanet;
+			if (orbitingStar != closestPlanet.startSystem){
+				orbitingStar = closestPlanet.startSystem;
+				camBehaviour.wideCamera.transform.position = new Vector3(orbitingStar.position.x,orbitingStar.position.y,-35);
+			}
+			
 		}
 	}
 
@@ -154,8 +157,17 @@ public class PlayerBehaviour : MonoBehaviour {
 				//Set line tositions
 				Lgravitational.SetPosition(0,transform.position);
 				Lgravitational.SetPosition(1, orbitingNow.transform.position);
-				//Find
+				//Find progress
 				float k = dist/orbitingNow.influenceRadius;
+				print(k);
+				if(k >= 0.9f)
+					if(TMan.timeBar.value > 0)
+						TMan.ChangeTime(1);
+				else if(k >= 0.75f)
+					if(TMan.timeBar.value > 0.5f)
+						TMan.ChangeTime(2);
+				else 
+					TMan.timeBar.interactable = true;
 				//k = k/10;
 //				print(dist +" " + orbitingNow.influenceRadius+" "+k);
 				Lgravitational.startColor = new Color(k,1-k,0,1);
@@ -178,11 +190,10 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	IEnumerator FixRotation() {	
 		while (true) {
-			if (attached) {
-				v = rb.velocity;
-				angle = Mathf.Atan2 (v.y, v.x) * Mathf.Rad2Deg;
-				transform.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
-			}
+                v = rb.velocity;
+                angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            
 			yield return null;
 		}
 	}
@@ -204,10 +215,10 @@ public class PlayerBehaviour : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collisionInfo)
 	{
 		if(collisionInfo.gameObject.tag == "surface")
-			StartCoroutine(Die());
+			Die();
 	}
 
-	IEnumerator Die() {
+	void Die() {
 		Time.timeScale = 1;
 		GetComponent<SpriteRenderer> ().enabled = false;
 		Lgravitational.enabled = false;
@@ -215,15 +226,6 @@ public class PlayerBehaviour : MonoBehaviour {
 		GetComponent<Rigidbody2D> ().simulated = false;
 		deathparticle.gameObject.SetActive(true);
 		deathparticle.Play(true);
-		yield return new WaitForSeconds (0.5f);
-		deathScreen.enabled = true;
-		deathScreen.color = new Color(0,0,0,0);
-		while (deathScreen.color.a <1) {
-			deathScreen.color += new Color (0, 0,0, +0.025f);
-			yield return null;
-		}
-		yield return new WaitForSeconds (0.5f);
-		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
-		yield break;
+		StartCoroutine(STMan.Death());
 	}
 }
