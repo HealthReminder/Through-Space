@@ -51,6 +51,9 @@ public class PlayerBehaviour : MonoBehaviour {
 
 		StartCoroutine (FixRotation ());
 
+        if (spawnWithForce)
+            rb.AddForce(Vector2.right*3, ForceMode2D.Impulse);
+
 	}
 
 	void Update() {

@@ -17,6 +17,7 @@ public class SpaceTravelManager : MonoBehaviour {
 	public Image overlay;
 	[Header("System Information")]
 	public Transform currentSolarSystem;
+    public bool isFirstLevel = false;
 
 	[System.Serializable]
 	public struct LevelInfo {
@@ -33,6 +34,7 @@ public class SpaceTravelManager : MonoBehaviour {
 	//Debug.DrawRay(player.transform.position,player.transform.right, Color.red, 1);
 	
 	void Start () {
+        if(!isFirstLevel) { 
 		StartCoroutine(Intro());
 		//Get current progress
 		currentLevel = PlayerPrefs.GetInt("currentLevel");
@@ -61,7 +63,8 @@ public class SpaceTravelManager : MonoBehaviour {
 		Vector2 v = currentSolarSystem.transform.position - player.position;
     	float angle = Mathf.Atan2(v.x, v.y) * Mathf.Rad2Deg;
     	currentSolarSystem.rotation = Quaternion.AngleAxis(-angle, Vector3.forward);
-	}
+        }
+    }
 
 	public IEnumerator Death()
 	{
