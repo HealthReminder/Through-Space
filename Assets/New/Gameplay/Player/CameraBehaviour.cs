@@ -15,7 +15,7 @@ public class CameraBehaviour : MonoBehaviour {
 	void Update ()
 	{
 		const int orthographicSizeMin =2;
-		const int orthographicSizeMax =30;
+		const int orthographicSizeMax =45;
 		
 		if (isOn) {
 			//print("3");

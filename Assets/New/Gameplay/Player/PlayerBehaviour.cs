@@ -13,7 +13,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	[Header("planetary")]
 	public Planet closestPlanet, orbitingNow;
 	Transform orbitingStar;
-	Planet[] planetsAvailable;
+	List<Planet> planetsAvailable;
 
 	[Header("Spring")]
 	public bool attached=false;
@@ -41,9 +41,9 @@ public class PlayerBehaviour : MonoBehaviour {
 	
 	void Start () {
 		STMan = FindObjectOfType<SpaceTravelManager>();
-		Time.timeScale = 1;	
-		//print(sj.connectet)
-		planetsAvailable = FindObjectsOfType<Planet>();
+		Time.timeScale = 1;
+        //print(sj.connectet)
+        UpdateAvailablePlanets();
 		rb = this.GetComponent<Rigidbody2D> ();
 		sj = this.GetComponent<SpringJoint2D> ();
 
@@ -55,6 +55,15 @@ public class PlayerBehaviour : MonoBehaviour {
             rb.AddForce(Vector2.right*3, ForceMode2D.Impulse);
 
 	}
+
+    public void UpdateAvailablePlanets()
+    {
+        Planet[] temp = FindObjectsOfType<Planet>();
+        planetsAvailable = new List<Planet>();
+        foreach (Planet p in temp)
+            planetsAvailable.Add(p);
+
+    }
 
 	void Update() {
 		//Find closes planet
@@ -217,11 +226,29 @@ public class PlayerBehaviour : MonoBehaviour {
 	
 	void OnCollisionEnter2D(Collision2D collisionInfo)
 	{
-		if(collisionInfo.gameObject.tag == "surface")
-			Die();
+        if (collisionInfo.gameObject.tag == "surface")
+            Die();        
 	}
 
-	void Die() {
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+         if (collision.gameObject.tag == "objective")
+        {
+            print("Touched objective");
+            if (collision.GetComponent<Objective>())
+            {
+                print("Worked");
+                STMan.lastLevel = STMan.currentLevel;
+                STMan.currentLevel = collision.GetComponent<Objective>().nextLevel;
+                STMan.SpawnSystem((int)STMan.currentLevel);
+            }
+            else
+            {
+                print("Failed");
+            }
+        }
+    }
+    void Die() {
 		Time.timeScale = 1;
 		GetComponent<SpriteRenderer> ().enabled = false;
 		Lgravitational.enabled = false;
