@@ -13,7 +13,7 @@ public class MenuManager : MonoBehaviour {
 	
 	void Start () {
 		//For test only, set the maxLevel to 2
-		PlayerPrefs.SetInt("maxLevel",2);
+		PlayerPrefs.SetInt("maxLevel",3);
 		//Get current max level reached
 		maxLevel = PlayerPrefs.GetInt("maxLevel");
 		//Make the right buttons become interactable accordingly to the max level the player reached before

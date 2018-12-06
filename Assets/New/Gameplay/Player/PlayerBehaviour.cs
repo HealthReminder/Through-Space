@@ -171,7 +171,6 @@ public class PlayerBehaviour : MonoBehaviour {
 				Lgravitational.SetPosition(1, orbitingNow.transform.position);
 				//Find progress
 				float k = dist/orbitingNow.influenceRadius;
-				print(k);
 				if(k >= 0.9f)
 					if(TMan.timeBar.value > 0)
 						TMan.ChangeTime(1);
@@ -250,7 +249,12 @@ public class PlayerBehaviour : MonoBehaviour {
     }
     void Die() {
 		Time.timeScale = 1;
-		GetComponent<SpriteRenderer> ().enabled = false;
+        print("Changing current level from: " + PlayerPrefs.GetInt("currentLevel"));
+        PlayerPrefs.SetInt("currentLevel", STMan.currentLevel);
+        print("To: " + PlayerPrefs.GetInt("currentLevel") + " by: " + STMan.currentLevel);
+        if (STMan.currentLevel > STMan.maxLevel)
+            PlayerPrefs.SetInt("maxLevel", STMan.currentLevel);
+        GetComponent<SpriteRenderer> ().enabled = false;
 		Lgravitational.enabled = false;
 		Lclosest.enabled = false;
 		GetComponent<Rigidbody2D> ().simulated = false;

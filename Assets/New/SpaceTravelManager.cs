@@ -13,12 +13,12 @@ public class SpaceTravelManager : MonoBehaviour {
 	[Header("prefabs")]
 	public GameObject pplayer;
 	PlayerBehaviour player;
-	public LevelInfo[] levels;
+
+    public LevelInfo[] levels;
 	[Header("GUI")]
 	public Image overlay;
 	[Header("System Information")]
 	public Transform currentSolarSystem;
-    public bool isFirstLevel = false;
 
 	[System.Serializable]
 	public struct LevelInfo {
@@ -35,51 +35,81 @@ public class SpaceTravelManager : MonoBehaviour {
 	//Debug.DrawRay(player.transform.position,player.transform.right, Color.red, 1);
 	
 	void Start () {
-        if (isFirstLevel)
-        {
-            lastLevel = -1;
-            currentLevel = 0;
-        }
+        //Dev Only 
+        //PlayerPrefs.SetInt("currentLevel", 0);
+        //Play intro
+        StartCoroutine(Intro());
+        //Get current progress
+        currentLevel = PlayerPrefs.GetInt("currentLevel");
+        maxLevel = PlayerPrefs.GetInt("maxLevel");
+
+        print(PlayerPrefs.GetInt("currentLevel") + "  " + PlayerPrefs.GetInt("maxLevel"));
+
        
-        //If this is the first level, spawn the Solar System prefab or maybe don't do shit
-        if (!isFirstLevel) { 
-		StartCoroutine(Intro());
-		//Get current progress
-		//currentLevel = PlayerPrefs.GetInt("currentLevel");
-		//maxLevel = PlayerPrefs.GetInt("maxLevel");
-            //Else spawn the player in a random direction
+
+        //Else spawn the player in a random direction
+        if (currentLevel != 0)
+        {
+
+            Rigidbody2D pRb;
             player = Instantiate(pplayer, new Vector3(-50, -50, 0), Quaternion.identity).transform.GetChild(0).GetComponent<PlayerBehaviour>();
-            player.transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
+            pRb = player.GetComponent<Rigidbody2D>();
             //Zero the rigidbody velocity
-            Rigidbody2D pRb = player.GetComponent<Rigidbody2D>();
             pRb.velocity = Vector3.zero;
-            //Add a force to the player   
+            //Rotate the player 
+            player.transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
+
+
+            //Add a force to the player  
+            Debug.DrawRay(player.transform.position, player.transform.right * 50, Color.red, 100000);
             pRb.AddForce(player.transform.right * 30);
             //Spawn system
-            SpawnSystem(currentLevel);
         }
+        SpawnSystem(currentLevel);
         player = FindObjectOfType<PlayerBehaviour>();
     }
 
     public void SpawnSystem(int index)
     {
+        if (lastLevel != index) { 
         lastLevel = currentLevel;
         currentLevel = index;
         //Spawn the right system in front of it
         if (index < levels.Length && index >= 0)
         {
-            Vector3 newpos = player.transform.position + player.transform.right * 50;
-            currentSolarSystem = Instantiate(levels[index].prefab, newpos, Quaternion.identity).transform;
-        }
+
+            if (currentLevel == 0)
+            {
+                    Debug.Log("Generating current level.");
+                    currentSolarSystem = Instantiate(levels[index].prefab, new Vector3(0, 0, 0), Quaternion.identity).transform;
+            }
+            else
+            {
+                Debug.Log("Generating longiquous star system.");
+                    Vector3 newpos = player.transform.position + player.transform.right * 50;
+                    
+                currentSolarSystem = Instantiate(levels[index].prefab, newpos, Quaternion.identity).transform;
+            }
+
+               //Rotate the system towards the right direction so that the player can have a safe anchor point
+                if(!player)
+                    player = FindObjectOfType<PlayerBehaviour>();
+                Vector2 v = currentSolarSystem.transform.position - player.transform.position;
+                float angle = Mathf.Atan2(v.x, v.y) * Mathf.Rad2Deg;
+                currentSolarSystem.rotation = Quaternion.AngleAxis(-angle, Vector3.forward);
+                player.UpdateAvailablePlanets();    
+
+            }
         else
         {
             Debug.Log("Start system not found.");
         }
-        //Rotate the system towards the right direction so that the player can have a safe anchor point
-        Vector2 v = currentSolarSystem.transform.position - player.transform.position;
-        float angle = Mathf.Atan2(v.x, v.y) * Mathf.Rad2Deg;
-        currentSolarSystem.rotation = Quaternion.AngleAxis(-angle, Vector3.forward);
-        player.UpdateAvailablePlanets();
+       
+     } else
+        {
+            print("Same level?");
+        }
+        Debug.DrawRay(player.transform.position, player.transform.right.normalized * 50, Color.cyan, 100000);
     }
 
 	public IEnumerator Death()
