@@ -37,9 +37,12 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	public TimeController TMan;
 
+    public float distanceFromStar;
+
 	
 	
 	void Start () {
+
 		STMan = FindObjectOfType<SpaceTravelManager>();
 		Time.timeScale = 1;
         //print(sj.connectet)
@@ -90,6 +93,18 @@ public class PlayerBehaviour : MonoBehaviour {
 		}
 		if(orbitingNow)
 			sj.connectedAnchor = orbitingNow.transform.position;
+        if (orbitingStar)
+            distanceFromStar = Vector2.Distance(orbitingStar.position, transform.position);
+        //65 far 80 too far 55 new star
+        if (distanceFromStar >= 70)
+        {
+            print(distanceFromStar + " TOO FAR");
+            Die();
+        }   
+        else if(distanceFromStar >= 60)
+        {
+            print(distanceFromStar + " CAREFUL");
+        } 
 		
     }
 

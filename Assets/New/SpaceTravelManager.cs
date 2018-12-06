@@ -36,7 +36,7 @@ public class SpaceTravelManager : MonoBehaviour {
 	
 	void Start () {
         //Dev Only 
-        //PlayerPrefs.SetInt("currentLevel", 0);
+        PlayerPrefs.SetInt("currentLevel", 0);
         //Play intro
         StartCoroutine(Intro());
         //Get current progress
@@ -66,7 +66,10 @@ public class SpaceTravelManager : MonoBehaviour {
             //Spawn system
         }
         SpawnSystem(currentLevel);
+        //Find player
         player = FindObjectOfType<PlayerBehaviour>();
+        //Set its transform to this object so it doesn't get destroyed or disabled by the solar systems
+        player.transform.parent.SetParent(transform);
     }
 
     public void SpawnSystem(int index)
@@ -89,15 +92,21 @@ public class SpaceTravelManager : MonoBehaviour {
                     Vector3 newpos = player.transform.position + player.transform.right * 50;
                     
                 currentSolarSystem = Instantiate(levels[index].prefab, newpos, Quaternion.identity).transform;
-            }
+                
+                }
 
                //Rotate the system towards the right direction so that the player can have a safe anchor point
                 if(!player)
                     player = FindObjectOfType<PlayerBehaviour>();
+                //Find rotation vector
                 Vector2 v = currentSolarSystem.transform.position - player.transform.position;
+                //Find angle using the rotation vector
                 float angle = Mathf.Atan2(v.x, v.y) * Mathf.Rad2Deg;
+                //Rotate system
                 currentSolarSystem.rotation = Quaternion.AngleAxis(-angle, Vector3.forward);
-                player.UpdateAvailablePlanets();    
+                //Find the new planets it can orbit (performance)
+                player.UpdateAvailablePlanets();
+                
 
             }
         else
