@@ -10,15 +10,28 @@ public class MenuManager : MonoBehaviour {
 	public int maxLevel, currentLevel;
 	[Header("GUI")]
 	public Image overlay;
+    //ScrollBar
+    public Scrollbar mapScrollBar;
+    public Transform mapTransform;
+    public Transform[] mapParallax;
+    Vector3 sBInitialY;
 	
 	void Start () {
-		//For test only, set the maxLevel to 2
-		PlayerPrefs.SetInt("maxLevel",3);
+       
+        //Dev Only 
+        PlayerPrefs.SetInt("currentLevel", 1);
+        PlayerPrefs.SetInt("maxLevel", 2);
+
+        //Store the initial Y position of the map
+        sBInitialY = mapTransform.position;
+        Screen.SetResolution(1000, 1600, false);
 		//Get current max level reached
 		maxLevel = PlayerPrefs.GetInt("maxLevel");
 		//Make the right buttons become interactable accordingly to the max level the player reached before
 		UpdateMenuButtons();
-	}
+
+        MoveMap();
+    }
 	
 	void UpdateMenuButtons () {
 		//Takes all buttons
@@ -38,6 +51,14 @@ public class MenuManager : MonoBehaviour {
 		PlayerPrefs.SetInt("currentLevel", currentLevel);
 		StartCoroutine(Travel());
 	}
+
+    public void MoveMap()
+    {
+        mapTransform.position = new Vector3(sBInitialY.x, sBInitialY.y - mapScrollBar.value * 500, 0);
+        for(int a = 0; a < mapParallax.Length; a++)
+            mapParallax[a].position = new Vector3(sBInitialY.x, sBInitialY.y - mapScrollBar.value * 250*(a+1), 0);
+
+    }
 
 	IEnumerator Travel()
 	{

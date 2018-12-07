@@ -13,7 +13,7 @@ public class TimeController : MonoBehaviour {
 		//Time.timeScale = Mathf.Pow(timeBar.value,3);`
 		//If the parameter is 0 it means you should change time accordingly to the scrollbar
 		if(newSpeed == 0) {
-		Time.timeScale = Mathf.Pow(((timeBar.value)*3)+1,3);
+		Time.timeScale = Mathf.Pow(((timeBar.value)*4)+1,3);
 		if(Time.timeScale != 1)
 			camBehaviour.isFollowEnabled = false;
 		else 

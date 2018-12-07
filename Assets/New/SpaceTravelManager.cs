@@ -35,8 +35,6 @@ public class SpaceTravelManager : MonoBehaviour {
 	//Debug.DrawRay(player.transform.position,player.transform.right, Color.red, 1);
 	
 	void Start () {
-        //Dev Only 
-        PlayerPrefs.SetInt("currentLevel", 0);
         //Play intro
         StartCoroutine(Intro());
         //Get current progress
