@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1817ff524b7d043b9121e579db4d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastLevel: 0
+  lastLevel: -1
   currentLevel: 0
   maxLevel: 0
   pplayer: {fileID: 1374736784734582, guid: 70907b2b859604848827f97f30236ac0, type: 2}
@@ -116,18 +116,41 @@ MonoBehaviour:
   - ID: 0
     prefab: {fileID: 1718895385947308, guid: 7f163facd3b70f3408b6ce58f9b54113, type: 2}
   - ID: 1
-    prefab: {fileID: 1036506889607606, guid: a219a5b0691a54e4087a56421d3cd219, type: 2}
+    prefab: {fileID: 1077101086149944, guid: c54429943e6d97f409911765e45aaaf7, type: 2}
   - ID: 2
-    prefab: {fileID: 1072009008291616, guid: 0a8a7f9856f4af74f9350e38e1b0c1ac, type: 2}
+    prefab: {fileID: 1992989148287572, guid: 00f1a63d30558194fa684f9ff2630556, type: 2}
   - ID: 3
-    prefab: {fileID: 1118866956483098, guid: 06d891ac0b2244b47b0fc5a88fe2a10b, type: 2}
+    prefab: {fileID: 1025118389253518, guid: cfa71a1f267975a4787519bb3dab0bb7, type: 2}
   - ID: 4
-    prefab: {fileID: 1553639858080202, guid: 3cdc82f698872f14bbf4c0ae8ff9e3dd, type: 2}
+    prefab: {fileID: 1131064526121982, guid: d2048c4f6812e854ab0dd89bafabd92f, type: 2}
   - ID: 5
-    prefab: {fileID: 1178694587153414, guid: 5b61c9ea97e74cb4e97d3eea51f86aae, type: 2}
+    prefab: {fileID: 1835847562939072, guid: 6a6d97b96294ab246981bdb759fbbd01, type: 2}
+  - ID: 6
+    prefab: {fileID: 1780832939703100, guid: 7f95ac0c05a7bcb47babdb92c8ffa558, type: 2}
+  - ID: 7
+    prefab: {fileID: 1124042528697808, guid: 59e7d9f08dcfb7b4eaf9cdbd0219a48e, type: 2}
+  - ID: 8
+    prefab: {fileID: 1224951184781072, guid: 98cdb2b8c401fcc4f805736a79f0b0e3, type: 2}
+  - ID: 9
+    prefab: {fileID: 1745520417114248, guid: 065836c31a9626d4cbc90b895c58b7d8, type: 2}
+  - ID: 5
+    prefab: {fileID: 1886451856910694, guid: aa3a780c6a139654c8e03bd6fd091c6b, type: 2}
+  - ID: 10
+    prefab: {fileID: 1050802138827542, guid: 4c49d4de63d17ca43bea1502bddbfd72, type: 2}
+  - ID: 11
+    prefab: {fileID: 0}
+  - ID: 12
+    prefab: {fileID: 0}
+  - ID: 13
+    prefab: {fileID: 0}
+  - ID: 14
+    prefab: {fileID: 0}
+  - ID: 15
+    prefab: {fileID: 0}
+  - ID: 15
+    prefab: {fileID: 0}
   overlay: {fileID: 114688684030498914}
   currentSolarSystem: {fileID: 0}
-  isFirstLevel: 0
 --- !u!114 &114510189723782376
 MonoBehaviour:
   m_ObjectHideFlags: 1

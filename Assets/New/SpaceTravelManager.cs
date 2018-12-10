@@ -13,6 +13,7 @@ public class SpaceTravelManager : MonoBehaviour {
 	[Header("prefabs")]
 	public GameObject pplayer;
 	PlayerBehaviour player;
+    Rigidbody2D pRb;
 
     public LevelInfo[] levels;
 	[Header("GUI")]
@@ -38,8 +39,9 @@ public class SpaceTravelManager : MonoBehaviour {
         //Play intro
         StartCoroutine(Intro());
         //Get current progress
-       // currentLevel = PlayerPrefs.GetInt("currentLevel");
-        //maxLevel = PlayerPrefs.GetInt("maxLevel");
+        PlayerPrefs.SetInt("currentLevel", 3);
+        currentLevel = PlayerPrefs.GetInt("currentLevel");
+        maxLevel = PlayerPrefs.GetInt("maxLevel");
 
         print(PlayerPrefs.GetInt("currentLevel") + "  " + PlayerPrefs.GetInt("maxLevel"));
 
@@ -49,7 +51,7 @@ public class SpaceTravelManager : MonoBehaviour {
         if (currentLevel != 0)
         {
 
-            Rigidbody2D pRb;
+           
             player = Instantiate(pplayer, new Vector3(-50, -50, 0), Quaternion.identity).transform.GetChild(0).GetComponent<PlayerBehaviour>();
             pRb = player.GetComponent<Rigidbody2D>();
             //Zero the rigidbody velocity
@@ -60,14 +62,15 @@ public class SpaceTravelManager : MonoBehaviour {
 
             //Add a force to the player  
             Debug.DrawRay(player.transform.position, player.transform.right * 50, Color.red, 100000);
-            pRb.AddForce(player.transform.right * 30);
+            //pRb.AddForce(player.transform.right * 30);
             //Spawn system
         }
         SpawnSystem(currentLevel);
         //Find player
         player = FindObjectOfType<PlayerBehaviour>();
         //Set its transform to this object so it doesn't get destroyed or disabled by the solar systems
-        player.transform.parent.SetParent(transform);
+        player.transform.parent.SetParent(transform,true);
+        //transform.SetParent(player.transform);
     }
 
     public void SpawnSystem(int index)
@@ -86,7 +89,12 @@ public class SpaceTravelManager : MonoBehaviour {
             }
             else
             {
-                Debug.Log("Generating longiquous star system.");
+                    pRb.velocity = Vector3.zero;
+                    //Add a force to the player  
+                    Debug.DrawRay(player.transform.position, player.transform.right * 50, Color.red, 100000);
+                    pRb.AddForce(player.transform.right * 30);
+
+                    Debug.Log("Generating longiquous star system.");
                     Vector3 newpos = player.transform.position + player.transform.right * 50;
                     
                 currentSolarSystem = Instantiate(levels[index].prefab, newpos, Quaternion.identity).transform;
