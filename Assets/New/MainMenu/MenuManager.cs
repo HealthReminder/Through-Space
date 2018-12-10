@@ -56,7 +56,7 @@ public class MenuManager : MonoBehaviour {
     {
         mapTransform.position = new Vector3(sBInitialY.x, sBInitialY.y - mapScrollBar.value * 500, 0);
         for(int a = 0; a < mapParallax.Length; a++)
-            mapParallax[a].position = new Vector3(sBInitialY.x, sBInitialY.y - mapScrollBar.value * 250*(a+1), 0);
+            mapParallax[a].position = new Vector3(sBInitialY.x, sBInitialY.y*2/(a+1) - mapScrollBar.value*100*a*a , 0);
 
     }
 

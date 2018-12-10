@@ -38,8 +38,8 @@ public class SpaceTravelManager : MonoBehaviour {
         //Play intro
         StartCoroutine(Intro());
         //Get current progress
-        currentLevel = PlayerPrefs.GetInt("currentLevel");
-        maxLevel = PlayerPrefs.GetInt("maxLevel");
+       // currentLevel = PlayerPrefs.GetInt("currentLevel");
+        //maxLevel = PlayerPrefs.GetInt("maxLevel");
 
         print(PlayerPrefs.GetInt("currentLevel") + "  " + PlayerPrefs.GetInt("maxLevel"));
 

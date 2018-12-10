@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Assets.Pixelation.Scripts
 {
    
-    //  [ExecuteInEditMode]
+      [ExecuteInEditMode]
     [AddComponentMenu("Image Effects/Color Adjustments/Pixelation")]
 
     public class Pixelation : ImageEffectBase
