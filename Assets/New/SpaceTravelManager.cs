@@ -20,6 +20,7 @@ public class SpaceTravelManager : MonoBehaviour {
 	public Image overlay;
 	[Header("System Information")]
 	public Transform currentSolarSystem;
+    GameObject oldSolarSystem;
 
 	[System.Serializable]
 	public struct LevelInfo {
@@ -39,7 +40,7 @@ public class SpaceTravelManager : MonoBehaviour {
         //Play intro
         StartCoroutine(Intro());
         //Get current progress
-        PlayerPrefs.SetInt("currentLevel", 3);
+        //PlayerPrefs.SetInt("currentLevel", 1);
         currentLevel = PlayerPrefs.GetInt("currentLevel");
         maxLevel = PlayerPrefs.GetInt("maxLevel");
 
@@ -81,6 +82,10 @@ public class SpaceTravelManager : MonoBehaviour {
         //Spawn the right system in front of it
         if (index < levels.Length && index >= 0)
         {
+                if (oldSolarSystem)
+                    oldSolarSystem.SetActive(false);
+                if (currentSolarSystem)
+                    oldSolarSystem = currentSolarSystem.gameObject;
 
             if (currentLevel == 0)
             {

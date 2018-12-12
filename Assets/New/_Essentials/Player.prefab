@@ -979,7 +979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 95703b29f49b899499233ea7308bb800, type: 3}
-  BlockCount: 170
+  BlockCount: 120
   thisCam: {fileID: 20315840986380856}
 --- !u!114 &114599057840254500
 MonoBehaviour:
@@ -1079,7 +1079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 95703b29f49b899499233ea7308bb800, type: 3}
-  BlockCount: 150
+  BlockCount: 120
   thisCam: {fileID: 20969762741009548}
 --- !u!114 &114818285503266164
 MonoBehaviour:
@@ -1174,6 +1174,7 @@ MonoBehaviour:
   deathScreen: {fileID: 0}
   deathparticle: {fileID: 198340417961666422}
   TMan: {fileID: 114042399722669220}
+  distanceFromStar: 0
 --- !u!114 &114965538878471454
 MonoBehaviour:
   m_ObjectHideFlags: 1

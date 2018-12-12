@@ -109,46 +109,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastLevel: -1
-  currentLevel: 0
+  currentLevel: 1
   maxLevel: 0
   pplayer: {fileID: 1374736784734582, guid: 70907b2b859604848827f97f30236ac0, type: 2}
   levels:
   - ID: 0
     prefab: {fileID: 1718895385947308, guid: 7f163facd3b70f3408b6ce58f9b54113, type: 2}
   - ID: 1
-    prefab: {fileID: 1077101086149944, guid: c54429943e6d97f409911765e45aaaf7, type: 2}
-  - ID: 2
     prefab: {fileID: 1992989148287572, guid: 00f1a63d30558194fa684f9ff2630556, type: 2}
+  - ID: 2
+    prefab: {fileID: 1077101086149944, guid: c54429943e6d97f409911765e45aaaf7, type: 2}
   - ID: 3
-    prefab: {fileID: 1025118389253518, guid: cfa71a1f267975a4787519bb3dab0bb7, type: 2}
+    prefab: {fileID: 1881287494788494, guid: 6ed004b5eeb3131449458020aca87184, type: 2}
   - ID: 4
-    prefab: {fileID: 1131064526121982, guid: d2048c4f6812e854ab0dd89bafabd92f, type: 2}
-  - ID: 5
-    prefab: {fileID: 1835847562939072, guid: 6a6d97b96294ab246981bdb759fbbd01, type: 2}
-  - ID: 6
-    prefab: {fileID: 1780832939703100, guid: 7f95ac0c05a7bcb47babdb92c8ffa558, type: 2}
-  - ID: 7
     prefab: {fileID: 1124042528697808, guid: 59e7d9f08dcfb7b4eaf9cdbd0219a48e, type: 2}
-  - ID: 8
-    prefab: {fileID: 1224951184781072, guid: 98cdb2b8c401fcc4f805736a79f0b0e3, type: 2}
-  - ID: 9
-    prefab: {fileID: 1745520417114248, guid: 065836c31a9626d4cbc90b895c58b7d8, type: 2}
   - ID: 5
+    prefab: {fileID: 1780832939703100, guid: 7f95ac0c05a7bcb47babdb92c8ffa558, type: 2}
+  - ID: 6
+    prefab: {fileID: 1131064526121982, guid: d2048c4f6812e854ab0dd89bafabd92f, type: 2}
+  - ID: 7
+    prefab: {fileID: 1224951184781072, guid: 98cdb2b8c401fcc4f805736a79f0b0e3, type: 2}
+  - ID: 8
+    prefab: {fileID: 1720242428467746, guid: 8a6e1f49ccc322948a95ebb8acb43ca9, type: 2}
+  - ID: 9
     prefab: {fileID: 1886451856910694, guid: aa3a780c6a139654c8e03bd6fd091c6b, type: 2}
+  - ID: 5
+    prefab: {fileID: 1155977755291566, guid: 85a84151a936d634baa0134fd5a1d1bc, type: 2}
   - ID: 10
-    prefab: {fileID: 1050802138827542, guid: 4c49d4de63d17ca43bea1502bddbfd72, type: 2}
+    prefab: {fileID: 1835847562939072, guid: 6a6d97b96294ab246981bdb759fbbd01, type: 2}
   - ID: 11
-    prefab: {fileID: 0}
+    prefab: {fileID: 1025118389253518, guid: cfa71a1f267975a4787519bb3dab0bb7, type: 2}
   - ID: 12
-    prefab: {fileID: 0}
+    prefab: {fileID: 1272007684331442, guid: 751e4ec0e01a14b4d8794881a2feb225, type: 2}
   - ID: 13
-    prefab: {fileID: 0}
+    prefab: {fileID: 1745520417114248, guid: 065836c31a9626d4cbc90b895c58b7d8, type: 2}
   - ID: 14
-    prefab: {fileID: 0}
+    prefab: {fileID: 1058995581442858, guid: 6d4a0f463a956014f9caeb3e1a7fead6, type: 2}
   - ID: 15
-    prefab: {fileID: 0}
-  - ID: 15
-    prefab: {fileID: 0}
+    prefab: {fileID: 1050802138827542, guid: 4c49d4de63d17ca43bea1502bddbfd72, type: 2}
   overlay: {fileID: 114688684030498914}
   currentSolarSystem: {fileID: 0}
 --- !u!114 &114510189723782376
