@@ -23,6 +23,8 @@ public class PlayerBehaviour : MonoBehaviour {
 	[Header("GUI")]
 	public LineRenderer Lgravitational;
 	public LineRenderer Lclosest;
+    
+    SpriteRenderer sptR;
 	
 
 	[Header("Angle")]
@@ -42,7 +44,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	
 	
 	void Start () {
-
+        sptR = GetComponent<SpriteRenderer>();
 		STMan = FindObjectOfType<SpaceTravelManager>();
 		Time.timeScale = 1;
         //print(sj.connectet)
@@ -163,7 +165,7 @@ public class PlayerBehaviour : MonoBehaviour {
 			Lclosest.SetPosition(1, closestPlanet.transform.position);
 			float k = dist/closestPlanet.influenceRadius;
 			Lclosest.colorGradient = new Gradient();
-			Lclosest.startColor = new Color(1,1,1,1-k);
+            Lclosest.startColor = new Color(1,1,1,1-k);
 			Lclosest.endColor = new Color(1,1,1,1-k);
 			Lclosest.enabled = true;
 		} else {
@@ -194,8 +196,14 @@ public class PlayerBehaviour : MonoBehaviour {
 						TMan.ChangeTime(2);
 				else 
 					TMan.timeBar.interactable = true;
-				//k = k/10;
-//				print(dist +" " + orbitingNow.influenceRadius+" "+k);
+                //k = k/10;
+                //				print(dist +" " + orbitingNow.influenceRadius+" "+k);
+
+                //Calculate the color for the player
+                float H, S, V;
+                Color.RGBToHSV(new Color(k, 1 - k, 0, 1), out H, out S, out V);
+                sptR.color = Color.HSVToRGB(H, S, 1);
+
 				Lgravitational.startColor = new Color(k,1-k,0,1);
 				Lgravitational.endColor = new Color(k,1-k,0,1);
 				Lgravitational.enabled = true;
@@ -207,7 +215,8 @@ public class PlayerBehaviour : MonoBehaviour {
 		
 	}
 	void Detach() {
-		attached = false;
+        sptR.color = Color.white;
+        attached = false;
 		sj.enabled = false;	
 		orbitingNow = null;
 		rb.AddForce (rb.velocity.normalized, ForceMode2D.Impulse);
