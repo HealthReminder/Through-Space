@@ -79,20 +79,6 @@ public class PlayerBehaviour : MonoBehaviour {
 		//If the tlayer tress K or J change timeScale
 		
 
-		if(closestPlanet){
-			if (Input.GetMouseButtonDown (0)) {
-				print("clicked");
-				if(camBehaviour.followCamera.pixelRect.Contains(Input.mousePosition)){
-					print("is in rect");
-					if (attached == true) {
-						Detach ();
-					} else {
-						Attach ();
-				} 
-			} else 
-				print("not in rect");
-		}
-		}
 		if(orbitingNow)
 			sj.connectedAnchor = orbitingNow.transform.position;
         if (orbitingStar)
@@ -108,6 +94,26 @@ public class PlayerBehaviour : MonoBehaviour {
            // print(distanceFromStar + " CAREFUL");
         } 
 		
+    }
+
+    public void PressedOnScreen()
+    {
+        print("clicked");
+        if(closestPlanet)
+        if (camBehaviour.followCamera.pixelRect.Contains(Input.mousePosition))
+        {
+            print("is in rect");
+            if (attached == true)
+            {
+                Detach();
+            }
+            else
+            {
+                Attach();
+            }
+        }
+        else
+            print("not in rect");
     }
 
 
