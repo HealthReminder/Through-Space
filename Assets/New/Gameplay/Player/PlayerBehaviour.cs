@@ -98,12 +98,12 @@ public class PlayerBehaviour : MonoBehaviour {
         //65 far 80 too far 55 new star
         if (distanceFromStar >= 70)
         {
-            print(distanceFromStar + " TOO FAR");
+           // print(distanceFromStar + " TOO FAR");
             Die();
         }   
         else if(distanceFromStar >= 60)
         {
-            print(distanceFromStar + " CAREFUL");
+           // print(distanceFromStar + " CAREFUL");
         } 
 		
     }
@@ -254,6 +254,7 @@ public class PlayerBehaviour : MonoBehaviour {
                 print("Worked");
                 STMan.lastLevel = STMan.currentLevel;
                 STMan.currentLevel = collision.GetComponent<Objective>().nextLevel;
+                print("Called spawn system.");
                 STMan.SpawnSystem((int)STMan.currentLevel);
             }
             else

@@ -20,7 +20,7 @@ public class MenuManager : MonoBehaviour {
        
         //Dev Only 
         PlayerPrefs.SetInt("currentLevel", 1);
-        PlayerPrefs.SetInt("maxLevel", 2);
+        PlayerPrefs.SetInt("maxLevel", 10);
 
         //Store the initial Y position of the map
         sBInitialY = mapTransform.position;
@@ -54,9 +54,9 @@ public class MenuManager : MonoBehaviour {
 
     public void MoveMap()
     {
-        mapTransform.position = new Vector3(sBInitialY.x, sBInitialY.y - mapScrollBar.value * 500, 0);
-        for(int a = 0; a < mapParallax.Length; a++)
-            mapParallax[a].position = new Vector3(sBInitialY.x, sBInitialY.y*2/(a+1) - mapScrollBar.value*100*a*a , 0);
+        mapTransform.position = new Vector3(sBInitialY.x, sBInitialY.y - mapScrollBar.value * 700, 0);
+       // for(int a = 0; a < mapParallax.Length; a++)
+           // mapParallax[a].position = new Vector3(sBInitialY.x, sBInitialY.y*2/(a+1) - mapScrollBar.value*100*a*a , 0);
 
     }
 
@@ -64,13 +64,13 @@ public class MenuManager : MonoBehaviour {
 	{
 		overlay.gameObject.SetActive(true);
 		overlay.color = new Color(0,0,0,0);
-		AsyncOperation loadingScene = SceneManager.LoadSceneAsync("SpaceTravel");
-		loadingScene.allowSceneActivation = false;
 		while(overlay.color.a < 1){
 			overlay.color+= new Color(0,0,0,0.05f);
 			yield return null;
 		}
-		yield return new WaitForSeconds(1);
+        AsyncOperation loadingScene = SceneManager.LoadSceneAsync("SpaceTravel");
+        loadingScene.allowSceneActivation = false;
+        yield return new WaitForSeconds(1);
 		loadingScene.allowSceneActivation = true;
 		yield return loadingScene;
 		

@@ -21,8 +21,13 @@ public class SpaceTravelManager : MonoBehaviour {
 	[Header("System Information")]
 	public Transform currentSolarSystem;
     GameObject oldSolarSystem;
+    [Header("Development")]
+    [SerializeField]
+    bool overrideLevel;
+    [SerializeField]
+    int newLevel = 0;
 
-	[System.Serializable]
+    [System.Serializable]
 	public struct LevelInfo {
 		public int ID;
 		public GameObject prefab;
@@ -44,8 +49,11 @@ public class SpaceTravelManager : MonoBehaviour {
         currentLevel = PlayerPrefs.GetInt("currentLevel");
         maxLevel = PlayerPrefs.GetInt("maxLevel");
 
-        print(PlayerPrefs.GetInt("currentLevel") + "  " + PlayerPrefs.GetInt("maxLevel"));
+        // print(PlayerPrefs.GetInt("currentLevel") + "  " + PlayerPrefs.GetInt("maxLevel"));
 
+        //Dev only
+        if (overrideLevel)
+            currentLevel = newLevel;
        
 
         //Else spawn the player in a random direction
@@ -54,7 +62,9 @@ public class SpaceTravelManager : MonoBehaviour {
 
            
             player = Instantiate(pplayer, new Vector3(-50, -50, 0), Quaternion.identity).transform.GetChild(0).GetComponent<PlayerBehaviour>();
-            pRb = player.GetComponent<Rigidbody2D>();
+            if(!pRb)
+                pRb = player.GetComponent<Rigidbody2D>();
+
             //Zero the rigidbody velocity
             pRb.velocity = Vector3.zero;
             //Rotate the player 
@@ -94,6 +104,7 @@ public class SpaceTravelManager : MonoBehaviour {
             }
             else
             {
+                    pRb = player.GetComponent<Rigidbody2D>();
                     pRb.velocity = Vector3.zero;
                     //Add a force to the player  
                     Debug.DrawRay(player.transform.position, player.transform.right * 50, Color.red, 100000);

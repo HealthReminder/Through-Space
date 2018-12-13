@@ -128,17 +128,17 @@ MonoBehaviour:
   - ID: 6
     prefab: {fileID: 1131064526121982, guid: d2048c4f6812e854ab0dd89bafabd92f, type: 2}
   - ID: 7
-    prefab: {fileID: 1224951184781072, guid: 98cdb2b8c401fcc4f805736a79f0b0e3, type: 2}
+    prefab: {fileID: 1835847562939072, guid: 6a6d97b96294ab246981bdb759fbbd01, type: 2}
   - ID: 8
-    prefab: {fileID: 1720242428467746, guid: 8a6e1f49ccc322948a95ebb8acb43ca9, type: 2}
+    prefab: {fileID: 1025118389253518, guid: cfa71a1f267975a4787519bb3dab0bb7, type: 2}
   - ID: 9
     prefab: {fileID: 1886451856910694, guid: aa3a780c6a139654c8e03bd6fd091c6b, type: 2}
   - ID: 5
     prefab: {fileID: 1155977755291566, guid: 85a84151a936d634baa0134fd5a1d1bc, type: 2}
   - ID: 10
-    prefab: {fileID: 1835847562939072, guid: 6a6d97b96294ab246981bdb759fbbd01, type: 2}
+    prefab: {fileID: 1224951184781072, guid: 98cdb2b8c401fcc4f805736a79f0b0e3, type: 2}
   - ID: 11
-    prefab: {fileID: 1025118389253518, guid: cfa71a1f267975a4787519bb3dab0bb7, type: 2}
+    prefab: {fileID: 1720242428467746, guid: 8a6e1f49ccc322948a95ebb8acb43ca9, type: 2}
   - ID: 12
     prefab: {fileID: 1272007684331442, guid: 751e4ec0e01a14b4d8794881a2feb225, type: 2}
   - ID: 13
@@ -149,6 +149,8 @@ MonoBehaviour:
     prefab: {fileID: 1050802138827542, guid: 4c49d4de63d17ca43bea1502bddbfd72, type: 2}
   overlay: {fileID: 114688684030498914}
   currentSolarSystem: {fileID: 0}
+  overrideLevel: 1
+  newLevel: 6
 --- !u!114 &114510189723782376
 MonoBehaviour:
   m_ObjectHideFlags: 1
