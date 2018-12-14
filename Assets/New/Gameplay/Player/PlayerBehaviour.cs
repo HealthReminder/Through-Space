@@ -12,8 +12,9 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	[Header("planetary")]
 	public Planet closestPlanet, orbitingNow;
-	Transform orbitingStar;
+	public Transform orbitingStar;
 	List<Planet> planetsAvailable;
+    public bool hasArrived=true;
 
 	[Header("Spring")]
 	public bool attached=false;
@@ -84,15 +85,27 @@ public class PlayerBehaviour : MonoBehaviour {
         if (orbitingStar)
             distanceFromStar = Vector2.Distance(orbitingStar.position, transform.position);
         //65 far 80 too far 55 new star
-        if (distanceFromStar >= 70)
+        if (hasArrived)
         {
-           // print(distanceFromStar + " TOO FAR");
-            Die();
-        }   
-        else if(distanceFromStar >= 60)
+            if (distanceFromStar >= 50)
+            {
+                // print(distanceFromStar + " TOO FAR");
+                Die();
+            }
+            else if (distanceFromStar >= 40)
+            {
+                 //print(distanceFromStar + " CAREFUL");
+            }
+        } else
         {
-           // print(distanceFromStar + " CAREFUL");
-        } 
+            if (distanceFromStar < 15)
+            {
+                hasArrived = true;
+                TMan.timeBar.value = 0;
+                TMan.ChangeTime(0);
+                print(distanceFromStar + " haha");
+            }
+        }
 		
     }
 
@@ -129,10 +142,6 @@ public class PlayerBehaviour : MonoBehaviour {
 			//sj.distance = Vector2.Distance (transform.position+new Vector3(rb.velocity.x,rb.velocity.y,0)*3, closestPlanet.transform.position);
 			sj.distance = Vector2.Distance (transform.position, closestPlanet.transform.position);
 			orbitingNow = closestPlanet;
-			if (orbitingStar != closestPlanet.startSystem){
-				orbitingStar = closestPlanet.startSystem;
-				camBehaviour.wideCamera.transform.position = new Vector3(orbitingStar.position.x,orbitingStar.position.y,-35);
-			}
 			
 		}
 	}
@@ -261,20 +270,24 @@ public class PlayerBehaviour : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-         if (collision.gameObject.tag == "objective")
+        if (collision.gameObject.tag == "objective")
         {
-            print("Touched objective");
-            if (collision.GetComponent<Objective>())
+            if (!orbitingNow)
             {
-                print("Worked");
-                STMan.lastLevel = STMan.currentLevel;
-                STMan.currentLevel = collision.GetComponent<Objective>().nextLevel;
-                print("Called spawn system.");
-                STMan.SpawnSystem((int)STMan.currentLevel);
-            }
-            else
-            {
-                print("Failed");
+                print("Touched objective");
+                if (collision.GetComponent<Objective>())
+                {
+                    print("Worked");
+                    STMan.lastLevel = STMan.currentLevel;
+                    STMan.currentLevel = collision.GetComponent<Objective>().nextLevel;
+                    print("Called spawn system.");
+
+                    STMan.SpawnSystem((int)STMan.currentLevel);
+                }
+                else
+                {
+                    print("Failed");
+                }
             }
         }
     }

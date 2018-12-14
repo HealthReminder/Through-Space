@@ -113,8 +113,8 @@ public class SpaceTravelManager : MonoBehaviour {
                     Debug.Log("Generating longiquous star system.");
                     Vector3 newpos = player.transform.position + player.transform.right * 50;
                     
-                currentSolarSystem = Instantiate(levels[index].prefab, newpos, Quaternion.identity).transform;
-                
+                    currentSolarSystem = Instantiate(levels[index].prefab, newpos, Quaternion.identity).transform;
+                    player.hasArrived = false;
                 }
 
                //Rotate the system towards the right direction so that the player can have a safe anchor point
@@ -128,7 +128,10 @@ public class SpaceTravelManager : MonoBehaviour {
                 currentSolarSystem.rotation = Quaternion.AngleAxis(-angle, Vector3.forward);
                 //Find the new planets it can orbit (performance)
                 player.UpdateAvailablePlanets();
-                
+                player.orbitingStar = currentSolarSystem.transform;
+                player.camBehaviour.wideCamera.transform.position = new Vector3(currentSolarSystem.transform.position.x, currentSolarSystem.transform.position.y, -35);
+               
+
 
             }
         else
