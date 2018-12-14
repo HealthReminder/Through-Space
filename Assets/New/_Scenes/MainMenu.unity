@@ -4766,9 +4766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42cd8dcae69d178488f5efa28e7c7e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shader: {fileID: 4800000, guid: 95703b29f49b899499233ea7308bb800, type: 3}
-  BlockCount: 148
-  thisCam: {fileID: 2005816609}
 --- !u!1 &2025905490
 GameObject:
   m_ObjectHideFlags: 0
