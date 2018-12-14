@@ -5,15 +5,23 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour {
 
-	public Transform buttonContainer;
-	[Header("player Information")]
-	public int maxLevel, currentLevel;
+    [SerializeField]
+    Transform buttonContainer;
+    [SerializeField]
+    float barSize;
+    [Header("player Information")]
+    [SerializeField]
+    int maxLevel, currentLevel;
 	[Header("GUI")]
-	public Image overlay;
+    [SerializeField]
+    Image overlay;
     //ScrollBar
-    public Scrollbar mapScrollBar;
-    public Transform mapTransform;
-    public Transform[] mapParallax;
+    [SerializeField]
+    Scrollbar mapScrollBar;
+    [SerializeField]
+    Transform mapTransform;
+    [SerializeField]
+    Transform[] mapParallax;
     Vector3 sBInitialY;
 	
 	void Start () {
@@ -23,13 +31,13 @@ public class MenuManager : MonoBehaviour {
         PlayerPrefs.SetInt("maxLevel", 10);
 
         //Store the initial Y position of the map
-        sBInitialY = mapTransform.position;
+       
         Screen.SetResolution(1000, 1600, false);
 		//Get current max level reached
 		maxLevel = PlayerPrefs.GetInt("maxLevel");
 		//Make the right buttons become interactable accordingly to the max level the player reached before
 		UpdateMenuButtons();
-
+        sBInitialY = mapTransform.position;
         MoveMap();
     }
 	
@@ -54,7 +62,7 @@ public class MenuManager : MonoBehaviour {
 
     public void MoveMap()
     {
-        mapTransform.position = new Vector3(sBInitialY.x, sBInitialY.y - mapScrollBar.value * 700, 0);
+        mapTransform.position = new Vector3(sBInitialY.x, sBInitialY.y - mapScrollBar.value * barSize, 0);
        // for(int a = 0; a < mapParallax.Length; a++)
            // mapParallax[a].position = new Vector3(sBInitialY.x, sBInitialY.y*2/(a+1) - mapScrollBar.value*100*a*a , 0);
 
