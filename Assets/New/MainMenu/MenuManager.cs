@@ -22,7 +22,7 @@ public class MenuManager : MonoBehaviour {
     Transform mapTransform;
     [SerializeField]
     Transform[] mapParallax;
-    Vector3 sBInitialY;
+    float mapY;
 	
 	void Start () {
        
@@ -32,12 +32,12 @@ public class MenuManager : MonoBehaviour {
 
         //Store the initial Y position of the map
        
-        Screen.SetResolution(1000, 1600, false);
+        //Screen.SetResolution(1000, 1600, false);
 		//Get current max level reached
 		maxLevel = PlayerPrefs.GetInt("maxLevel");
 		//Make the right buttons become interactable accordingly to the max level the player reached before
 		UpdateMenuButtons();
-        sBInitialY = mapTransform.position;
+        mapY = mapTransform.position.y;
         MoveMap();
     }
 	
@@ -62,7 +62,7 @@ public class MenuManager : MonoBehaviour {
 
     public void MoveMap()
     {
-        mapTransform.position = new Vector3(sBInitialY.x, sBInitialY.y - mapScrollBar.value * barSize, 0);
+        mapTransform.position = new Vector3(mapTransform.position.x, mapY - mapScrollBar.value * barSize, 0);
        // for(int a = 0; a < mapParallax.Length; a++)
            // mapParallax[a].position = new Vector3(sBInitialY.x, sBInitialY.y*2/(a+1) - mapScrollBar.value*100*a*a , 0);
 
