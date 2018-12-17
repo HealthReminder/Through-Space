@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4115,7 +4115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.59607846, g: 0.59607846, b: 0.59607846, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4688,7 +4688,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300014, guid: db67d150cf918c34784a3b32870954a5, type: 3}
+  m_Sprite: {fileID: 21300018, guid: db67d150cf918c34784a3b32870954a5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8309,7 +8309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.59607846, g: 0.59607846, b: 0.59607846, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -9237,7 +9237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 55, y: 0.7001953}
+  m_AnchoredPosition: {x: 32, y: 0.7}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1499399218
@@ -9259,7 +9259,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300008, guid: db67d150cf918c34784a3b32870954a5, type: 3}
+  m_Sprite: {fileID: 21300010, guid: db67d150cf918c34784a3b32870954a5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11266,7 +11266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.59607846, g: 0.59607846, b: 0.59607846, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -12863,41 +12863,42 @@ MonoBehaviour:
   tCamera: {fileID: 341085248}
   mapParallax: []
   lastLevel: {fileID: 1829476775}
-  map_Buttons:
-  - button: {fileID: 320775623}
-    attachedGUI: {fileID: 1120037918}
-  - button: {fileID: 1092832024}
-    attachedGUI: {fileID: 18296536}
-  - button: {fileID: 1980158708}
-    attachedGUI: {fileID: 273710512}
-  - button: {fileID: 360700452}
-    attachedGUI: {fileID: 1314865924}
-  - button: {fileID: 1182813100}
-    attachedGUI: {fileID: 114395328}
-  - button: {fileID: 422972845}
-    attachedGUI: {fileID: 1928554269}
-  - button: {fileID: 1462949123}
-    attachedGUI: {fileID: 329978309}
-  - button: {fileID: 400720459}
-    attachedGUI: {fileID: 1041275765}
-  - button: {fileID: 500682758}
-    attachedGUI: {fileID: 1552718921}
-  - button: {fileID: 617944481}
-    attachedGUI: {fileID: 656817144}
-  - button: {fileID: 1073156094}
-    attachedGUI: {fileID: 478395288}
-  - button: {fileID: 636324674}
-    attachedGUI: {fileID: 697833985}
-  - button: {fileID: 599578765}
-    attachedGUI: {fileID: 607365918}
-  - button: {fileID: 65250153}
-    attachedGUI: {fileID: 1243453167}
-  - button: {fileID: 2139909125}
-    attachedGUI: {fileID: 984716126}
-  - button: {fileID: 1197891393}
-    attachedGUI: {fileID: 1501571059}
-  - button: {fileID: 1829476776}
-    attachedGUI: {fileID: 1912279022}
+  buttons:
+  - {fileID: 320775623}
+  - {fileID: 1092832024}
+  - {fileID: 1980158708}
+  - {fileID: 360700452}
+  - {fileID: 1182813100}
+  - {fileID: 422972845}
+  - {fileID: 1462949123}
+  - {fileID: 400720459}
+  - {fileID: 500682758}
+  - {fileID: 617944481}
+  - {fileID: 1073156094}
+  - {fileID: 636324674}
+  - {fileID: 599578765}
+  - {fileID: 65250153}
+  - {fileID: 2139909125}
+  - {fileID: 1197891393}
+  - {fileID: 1829476776}
+  attachedGUIs:
+  - {fileID: 1120037918}
+  - {fileID: 18296536}
+  - {fileID: 273710512}
+  - {fileID: 1314865924}
+  - {fileID: 114395328}
+  - {fileID: 1928554269}
+  - {fileID: 329978309}
+  - {fileID: 1041275765}
+  - {fileID: 1552718921}
+  - {fileID: 656817144}
+  - {fileID: 478395288}
+  - {fileID: 697833985}
+  - {fileID: 607365918}
+  - {fileID: 1243453167}
+  - {fileID: 984716126}
+  - {fileID: 1501571059}
+  - {fileID: 1912279022}
 --- !u!4 &2125569087
 Transform:
   m_ObjectHideFlags: 0

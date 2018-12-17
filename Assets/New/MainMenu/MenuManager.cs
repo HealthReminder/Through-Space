@@ -28,19 +28,16 @@ public class MenuManager : MonoBehaviour {
     float lastLevelIY;
     [Header("Buttons")]
     [SerializeField]
-    MapButton[] map_Buttons;
-	
-    [System.Serializable]
-    struct MapButton
-    {
-        public Button button;
-        public GameObject attachedGUI;
-    }
+    Button[] buttons;
+    [SerializeField]
+    GameObject[] attachedGUIs;
+
+   
 	void Start () {
        
         //Dev Only 
         //PlayerPrefs.SetInt("currentLevel", 1);
-        PlayerPrefs.SetInt("maxLevel", 14);
+        //PlayerPrefs.SetInt("maxLevel", 14);
 
         //Store the initial Y position of the map
        
@@ -68,19 +65,19 @@ public class MenuManager : MonoBehaviour {
 	void UpdateMenuButtons () {
         print("Updating buttons");
 		//Make them interactable or not accordingly
-        for(int a = 0; a < map_Buttons.Length; a++)
+        for(int a = 0; a < buttons.Length; a++)
         {
             if (a <= maxLevel)
             {
-                map_Buttons[a].button.interactable = true;
-                if (map_Buttons[a].attachedGUI)
-                    map_Buttons[a].attachedGUI.SetActive(true);
+                buttons[a].interactable = true;
+                if (attachedGUIs[a])
+                    attachedGUIs[a].SetActive(true);
             }
             else
             {
-                map_Buttons[a].button.interactable = false;
-                if (map_Buttons[a].attachedGUI)
-                    map_Buttons[a].attachedGUI.SetActive(false);
+                buttons[a].interactable = false;
+                if (attachedGUIs[a])
+                    attachedGUIs[a].SetActive(false);
             }
                
            

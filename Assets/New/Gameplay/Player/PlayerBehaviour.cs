@@ -112,9 +112,7 @@ public class PlayerBehaviour : MonoBehaviour {
     public void PressedOnScreen()
     {
         print("clicked");
-        if(closestPlanet)
-        if (camBehaviour.followCamera.pixelRect.Contains(Input.mousePosition))
-        {
+        if (closestPlanet) { 
             print("is in rect");
             if (attached == true)
             {
@@ -125,8 +123,6 @@ public class PlayerBehaviour : MonoBehaviour {
                 Attach();
             }
         }
-        else
-            print("not in rect");
     }
 
 
