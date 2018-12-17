@@ -144,6 +144,9 @@ public class SpaceTravelManager : MonoBehaviour {
             print("Same level?");
         }
         Debug.DrawRay(player.transform.position, player.transform.right.normalized * 50, Color.cyan, 100000);
+        if (currentLevel > maxLevel)
+            maxLevel = currentLevel;
+        player.CheckForProgress();
     }
 
 	public IEnumerator Death()

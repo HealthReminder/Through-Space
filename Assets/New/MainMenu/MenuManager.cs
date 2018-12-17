@@ -19,40 +19,78 @@ public class MenuManager : MonoBehaviour {
     [SerializeField]
     Scrollbar mapScrollBar;
     [SerializeField]
-    Transform mapTransform;
+    Transform tCamera;
     [SerializeField]
     Transform[] mapParallax;
-    float mapY;
+    float tCameraIY;
+    [SerializeField]
+    Transform lastLevel;
+    float lastLevelIY;
+    [Header("Buttons")]
+    [SerializeField]
+    MapButton[] map_Buttons;
 	
+    [System.Serializable]
+    struct MapButton
+    {
+        public Button button;
+        public GameObject attachedGUI;
+    }
 	void Start () {
        
         //Dev Only 
-        PlayerPrefs.SetInt("currentLevel", 1);
-        PlayerPrefs.SetInt("maxLevel", 10);
+        //PlayerPrefs.SetInt("currentLevel", 1);
+        PlayerPrefs.SetInt("maxLevel", 14);
 
         //Store the initial Y position of the map
        
         //Screen.SetResolution(1000, 1600, false);
 		//Get current max level reached
+
 		maxLevel = PlayerPrefs.GetInt("maxLevel");
-		//Make the right buttons become interactable accordingly to the max level the player reached before
-		UpdateMenuButtons();
-        mapY = mapTransform.position.y;
-        MoveMap();
+		
+        tCameraIY = tCamera.position.y;
+        if(maxLevel > 4)
+        {
+            mapScrollBar.interactable = true;
+            lastLevel = GameObject.Find(maxLevel.ToString()).transform;
+            lastLevelIY = lastLevel.position.y;
+        } else
+        {
+            mapScrollBar.interactable = false;
+        }
+
+        //Make the right buttons become interactable accordingly to the max level the player reached before
+        UpdateMenuButtons();
+        MoveCamera();
     }
 	
 	void UpdateMenuButtons () {
-		//Takes all buttons
-		Button[] buttons = buttonContainer.GetComponentsInChildren<Button>();
+        print("Updating buttons");
 		//Make them interactable or not accordingly
-		foreach(Button b in buttons) {
-			if(int.Parse(b.name) <= maxLevel)
-				b.interactable = true;
-			else 
-				b.interactable = false;
-		}
+        for(int a = 0; a < map_Buttons.Length; a++)
+        {
+            if (a <= maxLevel)
+            {
+                map_Buttons[a].button.interactable = true;
+                if (map_Buttons[a].attachedGUI)
+                    map_Buttons[a].attachedGUI.SetActive(true);
+            }
+            else
+            {
+                map_Buttons[a].button.interactable = false;
+                if (map_Buttons[a].attachedGUI)
+                    map_Buttons[a].attachedGUI.SetActive(false);
+            }
+               
+           
+        }
 	}
-
+    public void ResetGame()
+    {
+        PlayerPrefs.SetInt("maxLevel", 0);
+        PlayerPrefs.SetInt("currentLevel", 0);
+    }
 	//This class will be called by the buttons to load a new scene
 	public void SetGoToLevel(int levelID) {
 		currentLevel = levelID;
@@ -60,9 +98,10 @@ public class MenuManager : MonoBehaviour {
 		StartCoroutine(Travel());
 	}
 
-    public void MoveMap()
+    public void MoveCamera()
     {
-        mapTransform.position = new Vector3(mapTransform.position.x, mapY - mapScrollBar.value * barSize, 0);
+        //print("Moving camera, " + Mathf.Lerp(0, lastLevelIY, mapScrollBar.value)+ "  " + lastLevelIY + "  pos "+ tCameraIY);
+        tCamera.position = new Vector3(tCamera.position.x, tCameraIY - Mathf.Lerp(0, lastLevelIY - 500, mapScrollBar.value) );
        // for(int a = 0; a < mapParallax.Length; a++)
            // mapParallax[a].position = new Vector3(sBInitialY.x, sBInitialY.y*2/(a+1) - mapScrollBar.value*100*a*a , 0);
 

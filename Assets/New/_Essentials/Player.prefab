@@ -511,7 +511,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1374736784734582}
   m_LocalRotation: {x: -0, y: -0, z: -0.6100479, w: 0.7923646}
-  m_LocalPosition: {x: 1139.999, y: 125.92218, z: -4.5147653}
+  m_LocalPosition: {x: 379.39603, y: 318.41476, z: -1940.4939}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4634148934530302}
@@ -586,7 +586,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 22.82
+  orthographic size: 35
   m_Depth: 0.34
   m_CullingMask:
     serializedVersion: 2
@@ -626,7 +626,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 0.85
   m_Depth: 0.34
   m_CullingMask:
     serializedVersion: 2
@@ -719,7 +719,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -30
   m_Time: 80
   m_Parameters:
     serializedVersion: 2

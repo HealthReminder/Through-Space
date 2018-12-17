@@ -8,7 +8,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	SpringJoint2D sj;
 	Rigidbody2D rb;
-	bool dead = false;
+	//bool dead = false;
 
 	[Header("planetary")]
 	public Planet closestPlanet, orbitingNow;
@@ -103,7 +103,7 @@ public class PlayerBehaviour : MonoBehaviour {
                 hasArrived = true;
                 TMan.timeBar.value = 0;
                 TMan.ChangeTime(0);
-                print(distanceFromStar + " haha");
+                //print(distanceFromStar + " haha");
             }
         }
 		
@@ -291,13 +291,22 @@ public class PlayerBehaviour : MonoBehaviour {
             }
         }
     }
-    void Die() {
-		Time.timeScale = 1;
-        print("Changing current level from: " + PlayerPrefs.GetInt("currentLevel"));
+    public void CheckForProgress()
+    {
+        if (!STMan)
+            STMan = FindObjectOfType<SpaceTravelManager>();
+        print("Current player pref" + PlayerPrefs.GetInt("maxLevel") + " to: " + STMan.maxLevel);
         PlayerPrefs.SetInt("currentLevel", STMan.currentLevel);
-        print("To: " + PlayerPrefs.GetInt("currentLevel") + " by: " + STMan.currentLevel);
-        if (STMan.currentLevel > STMan.maxLevel)
-            PlayerPrefs.SetInt("maxLevel", STMan.currentLevel);
+        if (STMan.maxLevel > PlayerPrefs.GetInt("maxLevel"))
+        {
+            print("You are on a higher level");
+           PlayerPrefs.SetInt("maxLevel", STMan.currentLevel);
+        }
+          
+    }
+    public void Die() {
+		Time.timeScale = 1;
+        CheckForProgress();
         GetComponent<SpriteRenderer> ().enabled = false;
 		Lgravitational.enabled = false;
 		Lclosest.enabled = false;

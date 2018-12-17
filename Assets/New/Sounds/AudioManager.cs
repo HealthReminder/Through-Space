@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour {
 	public int sourceQuantity;
 	public int currentSource = 0;
 	
-	string testingNow = "";
+	//string testingNow = "";
 
 	AudioSource[] sources;
 	[SerializeField]
