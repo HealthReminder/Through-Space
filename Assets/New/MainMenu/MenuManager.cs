@@ -37,7 +37,7 @@ public class MenuManager : MonoBehaviour {
        
         //Dev Only 
         //PlayerPrefs.SetInt("currentLevel", 1);
-        //PlayerPrefs.SetInt("maxLevel", 14);
+        PlayerPrefs.SetInt("maxLevel", 4);
 
         //Store the initial Y position of the map
        
@@ -50,10 +50,13 @@ public class MenuManager : MonoBehaviour {
         if(maxLevel > 4)
         {
             mapScrollBar.interactable = true;
+            mapScrollBar.gameObject.SetActive(true);
+
             lastLevel = GameObject.Find(maxLevel.ToString()).transform;
             lastLevelIY = lastLevel.position.y;
         } else
         {
+            mapScrollBar.gameObject.SetActive(false);
             mapScrollBar.interactable = false;
         }
 
