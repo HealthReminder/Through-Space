@@ -58,7 +58,7 @@ public class PlayerBehaviour : MonoBehaviour {
 		StartCoroutine (FixRotation ());
 
         if (spawnWithForce)
-            rb.AddForce(Vector2.right*3, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.right*300);
 
 	}
 
@@ -98,7 +98,7 @@ public class PlayerBehaviour : MonoBehaviour {
             }
         } else
         {
-            if (distanceFromStar < 15)
+            if (distanceFromStar < 35)
             {
                 hasArrived = true;
                 TMan.timeBar.value = 0;
@@ -133,7 +133,10 @@ public class PlayerBehaviour : MonoBehaviour {
 			attached = true;
 			sj.enabled = true;	
 			sj.connectedAnchor = closestPlanet.transform.position;
-			sj.frequency = (float)closestPlanet.gravitationalForce/4;
+            rb.AddForce(transform.right * closestPlanet.gravitationalForce * closestPlanet.gravitationalForce * 10);
+            Debug.DrawRay(transform.position, transform.right * closestPlanet.gravitationalForce,Color.blue, 10);
+
+			//sj.frequency = (float)closestPlanet.gravitationalForce/4;
 			//The distances must be lower for less dense planet
 			//sj.distance = Vector2.Distance (transform.position+new Vector3(rb.velocity.x,rb.velocity.y,0)*3, closestPlanet.transform.position);
 			sj.distance = Vector2.Distance (transform.position, closestPlanet.transform.position);

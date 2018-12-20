@@ -17,7 +17,7 @@ public class CameraBehaviour : MonoBehaviour {
 
 
     void Start () {
-        scrollbar.value = 0.15f;
+        scrollbar.value = 0.33f;
         ChangeCameraZoom();
 		followCamera.enabled=true;
 		wideCamera.enabled=false;

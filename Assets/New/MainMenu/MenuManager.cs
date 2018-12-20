@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour {
+    [Header("Dev Only")]
+    [SerializeField]
+    bool overrideConfig;
+    [SerializeField]
+    int newMaxLevel;
 
     [SerializeField]
     Transform buttonContainer;
@@ -32,27 +37,32 @@ public class MenuManager : MonoBehaviour {
     [SerializeField]
     GameObject[] attachedGUIs;
 
-   
-	void Start () {
-       
+
+    void Start() {
+
         //Dev Only 
-        //PlayerPrefs.SetInt("currentLevel", 1);
-        PlayerPrefs.SetInt("maxLevel", 4);
+        
+        if (overrideConfig)
+        {
+            PlayerPrefs.SetInt("currentLevel", 0);
+            PlayerPrefs.SetInt("maxLevel", 0);
+        }
+       
 
         //Store the initial Y position of the map
        
         //Screen.SetResolution(1000, 1600, false);
 		//Get current max level reached
 
-		maxLevel = PlayerPrefs.GetInt("maxLevel");
+		 maxLevel = PlayerPrefs.GetInt("maxLevel");
 		
         tCameraIY = tCamera.position.y;
         if(maxLevel > 4)
         {
             mapScrollBar.interactable = true;
             mapScrollBar.gameObject.SetActive(true);
-
-            lastLevel = GameObject.Find(maxLevel.ToString()).transform;
+            
+           //lastLevel = GameObject.Find(maxLevel.ToString()).transform;
             lastLevelIY = lastLevel.position.y;
         } else
         {

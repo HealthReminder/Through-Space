@@ -15,7 +15,7 @@ public class SpaceTravelManager : MonoBehaviour {
 	PlayerBehaviour player;
     Rigidbody2D pRb;
 
-    public LevelInfo[] levels;
+    public GameObject[] levels;
 	[Header("GUI")]
 	public Image overlay;
 	[Header("System Information")]
@@ -26,20 +26,8 @@ public class SpaceTravelManager : MonoBehaviour {
     bool overrideLevel;
     [SerializeField]
     int newLevel = 0;
-
-    [System.Serializable]
-	public struct LevelInfo {
-		public int ID;
-		public GameObject prefab;
-	}
-		
-	//Can be used to find the right forward vector (oopsies)
-	void Update()
-	{
-		if(player)
-		Debug.DrawRay(player.transform.position,player.transform.right, Color.red, 1);
-	}
-	//Debug.DrawRay(player.transform.position,player.transform.right, Color.red, 1);
+    
+	
 	
 	void Start () {
         //Play intro
@@ -100,20 +88,20 @@ public class SpaceTravelManager : MonoBehaviour {
             if (currentLevel == 0)
             {
                     Debug.Log("Generating current level.");
-                    currentSolarSystem = Instantiate(levels[index].prefab, new Vector3(0, 0, 0), Quaternion.identity).transform;
+                    currentSolarSystem = Instantiate(levels[index], new Vector3(0, 0, 0), Quaternion.identity).transform;
             }
             else
             {
                     pRb = player.GetComponent<Rigidbody2D>();
                     pRb.velocity = Vector3.zero;
                     //Add a force to the player  
-                    Debug.DrawRay(player.transform.position, player.transform.right * 50, Color.red, 100000);
-                    pRb.AddForce(player.transform.right * 30);
+                   // Debug.DrawRay(player.transform.position, player.transform.right * 50, Color.red, 100000);
+                    pRb.AddForce(player.transform.right * 200);
 
                     Debug.Log("Generating longiquous star system.");
-                    Vector3 newpos = player.transform.position + player.transform.right * 50;
+                    Vector3 newpos = player.transform.position + player.transform.right * 50*4;
                     
-                    currentSolarSystem = Instantiate(levels[index].prefab, newpos, Quaternion.identity).transform;
+                    currentSolarSystem = Instantiate(levels[index], newpos, Quaternion.identity).transform;
                     player.hasArrived = false;
                 }
 
