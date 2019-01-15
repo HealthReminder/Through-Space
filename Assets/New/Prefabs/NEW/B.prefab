@@ -321,7 +321,7 @@ Transform:
   m_GameObject: {fileID: 1732130784113556}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.005802005, y: -0.03700256, z: 5}
-  m_LocalScale: {x: 4, y: 4, z: 3.04}
+  m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 4708798686587498}
   m_RootOrder: 0
@@ -386,7 +386,7 @@ Transform:
   m_GameObject: {fileID: 1187734621621844}
   m_LocalRotation: {x: -0, y: -0, z: 0.0257591, w: 0.99966824}
   m_LocalPosition: {x: 5.6, y: -28.2, z: 0}
-  m_LocalScale: {x: 2.371865, y: 2.371865, z: 2.371861}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 4063956849080870}
   m_RootOrder: 1
@@ -494,7 +494,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.325
+  m_Radius: 2.08
 --- !u!58 &58930391188425572
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -522,18 +522,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 3.81}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 2.56}
+    oldSize: {x: 5.12, y: 10.24}
     newSize: {x: 5.04, y: 1.87}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.04, y: 1.87}
+  m_Size: {x: 5.12, y: 2.69}
   m_EdgeRadius: 0
 --- !u!96 &96476508187940714
 TrailRenderer:
@@ -551,7 +551,7 @@ TrailRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: ec15fa6a9ed97a84cbb02e271a257bfd, type: 2}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -661,7 +661,7 @@ TrailRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: ec15fa6a9ed97a84cbb02e271a257bfd, type: 2}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -950,8 +950,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -600
-  m_Sprite: {fileID: 21300000, guid: faacc37a5c290164bae7d060b1f27c7e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.34117648}
+  m_Sprite: {fileID: 21300000, guid: d751c6984d1af834c99c982e1657c5fb, type: 3}
+  m_Color: {r: 0.43921572, g: 0.9882353, b: 0.75592756, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

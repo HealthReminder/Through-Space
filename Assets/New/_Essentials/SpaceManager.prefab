@@ -109,11 +109,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastLevel: -1
-  currentLevel: 1
+  currentLevel: 0
   maxLevel: 0
   pplayer: {fileID: 1374736784734582, guid: 70907b2b859604848827f97f30236ac0, type: 2}
   levels:
-  - {fileID: 0}
+  - {fileID: 1973236843332326, guid: 568c5087da4986b41aacdc7f9256c8af, type: 2}
   - {fileID: 1259898425042458, guid: b5c8010193dda2041a246cf3bda0eb2d, type: 2}
   - {fileID: 1255202922204426, guid: fd14b0cdb0e9d254e855f24b728fac31, type: 2}
   - {fileID: 1013845591112434, guid: 9ab70d02ed003644cbfc3c2310377b74, type: 2}
@@ -137,7 +137,7 @@ MonoBehaviour:
   overlay: {fileID: 114688684030498914}
   currentSolarSystem: {fileID: 0}
   overrideLevel: 0
-  newLevel: 0
+  newLevel: 1
 --- !u!114 &114510189723782376
 MonoBehaviour:
   m_ObjectHideFlags: 1

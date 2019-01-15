@@ -157,8 +157,8 @@ public class SpaceTravelManager : MonoBehaviour {
 		overlay.color = new Color(0,0,0,1);
 		while(overlay.color.a > 0){
 			
-			overlay.color+= new Color(0,0,0,-0.01f);
-			yield return null;
+			overlay.color+= new Color(0,0,0,-0.1f);
+			yield return new WaitForSeconds(0.1f);
 		}
 
 		yield return null;

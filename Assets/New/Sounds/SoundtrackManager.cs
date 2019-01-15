@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundtrackManager : MonoBehaviour {
+	[SerializeField]
+	bool playOnStart = false;
 
 	public static SoundtrackManager instance;
 	Set currentSet;
@@ -34,7 +36,11 @@ public class SoundtrackManager : MonoBehaviour {
 			instance = this;
 			DontDestroyOnLoad(gameObject);
 		}
-
+		
+	}
+	void Start() {
+		if(playOnStart)
+			PlaySet("Default");
 	}
 	
 
