@@ -121,8 +121,8 @@ MonoBehaviour:
   - {fileID: 1106741398111542, guid: ee875a5944e828c4dacbc4f19ea575fe, type: 2}
   - {fileID: 1256334078569712, guid: f28fc90301bd6ff4cbf5f961f4ac55b1, type: 2}
   - {fileID: 1069377823468804, guid: 13f4a4c0e71a5fe47a4156f479dcaf7b, type: 2}
-  - {fileID: 1477378298758606, guid: a8b5e687585a47642aa4c45ce0907bb7, type: 2}
   - {fileID: 1420127880086392, guid: 544ab7672f09e414d976b61c1ebe81f2, type: 2}
+  - {fileID: 1477378298758606, guid: a8b5e687585a47642aa4c45ce0907bb7, type: 2}
   - {fileID: 1852043924279478, guid: 92d22c3568d8be44292a87875edec21d, type: 2}
   - {fileID: 1373343002544122, guid: fa47bccaa34d06141bb5d5a850f8ff92, type: 2}
   - {fileID: 1528252595170832, guid: 5760c3cdf41bba749bf90f4552165469, type: 2}
@@ -137,7 +137,7 @@ MonoBehaviour:
   overlay: {fileID: 114688684030498914}
   currentSolarSystem: {fileID: 0}
   overrideLevel: 0
-  newLevel: 1
+  newLevel: 8
 --- !u!114 &114510189723782376
 MonoBehaviour:
   m_ObjectHideFlags: 1
