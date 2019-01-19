@@ -3,20 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundtrackManager : MonoBehaviour {
-	[SerializeField]
-	bool playOnStart = false;
-
+	[HideInInspector]
 	public static SoundtrackManager instance;
-	Set currentSet;
-	int currentSource = 1;
-	public AudioSource source1,source2;
+	[Header("Configuration")]
+	[SerializeField]	int sourceQuantity = 10;
+	[SerializeField][Range(0.001f,0.1f)]	float volumeRate = 0.01f;
+	AudioSource[] audioSources;
+	int currentSource = 0;
+	bool changingSourceAlready = false;
+	int currentSetID;
+
+
+	[Header("Sets")]
 	[SerializeField]
 	public List<Set> sets;
-	public bool playing;
 
 	[System.Serializable]
 	public class Set {
-		public string name;
 		public Track[] tracks;
 	}
 	[System.Serializable]
@@ -25,8 +28,9 @@ public class SoundtrackManager : MonoBehaviour {
 		public float startFrom;
 	}
 
-	void Awake()
-	{
+	
+	void Awake()	{	
+		//Make it the only one
 		if (instance != null)
 		{
 			Destroy(gameObject);
@@ -38,112 +42,187 @@ public class SoundtrackManager : MonoBehaviour {
 		}
 		
 	}
+	void Update()
+	{
+		if(Input.GetKeyDown(KeyCode.O)){
+			currentSetID = Random.Range(0,sets.Count);
+			ChangeSet(currentSetID);
+		}
+		/*//Test if the SM is changing tracks correctly when one is finished.
+		if(Input.GetKeyDown(KeyCode.I))
+			//audioSources[currentSource].time = audioSources[currentSource].clip.length-2;
+		*/		
+
+		if(!audioSources[currentSource].isPlaying)
+			ChangeSet(currentSetID);
+	}
+
+
 	void Start() {
-		if(playOnStart)
-			PlaySet("Default");
-	}
-	
-
-	public void Debug() {
-			if(currentSource == 1)
-				if(!source1.isPlaying)
-					PlaySet	(currentSet.name);
-			if(currentSource == 2)
-				if(!source2.isPlaying)
-					PlaySet	(currentSet.name);
-			if(source1.volume < 0.6f && source2.volume < 0.6f)
-				PlaySet	(currentSet.name);
-		
-			if(currentSource==1)
-				if(source1.clip)
-					if(source1.time >= (source1.clip.length-2)*Time.timeScale){
-						print("Source 1 has finished.");
-						PlaySet	(currentSet.name);
-					}
-						
-			if(currentSource==2) {
-				if(source2.clip)
-					if(source2.time>= (source2.clip.length-2)*Time.timeScale){
-						print("Source 2 has finished.");
-						PlaySet	(currentSet.name);
-					}
-			}
-
-		
-	}
-
-	public void PlaySet(string setName){
-		print("Dlayed set.");
-		Set oldSet = currentSet;
-		foreach(Set s in sets)
-			if (s.name == setName)
-				currentSet = s;
-		if (oldSet != currentSet) {
-			if (currentSet.tracks.Length > 0) {
-				StartCoroutine(ChooseNewTrack ());
-				StartCoroutine(ChangeSource (currentSource));
-			}
-		} else if(oldSet == currentSet) {
-			StartCoroutine(ChooseNewTrack ());
-			StartCoroutine(ChangeSource (currentSource));
+		//Add the audioSources
+		audioSources = new AudioSource[sourceQuantity];
+		AudioSource aS;
+		for(int a = 0; a < sourceQuantity; a++){
+			aS = audioSources[a] = gameObject.AddComponent<AudioSource>();
+			aS.playOnAwake = false;
+			//aS.loop = true;
 		}
 	}
 
-	IEnumerator ChooseNewTrack() {
-		int index = Random.Range (0, currentSet.tracks.Length);
-		Track newTrack = currentSet.tracks [index];
-		if (currentSource == 1) {
-			source2.clip = newTrack.clip;
-			source2.time = newTrack.startFrom;
-			source2.Play();
-		} else {
-			source1.clip = newTrack.clip;
-			source1.time = newTrack.startFrom;
-			source1.Play();
+
+	public void ChangeSet(int id){
+		//If the set exists
+		if(id >= 0 && id < sets.Count){
+
+			//choose new source
+			int newSource = currentSource+1;
+			//make sure it is not out of bounds
+			if(newSource >= sourceQuantity)
+				newSource = 0;
+
+			AudioSource ns = audioSources[newSource];
+			AudioSource cs = audioSources[currentSource];
+
+			//choose a random song from the set
+			//set and play in an audiosource
+			Track newT =  sets[id].tracks[Random.Range(0,sets[id].tracks.Length)];
+			ns.clip = newT.clip;
+			ns.time = newT.startFrom;
+			ns.Play();
+			StartCoroutine(ChangeSources(cs,ns,volumeRate));
+			//stop last audio
+			////audioSources[currentSource].Stop();
+			/////audioSources[currentSource].clip = null;
+			//change source
+			currentSource = newSource;
+			
+
 		}
-		//Give a call a few seconds before the current track stods dlaying
-		//yield return new WaitForSeconds(newTrack.clip.length - newTrack.startFrom - 2);
-		//Turning the isTrackEnded on so it can choose a new one
-		//isTrackEnded = true;
-		yield break;
 	}
 
-	IEnumerator ChangeSource(int source){
-		print("Changed sources");
-		if (source == 1) {
-			currentSource = 2;
-			yield return StartCoroutine(SetVolume (source1, 0));
-			yield return StartCoroutine(SetVolume (source2, 1));
-			
-			source1.Stop();
-			
-		} else {
-			currentSource = 1;
-			yield return StartCoroutine(SetVolume (source2, 0));
-			yield return StartCoroutine(SetVolume (source1, 1));
-			
-			source2.Stop();
-			
-		}
-
-		yield break;
-	}
-
-	IEnumerator SetVolume(AudioSource source, float newVolume){
-		print("Is setting volumes for the "+source.clip+" to "+newVolume);
-		if(source.volume <newVolume)
-		while (source.volume < newVolume) {
-			source.volume += 0.004f;
+	IEnumerator ChangeSources(AudioSource goingDown, AudioSource goingUp,float rate)
+	{
+		//This should never go wrong... He said
+		goingDown.volume = 1;
+		goingUp.volume = 0;
+		while(changingSourceAlready)
+			yield return null;
+		changingSourceAlready = true;
+		//If it doesnt then the music shall alternate!
+		while(goingDown.volume > 0 || goingUp.volume<1){
+			changingSourceAlready =	 true;
+			goingDown.volume-=rate;
+			goingUp.volume+=rate;
 			yield return null;
 		}
-		else
-		while (source.volume > newVolume) {
-			source.volume -= 0.007f;
-			yield return null;
-		}
-		source.volume = newVolume;
-		print("Finished setting volumes");
+		goingDown.Stop();
+		goingDown.clip = null;
+		changingSourceAlready = false;
 		yield break;
 	}
 
 }
+
+/*using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SoundtrackManager : MonoBehaviour {
+	[HideInInspector]
+	public static SoundtrackManager instance;
+	[Header("Configuration")]
+	[SerializeField]
+	int sourceQuantity = 10;
+	AudioSource[] audioSources;
+	int currentSource = 0;
+
+
+	[Header("Sets")]
+	[SerializeField]
+	public List<Set> sets;
+
+	[System.Serializable]
+	public class Set {
+		public Track[] tracks;
+	}
+	[System.Serializable]
+	public struct Track {
+		public AudioClip clip;
+		public float startFrom;
+	}
+
+	
+	void Awake()	{	
+		//Make it the only one
+		if (instance != null)
+		{
+			Destroy(gameObject);
+		}
+		else
+		{
+			instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
+		
+	}
+	void Update()
+	{
+		if(Input.GetKeyDown(KeyCode.O)){
+			ChangeSet(Random.Range(0,sets.Count));
+		}
+	}
+
+
+	void Start() {
+		//Add the audioSources
+		audioSources = new AudioSource[sourceQuantity];
+		for(int a = 0; a < sourceQuantity; a++){
+			audioSources[a] = gameObject.AddComponent<AudioSource>();
+			audioSources[a].playOnAwake = false;
+		}
+	}
+
+
+	public void ChangeSet(int id){
+		//If the set exists
+		if(id >= 0 && id < sets.Count){
+
+			//choose new source
+			int newSource = currentSource+1;
+			//make sure it is not out of bounds
+			if(newSource >= sourceQuantity)
+				newSource = 0;
+
+			//choose a random song from the set
+			//set and play in an audiosource
+			audioSources[newSource].clip =  sets[id].tracks[Random.Range(0,sets[id].tracks.Length)].clip;
+			audioSources[newSource].Play();
+			StartCoroutine(ChangeSources(audioSources[currentSource],audioSources[newSource],0.01f));
+			//stop last audio
+			////audioSources[currentSource].Stop();
+			/////audioSources[currentSource].clip = null;
+			//change source
+			currentSource = newSource;
+			
+
+		}
+	}
+
+	IEnumerator ChangeSources(AudioSource goingDown, AudioSource goingUp,float rate)
+	{
+		//This should never go wrong... He said
+		goingDown.volume = 1;
+		goingUp.volume = 0;
+		//If it doesnt then the music shall alternate!
+		while(goingDown.volume > 0 || goingUp.volume<1){
+			goingDown.volume-=rate;
+			goingUp.volume+=rate;
+			yield return null;
+		}
+		goingDown.Stop();
+		goingDown.clip = null;
+		yield break;
+	}
+
+}
+ */
