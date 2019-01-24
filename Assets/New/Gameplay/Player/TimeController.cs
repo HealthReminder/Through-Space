@@ -5,37 +5,11 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class TimeController : MonoBehaviour {
+
+	public Scrollbar timeBar;
 	public CameraBehaviour camBehaviour;
 	
 	public void ChangeTime(int newSpeed) {
-		//Time.timeScale = Mathf.Pow(timeBar.value,3);`
-		//If the parameter is 0 it means you should change time accordingly to the scrollbar
-		if(newSpeed == 1) {
-			Time.timeScale = 1;
-           print("Slowed time up to: " + Time.timeScale);
-		} else {
-			Time.timeScale = 10;
-			print("Sped time up to: " + Time.timeScale);
-		}
-
-		//Fix camera on planet to not make the player sick!
-			if(Time.timeScale != 1)
-				camBehaviour.isFollowEnabled = false;
-			else 
-				camBehaviour.isFollowEnabled = true;
-	}
-
-	public void PauseTime() {
-		//Time.timeScale = Mathf.Pow(timeBar.value,3);
-		Time.timeScale = 0;
-		//
-	}
-
-	public void RestartScene() {
-		 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-	}
-
-/*public void NewTime(int newSpeed) {
 		//Time.timeScale = Mathf.Pow(timeBar.value,3);`
 		//If the parameter is 0 it means you should change time accordingly to the scrollbar
 		if(newSpeed == 0) {
@@ -52,8 +26,15 @@ public class TimeController : MonoBehaviour {
 			ChangeTime(0);
 			timeBar.interactable = false;
 		}
-	} */
-	
+	}
 
-	
+	public void PauseTime() {
+		//Time.timeScale = Mathf.Pow(timeBar.value,3);
+		Time.timeScale = 0;
+		//
+	}
+
+	public void RestartScene() {
+		 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
 }

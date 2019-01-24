@@ -11,7 +11,7 @@ public class SoundtrackManager : MonoBehaviour {
 	AudioSource[] audioSources;
 	int currentSource = 0;
 	bool changingSourceAlready = false;
-	Set currentSet;
+	int currentSetID;
 
 
 	[Header("Sets")]
@@ -20,7 +20,6 @@ public class SoundtrackManager : MonoBehaviour {
 
 	[System.Serializable]
 	public class Set {
-		public string name;
 		public Track[] tracks;
 	}
 	[System.Serializable]
@@ -45,17 +44,17 @@ public class SoundtrackManager : MonoBehaviour {
 	}
 	void Update()
 	{
-		/*if(Input.GetKeyDown(KeyCode.O)){
-			currentSetName = Random.Range(0,sets.Count);
-			ChangeSet(currentSetName);
+		if(Input.GetKeyDown(KeyCode.O)){
+			currentSetID = Random.Range(0,sets.Count);
+			ChangeSet(currentSetID);
 		}
-		//Test if the SM is changing tracks correctly when one is finished.
+		/*//Test if the SM is changing tracks correctly when one is finished.
 		if(Input.GetKeyDown(KeyCode.I))
 			//audioSources[currentSource].time = audioSources[currentSource].clip.length-2;
 		*/		
 
-		if(!audioSources[currentSource].isPlaying && currentSet != null)
-			ChangeSet(currentSet.name);
+		if(!audioSources[currentSource].isPlaying)
+			ChangeSet(currentSetID);
 	}
 
 
@@ -71,17 +70,9 @@ public class SoundtrackManager : MonoBehaviour {
 	}
 
 
-	public void ChangeSet(string name){
-
+	public void ChangeSet(int id){
 		//If the set exists
-		bool exists = false;
-		foreach(Set s in sets)
-			if(s.name == name){
-				exists = true;
-				currentSet = s;
-			}
-				
-		if(sets.Count> 0 && exists){
+		if(id >= 0 && id < sets.Count){
 
 			//choose new source
 			int newSource = currentSource+1;
@@ -94,7 +85,7 @@ public class SoundtrackManager : MonoBehaviour {
 
 			//choose a random song from the set
 			//set and play in an audiosource
-			Track newT =  currentSet.tracks[Random.Range(0,currentSet.tracks.Length)];
+			Track newT =  sets[id].tracks[Random.Range(0,sets[id].tracks.Length)];
 			ns.clip = newT.clip;
 			ns.time = newT.startFrom;
 			ns.Play();

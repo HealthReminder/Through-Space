@@ -101,7 +101,8 @@ public class PlayerBehaviour : MonoBehaviour {
             if (distanceFromStar < 35)
             {
                 hasArrived = true;
-                TMan.ChangeTime(1);
+                TMan.timeBar.value = 0;
+                TMan.ChangeTime(0);
                 //print(distanceFromStar + " haha");
             }
         }
@@ -202,9 +203,13 @@ public class PlayerBehaviour : MonoBehaviour {
 				//Find progress
 				float k = dist/orbitingNow.influenceRadius;
 				if(k >= 0.9f)
-					TMan.ChangeTime(2);
+					if(TMan.timeBar.value > 0)
+						TMan.ChangeTime(1);
 				else if(k >= 0.75f)
-					TMan.ChangeTime(1);
+					if(TMan.timeBar.value > 0.5f)
+						TMan.ChangeTime(2);
+				else 
+					TMan.timeBar.interactable = true;
                 //k = k/10;
                 //				print(dist +" " + orbitingNow.influenceRadius+" "+k);
 
