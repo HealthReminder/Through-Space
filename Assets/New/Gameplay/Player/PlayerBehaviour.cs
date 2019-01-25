@@ -201,9 +201,9 @@ public class PlayerBehaviour : MonoBehaviour {
 				Lgravitational.SetPosition(1, orbitingNow.transform.position);
 				//Find progress
 				float k = dist/orbitingNow.influenceRadius;
-				if(k >= 0.9f)
-					TMan.ChangeTime(2);
-				else if(k >= 0.75f)
+				//if(k >= 0.9f)
+				//	TMan.ChangeTime(1);else 
+				if(k >= 0.75f)
 					TMan.ChangeTime(1);
                 //k = k/10;
                 //				print(dist +" " + orbitingNow.influenceRadius+" "+k);
