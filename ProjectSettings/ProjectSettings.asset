@@ -246,7 +246,7 @@ PlayerSettings:
   AndroidKeystoreName: C:/Users/V/Desktop/KS/user-TS.keystore
   AndroidKeyaliasName: eduardofrancio
   AndroidBuildApkPerCpuArchitecture: 0
-  AndroidTVCompatibility: 1
+  AndroidTVCompatibility: 0
   AndroidIsGame: 1
   AndroidEnableTango: 0
   androidEnableBanner: 1
