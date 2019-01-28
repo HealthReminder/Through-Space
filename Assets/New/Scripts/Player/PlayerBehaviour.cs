@@ -24,6 +24,9 @@ public class PlayerBehaviour : MonoBehaviour {
 	[Header("GUI")]
 	public LineRenderer Lgravitational;
 	public LineRenderer Lclosest;
+	
+	public Text TdistanceToStar;
+	public GameObject TdistanceToStarObject;
     
     SpriteRenderer sptR;
 	
@@ -85,9 +88,14 @@ public class PlayerBehaviour : MonoBehaviour {
         if (orbitingStar)
             distanceFromStar = Vector2.Distance(orbitingStar.position, transform.position);
         //65 far 80 too far 55 new star
+		TdistanceToStar.text = distanceFromStar.ToString("F2") +" au";
         if (hasArrived)
-        {
-            if (distanceFromStar >= 50)
+        {	
+			if(distanceFromStar < 20){
+				if(TdistanceToStarObject.activeSelf)
+				TdistanceToStarObject.SetActive(false);
+			}
+            else if (distanceFromStar >= 50)
             {
                 // print(distanceFromStar + " TOO FAR");
                 Die();
@@ -98,12 +106,24 @@ public class PlayerBehaviour : MonoBehaviour {
             }
         } else
         {
-            if (distanceFromStar < 35)
+			if(!TdistanceToStarObject.activeSelf)
+				TdistanceToStarObject.SetActive(true);
+            if (distanceFromStar < 25)
             {
                 hasArrived = true;
                 TMan.ChangeTime(1);
                 //print(distanceFromStar + " haha");
-            }
+            }else  if (distanceFromStar < 40)
+            {
+                TMan.ChangeTime(15);
+                //print(distanceFromStar + " haha");
+            } else  if (distanceFromStar < 55)
+            {
+                TMan.ChangeTime(22);
+                //print(distanceFromStar + " haha");
+            } else {
+				TMan.ChangeTime(30);
+			}
         }
 		
     }
@@ -132,7 +152,7 @@ public class PlayerBehaviour : MonoBehaviour {
 			attached = true;
 			sj.enabled = true;	
 			sj.connectedAnchor = closestPlanet.transform.position;
-            rb.AddForce(transform.right * closestPlanet.gravitationalForce * closestPlanet.gravitationalForce * 10);
+            rb.AddForce(transform.right * closestPlanet.gravitationalForce * closestPlanet.gravitationalForce * 4);
             Debug.DrawRay(transform.position, transform.right * closestPlanet.gravitationalForce,Color.blue, 10);
 
 			//sj.frequency = (float)closestPlanet.gravitationalForce/4;

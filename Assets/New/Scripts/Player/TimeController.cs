@@ -14,7 +14,7 @@ public class TimeController : MonoBehaviour {
 			Time.timeScale = 1;
            print("Slowed time up to: " + Time.timeScale);
 		} else {
-			Time.timeScale = 10;
+			Time.timeScale = newSpeed;
 			print("Sped time up to: " + Time.timeScale);
 		}
 
