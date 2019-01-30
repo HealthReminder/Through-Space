@@ -113,13 +113,13 @@ public class PlayerBehaviour : MonoBehaviour {
                 hasArrived = true;
                 TMan.ChangeTime(1);
                 //print(distanceFromStar + " haha");
-            }else  if (distanceFromStar < 40)
+            }else  if (distanceFromStar < 60)
             {
-                TMan.ChangeTime(15);
+                TMan.ChangeTime(10);
                 //print(distanceFromStar + " haha");
-            } else  if (distanceFromStar < 55)
+            } else  if (distanceFromStar < 120)
             {
-                TMan.ChangeTime(22);
+                TMan.ChangeTime(20);
                 //print(distanceFromStar + " haha");
             } else {
 				TMan.ChangeTime(30);
