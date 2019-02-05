@@ -11,7 +11,7 @@ public class MeteorBehaviour : MonoBehaviour {
         {
             vel = Random.Range(-velMax, velMax);
         }
-        GetComponent<RotateZ>().rotationSpeed = vel;
+        GetComponent<BodyData>().rotationSpeed = vel;
 	}
 	
 	// Update is called once per frame

@@ -44,10 +44,12 @@ public class PlayerBehaviour : MonoBehaviour {
 	public TimeController TMan;
 
     public float distanceFromStar;
+	AmbientSoundController asc;
 
 	
 	
 	void Start () {
+		asc = FindObjectOfType<AmbientSoundController>();
         sptR = GetComponent<SpriteRenderer>();
 		STMan = FindObjectOfType<SpaceTravelManager>();
 		Time.timeScale = 1;
@@ -130,9 +132,9 @@ public class PlayerBehaviour : MonoBehaviour {
 
     public void PressedOnScreen()
     {
-        print("clicked");
+        //print("clicked");
         if (closestPlanet) { 
-            print("is in rect");
+           // print("is in rect");
             if (attached == true)
             {
                 Detach();
@@ -160,6 +162,22 @@ public class PlayerBehaviour : MonoBehaviour {
 			//sj.distance = Vector2.Distance (transform.position+new Vector3(rb.velocity.x,rb.velocity.y,0)*3, closestPlanet.transform.position);
 			sj.distance = Vector2.Distance (transform.position, closestPlanet.transform.position);
 			orbitingNow = closestPlanet;
+
+			//Find right music set
+			if(asc)
+				if(orbitingNow.GetComponent<BodyData>()){
+					Debug.Log(orbitingNow.GetComponent<BodyData>().musicSetName);
+					asc.ChangeSet(orbitingNow.GetComponent<BodyData>().musicSetName);
+				}
+				else{
+					BodyData bd = orbitingNow.transform.parent.GetComponent<BodyData>();
+					Debug.Log(bd.musicSetName);
+					if(bd != null)
+						if(!string.IsNullOrEmpty(bd.musicSetName))
+							asc.ChangeSet(bd.musicSetName);
+				}
+				
+				
 			
 		}
 	}
@@ -250,6 +268,7 @@ public class PlayerBehaviour : MonoBehaviour {
 		orbitingNow = null;
 		rb.AddForce (rb.velocity.normalized, ForceMode2D.Impulse);
 		StartCoroutine (DetachedCooldown ());
+		asc.ChangeSet("");
 	}
 
 	IEnumerator FixRotation() {	

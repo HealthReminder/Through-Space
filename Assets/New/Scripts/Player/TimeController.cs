@@ -12,10 +12,10 @@ public class TimeController : MonoBehaviour {
 		//If the parameter is 0 it means you should change time accordingly to the scrollbar
 		if(newSpeed == 1) {
 			Time.timeScale = 1;
-           print("Slowed time up to: " + Time.timeScale);
+           //print("Slowed time up to: " + Time.timeScale);
 		} else {
 			Time.timeScale = newSpeed;
-			print("Sped time up to: " + Time.timeScale);
+			//print("Sped time up to: " + Time.timeScale);
 		}
 
 		//Fix camera on planet to not make the player sick!
