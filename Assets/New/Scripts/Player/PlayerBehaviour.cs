@@ -46,6 +46,7 @@ public class PlayerBehaviour : MonoBehaviour {
     public float distanceFromStar;
 	AmbientSoundController asc;
 
+	PlayerView playerView;
 	
 	
 	void Start () {
@@ -57,6 +58,7 @@ public class PlayerBehaviour : MonoBehaviour {
         UpdateAvailablePlanets();
 		rb = this.GetComponent<Rigidbody2D> ();
 		sj = this.GetComponent<SpringJoint2D> ();
+		playerView = PlayerView.instance;
 
 		Attach ();
 
@@ -182,7 +184,7 @@ public class PlayerBehaviour : MonoBehaviour {
 		}
 	}
 
-	void FindClosestPlanet (){
+	void FindClosestPlanet ()	{
 		//Calculate the distance and get the closest one from all Planets
 		Planet closest = null;
 		float closestDist = 1000;
@@ -210,16 +212,22 @@ public class PlayerBehaviour : MonoBehaviour {
 		closestPlanet = closest;
 		//Change line according to result
 		if(closestPlanet){
+			if(!playerView.isProximityOn)
+				playerView.ShowProximity(true);
+			
 			planetPos = closestPlanet.transform.position;
 			dist = Vector2.Distance(new Vector2(planetPos.x,planetPos.y), new Vector2(transform.position.x,transform.position.y));
 			Lclosest.SetPosition(0,transform.position);
 			Lclosest.SetPosition(1, closestPlanet.transform.position);
 			float k = dist/closestPlanet.influenceRadius;
+			playerView.ToggleProximity(k);
 			Lclosest.colorGradient = new Gradient();
             Lclosest.startColor = new Color(1,1,1,1-k);
 			Lclosest.endColor = new Color(1,1,1,1-k);
 			Lclosest.enabled = true;
 		} else {
+			if(playerView.isProximityOn)
+				playerView.ShowProximity(false);
 			Lclosest.enabled = false;
 		}
 

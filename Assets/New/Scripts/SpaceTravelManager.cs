@@ -119,7 +119,12 @@ public class SpaceTravelManager : MonoBehaviour {
                 player.orbitingStar = currentSolarSystem.transform;
                 player.camBehaviour.wideCamera.transform.position = new Vector3(currentSolarSystem.transform.position.x, currentSolarSystem.transform.position.y, -35);
                
+               // player.camBehaviour.followCamera.transform.rotation = 
+                //Quaternion.LookRotation(player.orbitingStar.transform.right,
+               // player.camBehaviour.followCamera.transform.up);
 
+                //Debug.DrawRay(player.orbitingStar.transform.position,player.orbitingStar.transform.right*20,Color.red,10);
+               // Debug.DrawRay(player.camBehaviour.followCamera.transform.position,player.camBehaviour.followCamera.transform.up*20,Color.green,10);
 
             }
         else
@@ -143,7 +148,7 @@ public class SpaceTravelManager : MonoBehaviour {
 		overlay.color = new Color(0,0,0,0);
 		while(overlay.color.a < 1){
 			
-			overlay.color+= new Color(0,0,0,+0.01f);
+			overlay.color+= new Color(0,0,0,+0.1f);
 			yield return null;
 		}
 
