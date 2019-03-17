@@ -51,7 +51,7 @@ public class AmbientSoundController : MonoBehaviour {
 	{
 
 		if(!audioSources[currentSource].isPlaying && currentSet != null)
-			ChangeSet(currentSet.name);
+			audioSources[currentSource].Play();
 	}
 
 

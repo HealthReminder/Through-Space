@@ -117,7 +117,9 @@ public class SpaceTravelManager : MonoBehaviour {
                 //Find the new planets it can orbit (performance)
                 player.UpdateAvailablePlanets();
                 player.orbitingStar = currentSolarSystem.transform;
-                player.camBehaviour.wideCamera.transform.position = new Vector3(currentSolarSystem.transform.position.x, currentSolarSystem.transform.position.y, -35);
+                Vector3 newCameraPos = currentSolarSystem.transform.position;
+                newCameraPos.z = player.camBehaviour.wideCamera.transform.position.z;
+                player.camBehaviour.wideCamera.transform.position = newCameraPos;
                
                // player.camBehaviour.followCamera.transform.rotation = 
                 //Quaternion.LookRotation(player.orbitingStar.transform.right,

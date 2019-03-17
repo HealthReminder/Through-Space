@@ -143,6 +143,7 @@ public class PlayerBehaviour : MonoBehaviour {
             {
                 hasArrived = true;
                 timeController.ChangeTime(1);
+				camBehaviour.AlignToStar(orbitingStar.transform);
                 //print(distanceFromStar + " haha");
             }else  if (distanceFromStar < 60)
             {
@@ -250,7 +251,8 @@ public class PlayerBehaviour : MonoBehaviour {
 			float k = dist/closestPlanet.influenceRadius;
 			
 			if(k >= 0.75f)
-			    timeController.ChangeTime(1);
+				if(orbitingNow)
+			    	timeController.ChangeTime(1);
 			playerView.ToggleProximity(k,planetPos);
 			playerView.ToggleProximity(k,planetPos);
 			if(orbitingNow){

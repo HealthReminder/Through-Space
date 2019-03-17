@@ -1118,13 +1118,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1505116869815694}
-  m_LocalRotation: {x: -0, y: -0, z: -0.30846605, w: -0.95123535}
-  m_LocalPosition: {x: -14.5, y: 19.9, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.175211, w: -0.9845309}
+  m_LocalPosition: {x: -6.7, y: 18.9, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4646358823969088}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 395.934}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 380.182}
 --- !u!212 &212859935997424154
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1257,6 +1257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 15
+  musicSetName: 
   typeOfPlanet: 
 --- !u!1 &1619159254970872
 GameObject:
@@ -1812,6 +1813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 20
+  musicSetName: 
   typeOfPlanet: 
 --- !u!1 &1750238973776414
 GameObject:
@@ -1873,7 +1875,7 @@ Transform:
   m_GameObject: {fileID: 1904170142957894}
   m_LocalRotation: {x: -0, y: -0, z: -0.55847317, w: 0.8295226}
   m_LocalPosition: {x: 43.4, y: 15.7, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 4882024958700546}
   m_RootOrder: 0
@@ -2070,7 +2072,7 @@ MonoBehaviour:
   name: Tera
   howIsPronounced: 
   startSystem: {fileID: 0}
-  influenceRadius: 10
+  influenceRadius: 7
   gravitationalForce: 4
 --- !u!1 &1930940096741168
 GameObject:

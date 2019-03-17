@@ -9,7 +9,7 @@ public class FadeOutOnStart : MonoBehaviour {
 
 	void Start () {
 		sR = GetComponent<Image> ();
-		sR.color = new Color (0, 0, 0, 1);
+		//sR.color = new Color (0, 0, 0, 1);
 		StartCoroutine (FadeOut ());
 	}
 	IEnumerator FadeOut() {
