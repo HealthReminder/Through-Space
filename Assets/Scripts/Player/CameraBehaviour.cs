@@ -38,10 +38,10 @@ public class CameraBehaviour : MonoBehaviour {
             if (player.orbitingNow)
                 followCamera.transform.position = new Vector3(player.orbitingNow.transform.position.x, player.orbitingNow.transform.position.y, followCamera.transform.position.z);
         }
-		if(Input.GetMouseButton(1)){
-			ToggleWideCamera();
-			Time.timeScale = 6;
-		}
+		//if(Input.GetMouseButton(1)){
+		//	ToggleWideCamera();
+		//	Time.timeScale = 6;
+		//}
         
     }
 

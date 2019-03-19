@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009417659377876}
-  m_LocalRotation: {x: -0, y: -0, z: -0.8923477, w: 0.45134866}
-  m_LocalPosition: {x: 17.82, y: -13.62, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.9504349, w: 0.31092352}
+  m_LocalPosition: {x: 10, y: -13.8, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4598762495524608}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 593.66}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 576.23}
 --- !u!212 &212255053159503896
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -900,6 +900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
+  musicSetName: 
   typeOfPlanet: 
 --- !u!1 &1204408898426214
 GameObject:
@@ -1187,6 +1188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -20
+  musicSetName: 
   typeOfPlanet: 
 --- !u!1 &1303811414669886
 GameObject:
@@ -1732,6 +1734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 25
+  musicSetName: 
   typeOfPlanet: 
 --- !u!1 &1411756298657716
 GameObject:
