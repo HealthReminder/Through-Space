@@ -122,6 +122,7 @@ public class PlayerBehaviour : MonoBehaviour {
 		TdistanceToStar.text = distanceFromStar.ToString("F2") +" au";
         if (hasArrived)
         {	
+			
 			if(distanceFromStar < 20){
 				if(TdistanceToStarObject.activeSelf)
 				TdistanceToStarObject.SetActive(false);
@@ -165,14 +166,17 @@ public class PlayerBehaviour : MonoBehaviour {
         //print("clicked");
         if (closestPlanet) { 
            // print("is in rect");
-            if (attached == true)
-            {
-                Detach();
-            }
-            else
-            {
-                Attach();
-            }
+            if (attached == false)       
+                Attach();            
+        }
+    }
+
+	public void ReleasedScreen()
+    {
+        //print("clicked");
+        if (closestPlanet) { 
+			if (attached == true)   
+            	Detach();
         }
     }
 	#endregion

@@ -9,6 +9,8 @@ public class IntroManager : MonoBehaviour
     public Text titleText;
     public Image titleBackground;
     public Image titleTopground;
+    public Image overlay;
+    
     //public Animator rocketAnimator;
     void Start()
     {
@@ -38,8 +40,10 @@ public class IntroManager : MonoBehaviour
                 skipped = true;
            titleText.color+= new Color(0,0,0,0.02f);
            
-           if(titleBackground.color.a <= 0.25f)
+           if(titleBackground.color.a <= 0.15f){
                 titleBackground.color+= new Color(0,0,0,0.01f);
+                titleTopground.color+= new Color(0,0,0,0.01f);
+           }
 
             yield return new WaitForSeconds(0.05f);
        }
@@ -62,10 +66,10 @@ public class IntroManager : MonoBehaviour
        }
 
         //FADE OUT
-       while(titleTopground.color.a <1){
+       while(overlay.color.a <1){
            //if(Input.touchCount>0 || Input.GetMouseButton(0))   
                // break;
-           titleTopground.color+= new Color(0,0,0,0.03f);
+           overlay.color+= new Color(0,0,0,0.03f);
            
             yield return new WaitForSeconds(0.05f);
        }
