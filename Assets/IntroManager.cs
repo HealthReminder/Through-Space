@@ -15,7 +15,6 @@ public class IntroManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(StartIntro());   
-        SoundtrackManager.instance.ChangeSet("Intro");
     }
 
    IEnumerator StartIntro(){

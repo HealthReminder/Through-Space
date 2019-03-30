@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd15eec8f13ff3c4eb25b720b193647e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundtrackVolume: 0.5
+  soundtrackVolume: 1
   sourceQuantity: 10
   volumeRate: 0.01
   sets:
@@ -58,8 +58,4 @@ MonoBehaviour:
   - name: Menu
     tracks:
     - clip: {fileID: 8300000, guid: 23331bad7ad6df741b40d0f392677e67, type: 3}
-      startFrom: 0
-  - name: Intro
-    tracks:
-    - clip: {fileID: 8300000, guid: 506100d9df2d7874990d63094c2f479a, type: 3}
       startFrom: 0
