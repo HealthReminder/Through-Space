@@ -112,6 +112,22 @@ public class PlayerBehaviour : MonoBehaviour {
 //			rb.AddForce (new Vector2(2, 0));
 //		}
 		//If the tlayer tress K or J change timeScale
+
+		if(Input.GetKeyDown(KeyCode.Q))
+			timeController.ChangeTime(10);
+		if(Input.GetKeyUp(KeyCode.Q))
+			timeController.ChangeTime(1);
+
+		if(Input.GetKeyDown(KeyCode.E))
+			PressedOnScreen();
+		if(Input.GetKeyUp(KeyCode.E))
+			ReleasedScreen();
+		
+		if(Input.GetKeyDown(KeyCode.W))
+			camBehaviour.ToggleWideCamera();
+		if(Input.GetKeyUp(KeyCode.W))
+			camBehaviour.ToggleWideCamera();
+
 		
 
 		if(orbitingNow)
@@ -306,6 +322,8 @@ public class PlayerBehaviour : MonoBehaviour {
                     print("Called spawn system.");
 
                     STMan.SpawnSystem((int)STMan.currentLevel);
+					camBehaviour.ToggleFollowCamera();
+
                 }
                 else
                 {
