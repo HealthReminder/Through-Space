@@ -7,26 +7,10 @@ public class Meteor : MonoBehaviour {
     float y;
 	// Use this for initialization
 	void Start () {
-        Color newColor = new Color(Random.Range(0.5f, 1), Random.Range(0.5f, 1), Random.Range(0.5f, 1),1);
+        Color newColor = new Color(0.2f+Random.Range(0.2f, 1), 0.2f+Random.Range(0.5f, 1), 0.2f+Random.Range(0.5f, 1),1);
         GetComponent<SpriteRenderer>().color = newColor;
-        string mainColor = "red";
-        if (newColor.g > newColor.r)
-            mainColor = "green";
-        if (mainColor == "green")
-            if (newColor.b > newColor.g)
-                mainColor = "blue";
-        if (mainColor == "red")
-            if (newColor.b > newColor.r)
-                mainColor = "blue";
-
-        if (mainColor == "red")
-            newColor.r += 1;
-        else if (mainColor == "green")
-            newColor.g += 1;
-        else if (mainColor == "blue")
-            newColor.b += 1;
-        transform.GetChild(0).GetComponent<TrailRenderer>().startColor = newColor;
-        transform.GetChild(0).GetComponent<TrailRenderer>().endColor= newColor;
+        transform.GetChild(0).GetComponent<TrailRenderer>().startColor = newColor-new Color(0.2f,0.2f,0.2f);
+        transform.GetChild(0).GetComponent<TrailRenderer>().endColor= newColor-new Color(0.2f,0.2f,0.2f);
         speed = Random.Range(0.01f, 0.05f);
         y = transform.position.y;
 	}

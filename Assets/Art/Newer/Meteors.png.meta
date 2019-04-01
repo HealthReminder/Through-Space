@@ -11,7 +11,7 @@ TextureImporter:
     21300012: Meteors_6
     21300014: Meteors_7
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
@@ -106,10 +106,10 @@ TextureImporter:
       name: Meteors_0
       rect:
         serializedVersion: 2
-        x: 18
+        x: 7
         y: 275
-        width: 82
-        height: 215
+        width: 93
+        height: 231
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,10 +126,10 @@ TextureImporter:
       name: Meteors_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 8
-        width: 84
-        height: 163
+        x: 3
+        y: 4
+        width: 89
+        height: 167
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,10 +146,10 @@ TextureImporter:
       name: Meteors_2
       rect:
         serializedVersion: 2
-        x: 106
+        x: 96
         y: 7
-        width: 143
-        height: 243
+        width: 153
+        height: 254
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,9 +167,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 104
-        y: 260
+        y: 246
         width: 141
-        height: 246
+        height: 260
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,9 +227,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 386
-        y: 18
-        width: 107
-        height: 270
+        y: 8
+        width: 119
+        height: 269
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,9 +247,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 376
-        y: 311
-        width: 116
-        height: 201
+        y: 314
+        width: 123
+        height: 198
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
