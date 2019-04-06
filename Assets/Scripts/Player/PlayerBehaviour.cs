@@ -296,7 +296,8 @@ public class PlayerBehaviour : MonoBehaviour {
 		sj.enabled = false;	
 		orbitingNow = null;
 		rb.AddForce (rb.velocity.normalized, ForceMode2D.Impulse);
-		AmbientSoundController.instance.Stop(0.1f);
+		if(AmbientSoundController.instance)
+			AmbientSoundController.instance.Stop(0.1f);
 		StartCoroutine (DetachedCooldown ());
 	}
 

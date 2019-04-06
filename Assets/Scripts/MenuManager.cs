@@ -5,41 +5,29 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour {
     [Header("Dev Only")]
-    [SerializeField]
-    bool overrideConfig;
-    [SerializeField]
-    int newMaxLevel;
+    [SerializeField]    bool clearConfig;
 
-    [SerializeField]
-    Transform buttonContainer;
-    [SerializeField]
-    float barSize;
+    [SerializeField]    Transform buttonContainer;
+    [SerializeField]    float barSize;
     [Header("player Information")]
-    [SerializeField]
-    int maxLevel, currentLevel;
+    [SerializeField]    int maxLevel, currentLevel;
 	[Header("GUI")]
-    [SerializeField]
-    Image overlay;
+    [SerializeField]    Image overlay;
     //ScrollBar
-    [SerializeField]
-    Scrollbar mapScrollBar;
-    [SerializeField]
-    Transform[] mapParallax;
+    [SerializeField]    Scrollbar mapScrollBar;
+    [SerializeField]  Transform[] mapParallax;
     float tCameraIY;
-    [SerializeField]
-    Transform lastLevel;
+    [SerializeField]   Transform lastLevel;
     float lastLevelIY;
     [Header("Buttons")]
-    [SerializeField]
-    Button[] buttons;
-    [SerializeField]
-    GameObject[] attachedGUIs;
+    [SerializeField]    Button[] buttons;
+    [SerializeField]    GameObject[] attachedGUIs;
 
 
     void Start() {
 
         //Dev Only 
-        if (overrideConfig)
+        if (clearConfig)
         {
             PlayerPrefs.SetInt("currentLevel", 0);
             PlayerPrefs.SetInt("maxLevel", 0);
@@ -47,7 +35,7 @@ public class MenuManager : MonoBehaviour {
        
 
 		//Get current max level reached
-		 maxLevel = PlayerPrefs.GetInt("maxLevel");
+		maxLevel = PlayerPrefs.GetInt("maxLevel");
 
         UpdateMenuButtons();
         
@@ -59,17 +47,20 @@ public class MenuManager : MonoBehaviour {
 	void UpdateMenuButtons () {
         print("Updating buttons");
 		//Make the right buttons become interactable accordingly to the max level the player reached before
+        Debug.Log("Max level is " + maxLevel);
         for(int a = 0; a < buttons.Length; a++)
         {
             if (a <= maxLevel)
             {
                 buttons[a].interactable = true;
+                //buttons[a].gameObject.SetActive(true);
                 if (attachedGUIs[a])
                     attachedGUIs[a].SetActive(true);
             }
             else
             {
                 buttons[a].interactable = false;
+                //buttons[a].gameObject.SetActive(false);
                 if (attachedGUIs[a])
                     attachedGUIs[a].SetActive(false);
             }
@@ -104,12 +95,19 @@ public class MenuManager : MonoBehaviour {
 		
 		yield return null;
 	}
-
+    
     //DEBUGGING
+    private void Update() {
+        if(Input.touchCount == 6 || Input.GetKeyDown(KeyCode.P))
+            ResetLevels(); 
+        if(Input.touchCount == 7 ||Input.GetKeyDown(KeyCode.O))
+            UnlockLevels();
+    }
      private void ResetLevels()
     {
         PlayerPrefs.SetInt("maxLevel", 0);
         PlayerPrefs.SetInt("currentLevel", 0);
+        maxLevel = 0;
         UpdateMenuButtons();
     }
 
@@ -117,6 +115,7 @@ public class MenuManager : MonoBehaviour {
     {
         PlayerPrefs.SetInt("maxLevel", 30);
         PlayerPrefs.SetInt("currentLevel", 0);
+        maxLevel = 30;
         UpdateMenuButtons();
     }
 }

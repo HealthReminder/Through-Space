@@ -30,7 +30,6 @@ public class Meteor : MonoBehaviour {
     }
 
     void Disable() {
-        transform.DetachChildren();
         Destroy(gameObject.transform.parent.gameObject);
         
     }
