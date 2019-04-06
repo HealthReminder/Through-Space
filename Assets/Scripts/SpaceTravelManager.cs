@@ -144,7 +144,23 @@ public class SpaceTravelManager : MonoBehaviour {
         player.CheckForProgress();
     }
 
-	public IEnumerator Death()
+	public IEnumerator Ending()
+	{
+		Time.timeScale = 1;
+        yield return new WaitForSeconds(3f);
+		overlay.color = new Color(0,0,0,0);
+		while(overlay.color.a < 1){
+			
+			overlay.color+= new Color(0,0,0,+0.05f);
+			yield return new WaitForSeconds(0.25f);
+		}
+
+		yield return new WaitForSeconds(1);
+		SceneManager.LoadScene(1);
+		yield return null;
+	}
+
+    public IEnumerator Death()
 	{
 		Time.timeScale = 1;
 		overlay.color = new Color(0,0,0,0);

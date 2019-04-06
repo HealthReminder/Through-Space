@@ -44,6 +44,8 @@ public class PlayerBehaviour : MonoBehaviour {
     public float distanceFromStar;
 
 	PlayerView playerView;
+
+	public GameObject allCanvas;
 	
 	
 
@@ -331,8 +333,24 @@ public class PlayerBehaviour : MonoBehaviour {
                     print("Failed");
                 }
             }
-        }
+        } else {
+			if(collision.gameObject.tag == "blackHole")
+				End();
+		}
     }
+
+	public void End() {
+		Time.timeScale = 1;
+		rb.velocity = Vector3.zero;
+		rb.isKinematic = true;
+		allCanvas.SetActive(false);
+		for (int i = 0; i < transform.childCount; i++)
+		{
+			transform.GetChild(i).gameObject.SetActive(false);			
+		}
+
+		StartCoroutine(STMan.Ending());
+	}
     public void CheckForProgress()
     {
         if (!STMan)

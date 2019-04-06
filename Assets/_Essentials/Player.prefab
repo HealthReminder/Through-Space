@@ -403,6 +403,7 @@ MonoBehaviour:
   deathparticle: {fileID: 198340417961666422}
   timeController: {fileID: 2399954053529363254}
   distanceFromStar: 0
+  allCanvas: {fileID: 7202269094133337161}
 --- !u!70 &70915125551377710
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
