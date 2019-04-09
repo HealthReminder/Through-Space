@@ -38,6 +38,12 @@ public class CameraBehaviour : MonoBehaviour {
             if (player.orbitingNow)
                 followCamera.transform.position = new Vector3(player.orbitingNow.transform.position.x, player.orbitingNow.transform.position.y, followCamera.transform.position.z);
         }
+
+		if(Input.GetAxis("Mouse ScrollWheel") > 0f ){
+			scrollbar.value-= 0.05f;
+		} else if(Input.GetAxis("Mouse ScrollWheel") < 0f ){
+			scrollbar.value+= 0.05f;
+		}
 		//if(Input.GetMouseButton(1)){
 		//	ToggleWideCamera();
 		//	Time.timeScale = 6;
