@@ -9,7 +9,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	SpringJoint2D sj;
 	Rigidbody2D rb;
 	//bool dead = false;
-
+	public bool isInFirstLevel = false;
 	[Header("planetary")]
 	public Planet closestPlanet, orbitingNow;
 	public Transform orbitingStar;
@@ -53,7 +53,8 @@ public class PlayerBehaviour : MonoBehaviour {
 	void Start () {
         sptR = GetComponent<SpriteRenderer>();
 		STMan = FindObjectOfType<SpaceTravelManager>();
-		Time.timeScale = 1;
+		//if(!isInFirstLevel)
+			Time.timeScale = 1;
         //print(sj.connectet)
         UpdateAvailablePlanets();
 		rb = this.GetComponent<Rigidbody2D> ();
@@ -185,7 +186,9 @@ public class PlayerBehaviour : MonoBehaviour {
         if (closestPlanet) { 
            // print("is in rect");
             if (attached == false)       
-                Attach();            
+                Attach();   
+			if(isInFirstLevel)
+				Time.timeScale = 1;         
         }
     }
 

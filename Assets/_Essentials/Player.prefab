@@ -389,6 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac3fed6cc8c484d42bf499e023833cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInFirstLevel: 0
   closestPlanet: {fileID: 0}
   orbitingNow: {fileID: 0}
   orbitingStar: {fileID: 0}
@@ -10999,7 +11000,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 114613615457845688}
   m_HandleRect: {fileID: 224010021922637830}
-  m_Direction: 3
+  m_Direction: 2
   m_Value: 0
   m_Size: 0.2
   m_NumberOfSteps: 0
@@ -11350,7 +11351,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.00001}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 2.5062027, y: -4.5102997}
+  m_AnchoredPosition: {x: 2.5062027, y: 4.5102997}
   m_SizeDelta: {x: 6.079998, y: 8.2300005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222022655288959678

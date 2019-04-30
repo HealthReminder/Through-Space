@@ -87,7 +87,7 @@ public class SpaceTravelManager : MonoBehaviour {
 
             if (currentLevel == 0)
             {
-                    Debug.Log("Generating current level.");
+                    Debug.Log("Generating first level level.");
                     currentSolarSystem = Instantiate(levels[index], new Vector3(0, 0, 0), Quaternion.identity).transform;
             }
             else

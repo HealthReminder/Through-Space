@@ -55,6 +55,14 @@ MonoBehaviour:
       startFrom: 0
     - clip: {fileID: 8300000, guid: 6353e05f0437bed47896604660850610, type: 3}
       startFrom: 0
+    - clip: {fileID: 8300000, guid: a5c22dcee2292254b88d8941dfa3ddab, type: 3}
+      startFrom: 0
+    - clip: {fileID: 8300000, guid: 06f100a8c042b2144a3918047065afc1, type: 3}
+      startFrom: 0
+    - clip: {fileID: 8300000, guid: 10038f0d43f2e0a45b003accb67ee3f8, type: 3}
+      startFrom: 0
+    - clip: {fileID: 8300000, guid: ada0f9f68941c984fa684380eb9432ed, type: 3}
+      startFrom: 0
   - name: Menu
     tracks:
     - clip: {fileID: 8300000, guid: 23331bad7ad6df741b40d0f392677e67, type: 3}
