@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IntroFireSimulator : MonoBehaviour
+public class FireBehaviour : MonoBehaviour
 {
     Vector3 initialSize;
     [Range(0,1)] public float frequency;

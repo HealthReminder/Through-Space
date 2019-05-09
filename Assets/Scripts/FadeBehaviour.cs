@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FadeOutOnStart : MonoBehaviour {
+public class FadeBehaviour : MonoBehaviour {
 
 	Image sR;
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyAfterDelayBehaviour : MonoBehaviour
+public class DestroyBehaviour : MonoBehaviour
 {
     public float delay;
     private void Start() {

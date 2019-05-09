@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CameraBehaviour : MonoBehaviour {
+public class CameraManager : MonoBehaviour {
 	public bool isOn,canLookWide,canZoom =true;
-	public PlayerBehaviour player;
+	public PlayerManager player;
 	Transform playerTransform;
 	public Camera followCamera,wideCamera;
 	public bool isFollowEnabled = true;

@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AmbientSoundController : MonoBehaviour {
+public class AmbientSoundManager : MonoBehaviour {
 	[Header("Configuration")]
 	public float ambientSoundVolume = 0.5f;
-	[SerializeField]int sourceQuantity = 10;
 	[SerializeField][Range(0.001f,0.1f)]	float volumeRate = 0.004f;
-	AudioSource[] audioSources;
+	AudioSource audioSource;
 	int currentSource = 0;
 	bool changingSourceAlready = false;
 	Set currentSet;
@@ -30,7 +29,7 @@ public class AmbientSoundController : MonoBehaviour {
 
 
 	//Singleton pattern
-	[HideInInspector]	public static AmbientSoundController instance;
+	[HideInInspector]	public static AmbientSoundManager instance;
 	void Awake()	{	
 		//Make it the only one
 		if (instance != null)
@@ -50,20 +49,15 @@ public class AmbientSoundController : MonoBehaviour {
 	void Update()
 	{
 
-		if(!audioSources[currentSource].isPlaying && currentSet != null)
-			audioSources[currentSource].Play();
+		if(!audioSource.isPlaying && currentSet != null)
+			audioSource.Play();
 	}
 
 
 	void Setup() {
-		//Add the audioSources
-		audioSources = new AudioSource[sourceQuantity];
-		AudioSource aS;
-		for(int a = 0; a < sourceQuantity; a++){
-			aS = audioSources[a] = gameObject.AddComponent<AudioSource>();
-			aS.playOnAwake = false;
-			//aS.loop = true;
-		}
+//		audioSource = .AddComponent<AudioSource>();
+		//audioSource.playOnAwake = false;
+		
 	}
 
 	public void Stop(float rate) {
@@ -71,7 +65,7 @@ public class AmbientSoundController : MonoBehaviour {
 	}
 	IEnumerator FadeCurrentSourceOut(float rate) {
 		float currentSourceAtStartOfCoroutine = currentSource;
-		AudioSource goingDown = audioSources[currentSource];
+		AudioSource goingDown = audioSource;
 		while(currentSourceAtStartOfCoroutine == currentSource){
 			while(goingDown.volume > 0 ){
 				goingDown.volume-=rate;
@@ -103,11 +97,11 @@ public class AmbientSoundController : MonoBehaviour {
 			//choose new source
 			int newSource = currentSource+1;
 			//make sure it is not out of bounds
-			if(newSource >= sourceQuantity)
+			//if(newSource >= sourceQuantity)
 				newSource = 0;
 
-			AudioSource ns = audioSources[newSource];
-			AudioSource cs = audioSources[currentSource];
+			AudioSource ns = audioSource;
+			AudioSource cs = audioSource;
 
 			if(exists){
 			//choose a random song from the set

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class TimeController : MonoBehaviour {
 	public bool isOn;
-	public CameraBehaviour camBehaviour;
+	public CameraManager camBehaviour;
 	
 	public void ChangeTime(int newSpeed) {
 		if(isOn){

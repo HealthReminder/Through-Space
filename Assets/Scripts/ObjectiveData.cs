@@ -4,6 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Objective : MonoBehaviour {
+public class ObjectiveData : MonoBehaviour {
 	public int nextLevel;
 }

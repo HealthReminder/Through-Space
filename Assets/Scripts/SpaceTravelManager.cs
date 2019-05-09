@@ -12,7 +12,7 @@ public class SpaceTravelManager : MonoBehaviour {
 	public int maxLevel;
 	[Header("prefabs")]
 	public GameObject pplayer;
-	PlayerBehaviour player;
+	PlayerManager player;
     Rigidbody2D pRb;
 
     public GameObject[] levels;
@@ -49,7 +49,7 @@ public class SpaceTravelManager : MonoBehaviour {
         {
 
            
-            player = Instantiate(pplayer, new Vector3(-50, -50, 0), Quaternion.identity).transform.GetChild(0).GetComponent<PlayerBehaviour>();
+            player = Instantiate(pplayer, new Vector3(-50, -50, 0), Quaternion.identity).transform.GetChild(0).GetComponent<PlayerManager>();
             if(!pRb)
                 pRb = player.GetComponent<Rigidbody2D>();
 
@@ -66,7 +66,7 @@ public class SpaceTravelManager : MonoBehaviour {
         }
         SpawnSystem(currentLevel);
         //Find player
-        player = FindObjectOfType<PlayerBehaviour>();
+        player = FindObjectOfType<PlayerManager>();
         //Set its transform to this object so it doesn't get destroyed or disabled by the solar systems
         player.transform.parent.SetParent(transform,true);
         //transform.SetParent(player.transform);
@@ -107,7 +107,7 @@ public class SpaceTravelManager : MonoBehaviour {
 
                //Rotate the system towards the right direction so that the player can have a safe anchor point
                 if(!player)
-                    player = FindObjectOfType<PlayerBehaviour>();
+                    player = FindObjectOfType<PlayerManager>();
                 //Find rotation vector
                 Vector2 v = currentSolarSystem.transform.position - player.transform.position;
                 //Find angle using the rotation vector

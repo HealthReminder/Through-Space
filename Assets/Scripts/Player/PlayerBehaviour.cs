@@ -4,16 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayerBehaviour : MonoBehaviour {
+public class PlayerManager : MonoBehaviour {
 
 	SpringJoint2D sj;
 	Rigidbody2D rb;
 	//bool dead = false;
 	public bool isInFirstLevel = false;
 	[Header("planetary")]
-	public Planet closestPlanet, orbitingNow;
+	public PlanetData closestPlanet, orbitingNow;
 	public Transform orbitingStar;
-	List<Planet> planetsAvailable;
+	List<PlanetData> planetsAvailable;
     public bool hasArrived=true;
 
 	[Header("Spring")]
@@ -32,7 +32,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	[Header("Angle")]
 	float angle;
 	Vector2 v;
-	public CameraBehaviour camBehaviour;
+	public CameraManager camBehaviour;
 
 	[Header("Managers")]
 	SpaceTravelManager STMan;
@@ -72,9 +72,9 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	public void UpdateAvailablePlanets()
     {
-        Planet[] temp = FindObjectsOfType<Planet>();
-        planetsAvailable = new List<Planet>();
-        foreach (Planet p in temp)
+        PlanetData[] temp = FindObjectsOfType<PlanetData>();
+        planetsAvailable = new List<PlanetData>();
+        foreach (PlanetData p in temp)
             planetsAvailable.Add(p);
 
     }
@@ -220,17 +220,17 @@ public class PlayerBehaviour : MonoBehaviour {
 			orbitingNow = closestPlanet;
 
 			//Find right music set
-			if(AmbientSoundController.instance)
+			if(AmbientSoundManager.instance)
 				if(orbitingNow.GetComponent<BodyData>()){
 					Debug.Log(orbitingNow.GetComponent<BodyData>().musicSetName);
-					AmbientSoundController.instance.ChangeSet(orbitingNow.GetComponent<BodyData>().musicSetName);
+					AmbientSoundManager.instance.ChangeSet(orbitingNow.GetComponent<BodyData>().musicSetName);
 				}
 				else{
 					BodyData bd = orbitingNow.transform.parent.GetComponent<BodyData>();
 					Debug.Log(bd.musicSetName);
 					if(bd != null)
 						if(!string.IsNullOrEmpty(bd.musicSetName))
-							AmbientSoundController.instance.ChangeSet(bd.musicSetName);
+							AmbientSoundManager.instance.ChangeSet(bd.musicSetName);
 				}
 				
 				
@@ -240,12 +240,12 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	void FindClosestPlanet ()	{
 		//Calculate the distance and get the closest one from all Planets
-		Planet closest = null;
+		PlanetData closest = null;
 		float closestDist = 1000;
 		//Reference Position and distance for Performance
 		Vector3 planetPos;
 		float dist=9999;
-		foreach(Planet j in planetsAvailable) {
+		foreach(PlanetData j in planetsAvailable) {
 			planetPos = j.transform.position;
 			dist = Vector2.Distance(new Vector2(planetPos.x,planetPos.y), new Vector2(transform.position.x,transform.position.y));
 			if(j == orbitingNow)
@@ -301,8 +301,8 @@ public class PlayerBehaviour : MonoBehaviour {
 		sj.enabled = false;	
 		orbitingNow = null;
 		rb.AddForce (rb.velocity.normalized, ForceMode2D.Impulse);
-		if(AmbientSoundController.instance)
-			AmbientSoundController.instance.Stop(0.1f);
+		if(AmbientSoundManager.instance)
+			AmbientSoundManager.instance.Stop(0.1f);
 		StartCoroutine (DetachedCooldown ());
 	}
 
@@ -320,11 +320,11 @@ public class PlayerBehaviour : MonoBehaviour {
             if (!orbitingNow)
             {
                 print("Touched objective");
-                if (collision.GetComponent<Objective>())
+                if (collision.GetComponent<ObjectiveData>())
                 {
                     print("Worked");
                     STMan.lastLevel = STMan.currentLevel;
-                    STMan.currentLevel = collision.GetComponent<Objective>().nextLevel;
+                    STMan.currentLevel = collision.GetComponent<ObjectiveData>().nextLevel;
                     print("Called spawn system.");
 
                     STMan.SpawnSystem((int)STMan.currentLevel);
