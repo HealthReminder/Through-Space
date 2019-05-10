@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SpaceTravelManager : MonoBehaviour {
+public class GameManager : MonoBehaviour {
 
     [Header("player Information")]
     public int lastLevel;
@@ -27,6 +27,10 @@ public class SpaceTravelManager : MonoBehaviour {
     [SerializeField]
     int newLevel = 0;
     
+    public static GameManager instance;
+    private void Awake() {
+        instance = this;
+    }
 	
 	
 	void Start () {

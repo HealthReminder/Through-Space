@@ -51,6 +51,10 @@ public class CameraManager : MonoBehaviour {
         
     }
 
+	public void ToggleFollow(bool isOn){
+		isFollowEnabled = isOn;
+	}
+
     //When the player holds on the button
     public void ToggleWideCamera()
     {

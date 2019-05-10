@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
 public class PlayerManager : MonoBehaviour {
 
 	SpringJoint2D sj;
@@ -35,7 +34,7 @@ public class PlayerManager : MonoBehaviour {
 	public CameraManager camBehaviour;
 
 	[Header("Managers")]
-	SpaceTravelManager STMan;
+	GameManager STMan;
 	public Image deathScreen;
 	public ParticleSystem deathparticle;
 
@@ -52,7 +51,7 @@ public class PlayerManager : MonoBehaviour {
 	#region Setup and System
 	void Start () {
         sptR = GetComponent<SpriteRenderer>();
-		STMan = FindObjectOfType<SpaceTravelManager>();
+		STMan = GameManager.instance;
 		//if(!isInFirstLevel)
 			Time.timeScale = 1;
         //print(sj.connectet)
@@ -357,7 +356,7 @@ public class PlayerManager : MonoBehaviour {
     public void CheckForProgress()
     {
         if (!STMan)
-            STMan = FindObjectOfType<SpaceTravelManager>();
+            STMan = FindObjectOfType<GameManager>();
         print("Current player pref" + PlayerPrefs.GetInt("maxLevel") + " to: " + STMan.maxLevel);
         PlayerPrefs.SetInt("currentLevel", STMan.currentLevel);
         if (STMan.maxLevel > PlayerPrefs.GetInt("maxLevel"))

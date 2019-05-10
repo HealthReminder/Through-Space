@@ -32,7 +32,7 @@ RectTransform:
   m_Children:
   - {fileID: 224210630484568782}
   m_Father: {fileID: 4847081748586524}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -720,8 +720,8 @@ Transform:
   m_Children:
   - {fileID: 4634148934530302}
   - {fileID: 21541331336371941}
-  - {fileID: 224252498782308602}
   - {fileID: 5254313205086195147}
+  - {fileID: 224252498782308602}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
@@ -12028,7 +12028,7 @@ RectTransform:
   m_Children:
   - {fileID: 224518210326015486}
   m_Father: {fileID: 4847081748586524}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12048,7 +12048,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOn: 1
-  camBehaviour: {fileID: 2974863215657569336}
+  OnAccelerate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2974863215657569336}
+        m_MethodName: ToggleFollow
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDeaccelerate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2974863215657569336}
+        m_MethodName: ToggleFollow
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnBackToNormal:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2974863215657569336}
+        m_MethodName: ToggleFollow
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &7473051481110260273
 GameObject:
   m_ObjectHideFlags: 0
