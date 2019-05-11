@@ -1905,6 +1905,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1155681948569258, guid: df4b33c8eef0af24c89e0cf9aea302f4, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
     - target: {fileID: 4314383142803850, guid: df4b33c8eef0af24c89e0cf9aea302f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -52.8
@@ -1937,30 +1941,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114431109606661766, guid: df4b33c8eef0af24c89e0cf9aea302f4,
-        type: 3}
-      propertyPath: overrideLevel
+    - target: {fileID: 4314383142803850, guid: df4b33c8eef0af24c89e0cf9aea302f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114431109606661766, guid: df4b33c8eef0af24c89e0cf9aea302f4,
-        type: 3}
-      propertyPath: newLevel
+    - target: {fileID: 4314383142803850, guid: df4b33c8eef0af24c89e0cf9aea302f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114431109606661766, guid: df4b33c8eef0af24c89e0cf9aea302f4,
-        type: 3}
-      propertyPath: levels.Array.data[0]
-      value: 
-      objectReference: {fileID: 1973236843332326, guid: 568c5087da4986b41aacdc7f9256c8af,
-        type: 3}
-    - target: {fileID: 114431109606661766, guid: df4b33c8eef0af24c89e0cf9aea302f4,
-        type: 3}
-      propertyPath: currentLevel
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224867420563719866, guid: df4b33c8eef0af24c89e0cf9aea302f4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
+    - target: {fileID: 4314383142803850, guid: df4b33c8eef0af24c89e0cf9aea302f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 public class PlayerManager : MonoBehaviour {
 
+	public bool isDead = false;
 	SpringJoint2D sj;
 	Rigidbody2D rb;
 	//bool dead = false;
 	public bool isInFirstLevel = false;
-	[Header("planetary")]
+	
+	[Header("Environment Information")]
+    public float distanceFromStar;
 	public PlanetData closestPlanet, orbitingNow;
 	public Transform orbitingStar;
 	List<PlanetData> planetsAvailable;
@@ -18,40 +20,24 @@ public class PlayerManager : MonoBehaviour {
 	[Header("Spring")]
 	public bool attached=false;
 	public bool spawnWithForce = true;
-	public bool canAttach = false;
-	
-	[Header("GUI")]
-	
-	public Text TdistanceToStar;
-	public GameObject TdistanceToStarObject;
-    
-    SpriteRenderer sptR;
-	
+	public bool canAttach = false;	
 
 	[Header("Angle")]
 	float angle;
 	Vector2 v;
 	public CameraManager camBehaviour;
 
-	[Header("Managers")]
-	GameManager STMan;
-	public Image deathScreen;
-	public ParticleSystem deathparticle;
-
-	public TimeController timeController;
-
-    public float distanceFromStar;
+	[Header("References")]
+	GameManager gameManager;
 
 	PlayerView playerView;
-
-	public GameObject allCanvas;
+	public TimeController timeController;
 	
 	
 
 	#region Setup and System
 	void Start () {
-        sptR = GetComponent<SpriteRenderer>();
-		STMan = GameManager.instance;
+		gameManager = GameManager.instance;
 		//if(!isInFirstLevel)
 			Time.timeScale = 1;
         //print(sj.connectet)
@@ -134,18 +120,17 @@ public class PlayerManager : MonoBehaviour {
 
 		if(orbitingNow)
 			sj.connectedAnchor = orbitingNow.transform.position;
-        if (orbitingStar)
+        if (orbitingStar){
             distanceFromStar = Vector2.Distance(orbitingStar.position, transform.position);
-        //65 far 80 too far 55 new star
-		TdistanceToStar.text = distanceFromStar.ToString("F2") +" au";
+			playerView.ChangeDistanceText(distanceFromStar.ToString("F2") +" au"); 
+		}
+		
         if (hasArrived)
         {	
 			
-			if(distanceFromStar < 20){
-				if(TdistanceToStarObject.activeSelf)
-				TdistanceToStarObject.SetActive(false);
-			}
-            else if (distanceFromStar >= 50)
+			if(distanceFromStar < 20)
+				playerView.ToggleDistanceFromStar(0);
+			else if (distanceFromStar >= 50)
             {
                 // print(distanceFromStar + " TOO FAR");
                 Die();
@@ -156,8 +141,7 @@ public class PlayerManager : MonoBehaviour {
             }
         } else
         {
-			if(!TdistanceToStarObject.activeSelf)
-				TdistanceToStarObject.SetActive(true);
+			playerView.ToggleDistanceFromStar(1);
             if (distanceFromStar < 25)
             {
                 hasArrived = true;
@@ -277,8 +261,8 @@ public class PlayerManager : MonoBehaviour {
 			if(k >= 0.75f)
 				if(orbitingNow)
 			    	timeController.ChangeTime(1);
-			playerView.ToggleProximity(k,planetPos);
-			playerView.ToggleProximity(k,planetPos);
+			playerView.UpdateProximity(k,planetPos);
+			playerView.UpdateProximity(k,planetPos);
 			if(orbitingNow){
 				playerView.ShowOrbit(true);
 				playerView.ToggleOrbit(k,orbitingNow.transform.position);
@@ -295,7 +279,6 @@ public class PlayerManager : MonoBehaviour {
 		
 	}
 	void Detach() {
-        sptR.color = Color.white;
         attached = false;
 		sj.enabled = false;	
 		orbitingNow = null;
@@ -322,11 +305,11 @@ public class PlayerManager : MonoBehaviour {
                 if (collision.GetComponent<ObjectiveData>())
                 {
                     print("Worked");
-                    STMan.lastLevel = STMan.currentLevel;
-                    STMan.currentLevel = collision.GetComponent<ObjectiveData>().nextLevel;
+                    gameManager.lastLevel = gameManager.currentLevel;
+                    gameManager.currentLevel = collision.GetComponent<ObjectiveData>().nextLevel;
                     print("Called spawn system.");
 
-                    STMan.SpawnSystem((int)STMan.currentLevel);
+                    gameManager.SpawnSystem((int)gameManager.currentLevel);
 					camBehaviour.ToggleFollowCamera();
 
                 }
@@ -345,36 +328,37 @@ public class PlayerManager : MonoBehaviour {
 		Time.timeScale = 1;
 		rb.velocity = Vector3.zero;
 		rb.isKinematic = true;
-		allCanvas.SetActive(false);
+		playerView.ToggleGUIContainer(0);
 		for (int i = 0; i < transform.childCount; i++)
 		{
 			transform.GetChild(i).gameObject.SetActive(false);			
 		}
 
-		StartCoroutine(STMan.Ending());
+		StartCoroutine(gameManager.Ending());
 	}
     public void CheckForProgress()
     {
-        if (!STMan)
-            STMan = FindObjectOfType<GameManager>();
-        print("Current player pref" + PlayerPrefs.GetInt("maxLevel") + " to: " + STMan.maxLevel);
-        PlayerPrefs.SetInt("currentLevel", STMan.currentLevel);
-        if (STMan.maxLevel > PlayerPrefs.GetInt("maxLevel"))
+        if (!gameManager)
+            gameManager = FindObjectOfType<GameManager>();
+        print("Current player pref" + PlayerPrefs.GetInt("maxLevel") + " to: " + gameManager.maxLevel);
+        PlayerPrefs.SetInt("currentLevel", gameManager.currentLevel);
+        if (gameManager.maxLevel > PlayerPrefs.GetInt("maxLevel"))
         {
             print("You are on a higher level");
-           PlayerPrefs.SetInt("maxLevel", STMan.currentLevel);
+           PlayerPrefs.SetInt("maxLevel", gameManager.currentLevel);
         }
           
     }
     public void Die() {
+		if(isDead)
+			return;
+		isDead = true;
+		playerView.OnDeath();
 		timeController.isOn = false;
 		Time.timeScale = 1;
         CheckForProgress();
         GetComponent<SpriteRenderer> ().enabled = false;
-		playerView.ShowProximity(false);
 		GetComponent<Rigidbody2D> ().simulated = false;
-		deathparticle.gameObject.SetActive(true);
-		deathparticle.Play(true);
-		StartCoroutine(STMan.Death());
+		StartCoroutine(gameManager.Death());
 	}
 }

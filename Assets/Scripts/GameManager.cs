@@ -168,13 +168,14 @@ public class GameManager : MonoBehaviour {
 	{
 		Time.timeScale = 1;
 		overlay.color = new Color(0,0,0,0);
+        yield return new WaitForSeconds(1f);
 		while(overlay.color.a < 1){
 			
-			overlay.color+= new Color(0,0,0,+0.1f);
-			yield return null;
+			overlay.color+= new Color(0,0,0,+0.05f);
+			yield return new WaitForSeconds(Time.deltaTime*5);
 		}
 
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(0.5f);
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		yield return null;
 	}

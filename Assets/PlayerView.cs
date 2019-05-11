@@ -7,8 +7,17 @@ public class PlayerView : MonoBehaviour
 {   
     public bool isProximityOn = false;
     public bool isOrbitOn = false;
+    public GameObject viewContainer;
     public Image proximityGUI;
-    public LineRenderer closestPlanetLine, orbitingPlanetLine;
+    public LineRenderer lineClosest, lineOrbiting, lineDirection;
+    [Header("Spaceship")]
+    public SpriteRenderer spaceshipSprite;
+
+    [Header("Distance from star")]
+    public Text TdistanceToStar;
+    public GameObject TdistanceToStarObject;
+    [Header("Death")]
+    public ParticleSystem deathparticle;
 
       
     //Make it a singleton
@@ -24,7 +33,36 @@ public class PlayerView : MonoBehaviour
 		
 	}
 
-    public void ToggleProximity (float percentage, Vector3 closestPlanetPosition){
+    public void ToggleGUIContainer(int toggle){
+        if(toggle == 1){
+            viewContainer.SetActive(true);
+        } else {
+            viewContainer.SetActive(false);
+        }
+    }
+    public void OnDeath(){
+        deathparticle.gameObject.SetActive(true);
+        spaceshipSprite.color = Color.black;
+		deathparticle.Play(true);
+        viewContainer.SetActive(false);
+        ShowProximity(false);
+    }
+    public void ToggleDistanceFromStar(int toggle){
+        Debug.Log("Toggling for "+toggle);
+        if(toggle == 0){
+            if(TdistanceToStarObject.activeSelf == true)
+				TdistanceToStarObject.SetActive(false);
+        }else {
+            if(TdistanceToStarObject.activeSelf == false)
+				TdistanceToStarObject.SetActive(true);
+        }
+    }
+
+    public void ChangeDistanceText(string newText){
+        TdistanceToStar.text = newText;
+    }
+
+    public void UpdateProximity (float percentage, Vector3 closestPlanetPosition){
         //Change the color of the GUI indicator
         float hue = Mathf.Lerp(-0.065f,0.45f,1-percentage);
         //Debug.Log(percentage);
@@ -32,12 +70,12 @@ public class PlayerView : MonoBehaviour
         proximityGUI.transform.RotateAround(proximityGUI.transform.position,Vector3.forward,(1-percentage)*2);
 
         //Work the line that indicates the closes planet
-        closestPlanetLine.SetPosition(0,transform.position);
-		closestPlanetLine.SetPosition(1, closestPlanetPosition);
-		closestPlanetLine.colorGradient = new Gradient();
-        closestPlanetLine.startColor = new Color(1,1,1,1-percentage);
-		closestPlanetLine.endColor = new Color(1,1,1,1-percentage);
-		closestPlanetLine.enabled = true;
+        lineClosest.SetPosition(0,transform.position);
+		lineClosest.SetPosition(1, closestPlanetPosition);
+		lineClosest.colorGradient = new Gradient();
+        lineClosest.startColor = new Color(1,1,1,1-percentage);
+		lineClosest.endColor = new Color(1,1,1,1-percentage);
+		lineClosest.enabled = true;
         
     }
     public void ShowProximity (bool isActive){
@@ -55,26 +93,26 @@ public class PlayerView : MonoBehaviour
             return;
         isOrbitOn = isActive;
         if(!isOrbitOn)
-            orbitingPlanetLine.gameObject.SetActive(false);
+            lineOrbiting.gameObject.SetActive(false);
         else
-            orbitingPlanetLine.gameObject.SetActive(true);
+            lineOrbiting.gameObject.SetActive(true);
     }
 
     public void ToggleOrbit (float percentage, Vector3 closestPlanetPosition){
             //Change the color of the GUI indicator
             float hue = Mathf.Lerp(-0.065f,0.45f,1-percentage);
             //Debug.Log(percentage);
-            orbitingPlanetLine.startColor = Color.HSVToRGB(hue,1,1);
-            orbitingPlanetLine.endColor = Color.HSVToRGB(hue,1,1);
+            lineOrbiting.startColor = Color.HSVToRGB(hue,1,1);
+            lineOrbiting.endColor = Color.HSVToRGB(hue,1,1);
 
 			//Set line positions
-			orbitingPlanetLine.SetPosition(0,transform.position);
-			orbitingPlanetLine.SetPosition(1, closestPlanetPosition);
+			lineOrbiting.SetPosition(0,transform.position);
+			lineOrbiting.SetPosition(1, closestPlanetPosition);
             // float H, S, V;
             //Color.RGBToHSV(new Color(percentage, 1 - percentage, 0, 1), out H, out S, out V);
             proximityGUI.color = Color.HSVToRGB(hue,1,1);
 
-			//orbitingPlanetLine.startColor = new Color(percentage,1-percentage,0,1);
-			//orbitingPlanetLine.endColor = new Color(percentage,1-percentage,0,1);
+			//lineOrbiting.startColor = new Color(percentage,1-percentage,0,1);
+			//lineOrbiting.endColor = new Color(percentage,1-percentage,0,1);
     }
 }

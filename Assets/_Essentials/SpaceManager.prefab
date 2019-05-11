@@ -74,7 +74,7 @@ MonoBehaviour:
   overlay: {fileID: 114688684030498914}
   currentSolarSystem: {fileID: 0}
   overrideLevel: 0
-  newLevel: 8
+  newLevel: 0
 --- !u!1 &1779998966576422
 GameObject:
   m_ObjectHideFlags: 0
