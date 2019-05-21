@@ -44,46 +44,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ambientSoundVolume: 0.8
-  sourceQuantity: 10
-  volumeRate: 0.01
-  sets:
-  - name: Silence
-    tracks: []
-  - name: Ocean
-    tracks: []
-  - name: Rain
-    tracks: []
-  - name: Lava
-    tracks: []
-  - name: Windy
-    tracks: []
-  - name: Scorching
-    tracks: []
-  - name: Frozen
-    tracks: []
-  - name: Meteors
-    tracks: []
-  - name: Rainforest
-    tracks:
-    - clip: {fileID: 8300000, guid: fbc632a5280dba94086416c3d8cd51dc, type: 3}
-      startFrom: 5
-    - clip: {fileID: 8300000, guid: 51e32032789a8d04b805f3490a8bf6dd, type: 3}
-      startFrom: 5
-    - clip: {fileID: 8300000, guid: 5ce11214b556c7945a873996393274fa, type: 3}
-      startFrom: 5
-    - clip: {fileID: 8300000, guid: fa1db5a94043202419ed02a376e0d333, type: 3}
-      startFrom: 5
-    - clip: {fileID: 8300000, guid: 4608fa45b6fb4d84ea87a484b2541385, type: 3}
-      startFrom: 5
-  - name: Desert
-    tracks: []
-  - name: Vulcanic
-    tracks: []
-  - name: Urban
-    tracks:
-    - clip: {fileID: 8300000, guid: dd04b2c5565f35749a462d2d796ddbdb, type: 3}
-      startFrom: 0
-    - clip: {fileID: 8300000, guid: 5ff433b10caae8b44a1b73696f9098d4, type: 3}
-      startFrom: 0
-    - clip: {fileID: 8300000, guid: c9d6c65822fb93c43810bb52785a0b06, type: 3}
-      startFrom: 0
+  tracks:
+  - name: Earth
+    clip: {fileID: 8300000, guid: fc3cdcdd8a5c2884cbc099db1ef52a52, type: 3}
+    randomPortion: 0.5
+  - name: 
+    clip: {fileID: 8300000, guid: ea9fd448d865c0f49abf1b7a0cb9d011, type: 3}
+    randomPortion: 0.5
+  - name: 
+    clip: {fileID: 8300000, guid: 5dd14db6bab8c9b4db4d4c6a2c1a0cd2, type: 3}
+    randomPortion: 0.5
+  - name: 
+    clip: {fileID: 8300000, guid: 46a2425327f1e604fadd7c5fd98535bb, type: 3}
+    randomPortion: 0.5
+  - name: 
+    clip: {fileID: 8300000, guid: f02c3621a1b836d40b28ff573bc530ab, type: 3}
+    randomPortion: 0.5
+  - name: 
+    clip: {fileID: 8300000, guid: 41dc80f527179364e894287f03b24df2, type: 3}
+    randomPortion: 0.5
+  - name: 
+    clip: {fileID: 8300000, guid: 55e694439120c2e4da06dca4be466312, type: 3}
+    randomPortion: 0.5

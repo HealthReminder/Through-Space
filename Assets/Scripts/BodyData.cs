@@ -5,6 +5,6 @@ using UnityEngine;
 public class BodyData : MonoBehaviour {
 
 	public float rotationSpeed;
-	public string musicSetName;
-	public string typeOfPlanet;
+	public string ambientTrackName;
+	//public string typeOfPlanet;
 }

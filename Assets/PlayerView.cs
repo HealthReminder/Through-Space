@@ -48,7 +48,6 @@ public class PlayerView : MonoBehaviour
         ShowProximity(false);
     }
     public void ToggleDistanceFromStar(int toggle){
-        Debug.Log("Toggling for "+toggle);
         if(toggle == 0){
             if(TdistanceToStarObject.activeSelf == true)
 				TdistanceToStarObject.SetActive(false);

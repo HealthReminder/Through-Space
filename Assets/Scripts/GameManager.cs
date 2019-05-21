@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour {
 
             if (currentLevel == 0)
             {
-                    Debug.Log("Generating first level level.");
+                    Debug.Log("Generating first level.");
                     currentSolarSystem = Instantiate(levels[index], new Vector3(0, 0, 0), Quaternion.identity).transform;
             }
             else

@@ -2,30 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]	public struct Track {
+		public string name;
+		public AudioClip clip;
+		[Range(0,1)] public float randomPortion;
+}
+
 public class AmbientSoundManager : MonoBehaviour {
 	[Header("Configuration")]
-	public float ambientSoundVolume = 0.5f;
-	[SerializeField][Range(0.001f,0.1f)]	float volumeRate = 0.004f;
-	AudioSource audioSource;
-	int currentSource = 0;
-	bool changingSourceAlready = false;
-	Set currentSet;
+	public float ambientSoundVolume = 1f;
+	int currentAudioSource = 0;
+
+	AudioSource audioSource1;
+	AudioSource audioSource2;
+	Track currentTrack;
 
 
 	[Header("Sets")]
 	[SerializeField]
-	public List<Set> sets;
+	public List<Track> tracks;
 
-	[System.Serializable]
-	public class Set {
-		public string name;
-		public Track[] tracks;
-	}
-	[System.Serializable]
-	public struct Track {
-		public AudioClip clip;
-		public float startFrom;
-	}
+	
 
 
 	//Singleton pattern
@@ -45,104 +42,97 @@ public class AmbientSoundManager : MonoBehaviour {
 		Setup();
 	}
 
-
-	void Update()
-	{
-
-		if(!audioSource.isPlaying && currentSet != null)
-			audioSource.Play();
-	}
-
-
-	void Setup() {
-//		audioSource = .AddComponent<AudioSource>();
-		//audioSource.playOnAwake = false;
+	private void Update() {
+		if(Input.GetKeyDown(KeyCode.T))
+			StartAmbientSound("Earth");
+		if(Input.GetKeyDown(KeyCode.Y))
+			StopAmbientSound();
 		
 	}
 
-	public void Stop(float rate) {
-		StartCoroutine(FadeCurrentSourceOut(rate));
-	}
-	IEnumerator FadeCurrentSourceOut(float rate) {
-		float currentSourceAtStartOfCoroutine = currentSource;
-		AudioSource goingDown = audioSource;
-		while(currentSourceAtStartOfCoroutine == currentSource){
-			while(goingDown.volume > 0 ){
-				goingDown.volume-=rate;
-				yield return null;
+	public void StartAmbientSound(string name) {
+		Debug.Log("Now playing ambient sound: "+name);
+		bool wasFound = false;
+		Track foundTrack = new Track();
+		foreach(Track t in tracks)
+			if(t.name == name){
+				foundTrack = t;
+				wasFound = true;
 			}
-			currentSet = null;
-			goingDown.Stop();
-			goingDown.volume = 0;
-			goingDown.clip = null;
-			Debug.Log ("Going down volume is "+ goingDown.volume);
-			yield break;
+
+		if(!wasFound)
+			Debug.Log("Didn't find track");
+		else {
+			if(currentAudioSource == 0){
+				currentAudioSource = 1;
+				StartCoroutine(PlaySource(foundTrack, audioSource1));
+				StartCoroutine(StopSource(audioSource2));
+			} else {
+				currentAudioSource = 0;
+				StartCoroutine(PlaySource(foundTrack, audioSource2));
+				StartCoroutine(StopSource(audioSource1));	
+			}
+		}
+
+		return;
+	}
+
+	public void StopAmbientSound(){
+		Debug.Log("Stopped ambient sound");
+		if(currentAudioSource == 0){
+			StartCoroutine(StopSource(audioSource2));
+		} else {
+			StartCoroutine(StopSource(audioSource1));
+		}
+	}
+	bool isStartingSource = false;
+	IEnumerator PlaySource(Track newTrack, AudioSource source) {
+		isStartingSource = false;
+		yield return null;
+		isStartingSource = true;
+
+		source.volume = 0;
+		source.clip = newTrack.clip;
+		source.time = Random.Range(0,Mathf.Lerp(0, newTrack.clip.length, newTrack.randomPortion));
+		source.Play();
+
+		while(isStartingSource) {
+			if(source.volume < 1)
+				source.volume+= Time.deltaTime*1;
+			else
+				isStartingSource = false;
+			yield return null;
 		}
 
 		yield break;
 	}
+	bool isStoppingSource = false;
+	IEnumerator StopSource(AudioSource source) {
+		isStoppingSource = false;
+		yield return null;
+		isStoppingSource = true;
 
-	public void ChangeSet(string name){
-
-		if(sets.Count> 0){
-
-			//If the set exists
-			bool exists = false;
-			foreach(Set s in sets)
-			if(s.name == name){
-				exists = true;
-				currentSet = s;
-			} 
-
-			//choose new source
-			int newSource = currentSource+1;
-			//make sure it is not out of bounds
-			//if(newSource >= sourceQuantity)
-				newSource = 0;
-
-			AudioSource ns = audioSource;
-			AudioSource cs = audioSource;
-
-			if(exists){
-			//choose a random song from the set
-			//set and play in an audiosource
-			Track newT =  currentSet.tracks[Random.Range(0,currentSet.tracks.Length)];
-			ns.clip = newT.clip;
-			ns.time = newT.startFrom;
-
-			//This will stop the ambient sound
-			if(name == "Stop")
-				ns.clip = null;
-			ns.Play();
-
-			}
-			StartCoroutine(ChangeSources(cs,ns,volumeRate));
-			currentSource = newSource;
-			
-
-		}
-	}
-
-	IEnumerator ChangeSources(AudioSource goingDown, AudioSource goingUp,float rate)
-	{
-		//This should never go wrong... He said
-		goingDown.volume = ambientSoundVolume;
-		goingUp.volume = 0;
-		while(changingSourceAlready)
-			yield return null;
-		changingSourceAlready = true;
-		//If it doesnt then the music shall alternate!
-		while(goingDown.volume > 0 || goingUp.volume<ambientSoundVolume){
-			changingSourceAlready =	 true;
-			goingDown.volume-=rate;
-			goingUp.volume+=rate;
+		while(isStoppingSource) {
+			if(source.volume > 0)
+				source.volume-= Time.deltaTime*1;
+			else
+				isStoppingSource = false;
 			yield return null;
 		}
-		goingUp.volume = ambientSoundVolume;
-		goingDown.Stop();
-		goingDown.clip = null;
-		changingSourceAlready = false;
+
+		source.Stop();
+
 		yield break;
+	}
+	void Setup() {
+		audioSource1 = gameObject.AddComponent<AudioSource>();
+		audioSource1.playOnAwake = false;
+		audioSource1.loop = true;
+		audioSource1.spatialBlend = 0;
+		audioSource2 = gameObject.AddComponent<AudioSource>();
+		audioSource2.playOnAwake = false;
+		audioSource2.loop = true;
+		audioSource2.spatialBlend = 0;
 	}
 
 }

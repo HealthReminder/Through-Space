@@ -205,15 +205,15 @@ public class PlayerManager : MonoBehaviour {
 			//Find right music set
 			if(AmbientSoundManager.instance)
 				if(orbitingNow.GetComponent<BodyData>()){
-					Debug.Log(orbitingNow.GetComponent<BodyData>().musicSetName);
-					AmbientSoundManager.instance.ChangeSet(orbitingNow.GetComponent<BodyData>().musicSetName);
+					Debug.Log(orbitingNow.GetComponent<BodyData>().ambientTrackName);
+					AmbientSoundManager.instance.StartAmbientSound(orbitingNow.GetComponent<BodyData>().ambientTrackName);
 				}
 				else{
 					BodyData bd = orbitingNow.transform.parent.GetComponent<BodyData>();
-					Debug.Log(bd.musicSetName);
+					Debug.Log(bd.ambientTrackName);
 					if(bd != null)
-						if(!string.IsNullOrEmpty(bd.musicSetName))
-							AmbientSoundManager.instance.ChangeSet(bd.musicSetName);
+						if(!string.IsNullOrEmpty(bd.ambientTrackName))
+							AmbientSoundManager.instance.StartAmbientSound(bd.ambientTrackName);
 				}
 				
 				
@@ -284,7 +284,7 @@ public class PlayerManager : MonoBehaviour {
 		orbitingNow = null;
 		rb.AddForce (rb.velocity.normalized, ForceMode2D.Impulse);
 		if(AmbientSoundManager.instance)
-			AmbientSoundManager.instance.Stop(0.1f);
+			AmbientSoundManager.instance.StopAmbientSound();
 		StartCoroutine (DetachedCooldown ());
 	}
 
@@ -340,7 +340,7 @@ public class PlayerManager : MonoBehaviour {
     {
         if (!gameManager)
             gameManager = FindObjectOfType<GameManager>();
-        print("Current player pref" + PlayerPrefs.GetInt("maxLevel") + " to: " + gameManager.maxLevel);
+        print("Current max level changed from " + PlayerPrefs.GetInt("maxLevel") + " to: " + gameManager.maxLevel);
         PlayerPrefs.SetInt("currentLevel", gameManager.currentLevel);
         if (gameManager.maxLevel > PlayerPrefs.GetInt("maxLevel"))
         {
