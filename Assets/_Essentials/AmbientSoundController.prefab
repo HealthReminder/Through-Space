@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b36754621b73084dae4c60de5245af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ambientSoundVolume: 0.8
+  ambientSoundVolume: 0.26
   tracks:
   - name: Earth
     clip: {fileID: 8300000, guid: fc3cdcdd8a5c2884cbc099db1ef52a52, type: 3}
@@ -54,7 +54,7 @@ MonoBehaviour:
   - name: 
     clip: {fileID: 8300000, guid: 5dd14db6bab8c9b4db4d4c6a2c1a0cd2, type: 3}
     randomPortion: 0.5
-  - name: 
+  - name: Mercury
     clip: {fileID: 8300000, guid: 46a2425327f1e604fadd7c5fd98535bb, type: 3}
     randomPortion: 0.5
   - name: 
@@ -63,6 +63,6 @@ MonoBehaviour:
   - name: 
     clip: {fileID: 8300000, guid: 41dc80f527179364e894287f03b24df2, type: 3}
     randomPortion: 0.5
-  - name: 
+  - name: Jupiter
     clip: {fileID: 8300000, guid: 55e694439120c2e4da06dca4be466312, type: 3}
     randomPortion: 0.5

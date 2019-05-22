@@ -4,25 +4,22 @@ using UnityEngine;
 
 public class SoundtrackManager : MonoBehaviour {
 	
+	[Header("Aspect")]
 	public float soundtrackVolume = 1;
-	[Header("Configuration")]
+	[SerializeField][Range(0.001f,0.1f)]	float volumeRate = 0.01f;	
 	//Quantity of sources that this script will be using to manage the sounds
+	[Header("Performance")]
 	[SerializeField]	int sourceQuantity = 10;
-	//Soundtrack volume
-	[SerializeField][Range(0.001f,0.1f)]	float volumeRate = 0.01f;
-
+	[Header("Set data")]
+	//Sets of soundtrack available to be played in-game
+	[SerializeField]	public List<Set> sets;
+	
+	//Data
 	//Audio source management
 	AudioSource[] audioSources;
 	int currentSource = 0;
 	bool changingSourceAlready = false;
-
-	//Data
 	Set currentSet;
-
-	//Sets of soundtrack available to be played in-game
-	[Header("Sets")]	[SerializeField]	public List<Set> sets;
-
-
 
 	[System.Serializable]
 	public class Set {
@@ -62,7 +59,6 @@ public class SoundtrackManager : MonoBehaviour {
 	}
 
 	//These functions are responsable for stopping the current audio source
-	//NOT WORKING
 	public void Stop(float rate) {
 		StartCoroutine(FadeCurrentSourceOut(rate));
 	}

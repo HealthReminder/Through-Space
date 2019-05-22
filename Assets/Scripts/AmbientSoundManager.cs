@@ -97,8 +97,8 @@ public class AmbientSoundManager : MonoBehaviour {
 		source.Play();
 
 		while(isStartingSource) {
-			if(source.volume < 1)
-				source.volume+= Time.deltaTime*1;
+			if(source.volume < 1*ambientSoundVolume)
+				source.volume+= Time.deltaTime/10/ambientSoundVolume;
 			else
 				isStartingSource = false;
 			yield return null;
@@ -114,13 +114,13 @@ public class AmbientSoundManager : MonoBehaviour {
 
 		while(isStoppingSource) {
 			if(source.volume > 0)
-				source.volume-= Time.deltaTime*1;
+				source.volume-= Time.deltaTime/10/ambientSoundVolume;
 			else
 				isStoppingSource = false;
 			yield return null;
 		}
 
-		source.Stop();
+		//source.Stop();
 
 		yield break;
 	}

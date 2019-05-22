@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -30
-  ambientTrackName: Urban
+  ambientTrackName: Earth
 --- !u!1 &1364424609572466
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,7 +928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -40
-  ambientTrackName: 
+  ambientTrackName: Mercury
 --- !u!1 &1568723809846712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,7 +1530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 20
-  ambientTrackName: 
+  ambientTrackName: Jupiter
 --- !u!1 &1970384712991616
 GameObject:
   m_ObjectHideFlags: 0
