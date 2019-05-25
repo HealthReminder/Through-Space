@@ -255,8 +255,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 0}
+  ambientSound:
+    name: 
+    clip: {fileID: 8300000, guid: 5dd14db6bab8c9b4db4d4c6a2c1a0cd2, type: 3}
+    randomPortion: 0.511
   influenceRadius: 6
   gravitationalForce: 2
 --- !u!1 &1230571453467542
@@ -424,8 +426,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1467324119179490
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,8 +502,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 45
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1604830829766434
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,8 +757,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 0}
+  ambientSound:
+    name: 
+    clip: {fileID: 8300000, guid: adeb2f67d380f474ebb18285a2627151, type: 3}
+    randomPortion: 0.358
   influenceRadius: 8
   gravitationalForce: 4
 --- !u!1 &1640749753753718
@@ -987,8 +987,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 0}
+  ambientSound:
+    name: 
+    clip: {fileID: 8300000, guid: 45bd87c3870c6304e9fa7dc5d0add8a5, type: 3}
+    randomPortion: 0
   influenceRadius: 4
   gravitationalForce: 1
 --- !u!1 &1851219671890256
@@ -1036,8 +1038,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1852043924279478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,10 +1084,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planets:
+  rotationData:
   - {fileID: 114414183647689734}
   - {fileID: 114941990829730972}
   - {fileID: 114538226783485326}
+  planetDatas:
+  - {fileID: 114974230878257286}
+  - {fileID: 114815859233606424}
+  - {fileID: 114693509902063850}
 --- !u!1 &1942156939030728
 GameObject:
   m_ObjectHideFlags: 0

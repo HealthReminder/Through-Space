@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]	public struct Track {
+[System.Serializable]	public class Track {
 		public string name;
 		public AudioClip clip;
 		[Range(0,1)] public float randomPortion;
@@ -18,9 +18,9 @@ public class AmbientSoundManager : MonoBehaviour {
 	Track currentTrack;
 
 
-	[Header("Sets")]
-	[SerializeField]
-	public List<Track> tracks;
+	//[Header("Sets")]
+	//[SerializeField]
+	//public List<Track> tracks;
 
 	
 
@@ -42,37 +42,29 @@ public class AmbientSoundManager : MonoBehaviour {
 		Setup();
 	}
 
-	private void Update() {
-		if(Input.GetKeyDown(KeyCode.T))
-			StartAmbientSound("Earth");
-		if(Input.GetKeyDown(KeyCode.Y))
-			StopAmbientSound();
-		
-	}
+	public void StartAmbientSound(Track clip) {
+		Debug.Log("Now playing ambient sound: "+ clip.name);
+		//bool wasFound = false;
+		//Track foundTrack = new Track();
+		//foreach(Track t in tracks)
+			//if(t.name == name){
+			//	foundTrack = t;
+			//	wasFound = true;
+			//}
 
-	public void StartAmbientSound(string name) {
-		Debug.Log("Now playing ambient sound: "+name);
-		bool wasFound = false;
-		Track foundTrack = new Track();
-		foreach(Track t in tracks)
-			if(t.name == name){
-				foundTrack = t;
-				wasFound = true;
-			}
-
-		if(!wasFound)
-			Debug.Log("Didn't find track");
-		else {
-			if(currentAudioSource == 0){
-				currentAudioSource = 1;
-				StartCoroutine(PlaySource(foundTrack, audioSource1));
-				StartCoroutine(StopSource(audioSource2));
-			} else {
-				currentAudioSource = 0;
-				StartCoroutine(PlaySource(foundTrack, audioSource2));
-				StartCoroutine(StopSource(audioSource1));	
-			}
+		//if(!wasFound)
+			//Debug.Log("Didn't find track");
+		//else {
+		if(currentAudioSource == 0){
+			currentAudioSource = 1;
+			StartCoroutine(PlaySource(clip, audioSource1));
+			StartCoroutine(StopSource(audioSource2));
+		} else {
+			currentAudioSource = 0;
+			StartCoroutine(PlaySource(clip, audioSource2));
+			StartCoroutine(StopSource(audioSource1));	
 		}
+		//}
 
 		return;
 	}

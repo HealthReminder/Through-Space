@@ -26,7 +26,7 @@ public class CameraManager : MonoBehaviour {
 	}
 	void Update ()
 	{
-		Vector3 pos = player.orbitingStar.transform.position;
+		Vector3 pos = player.currentOrbitingStar.transform.position;
 		pos.z = transform.position.z;
 		transform.position = pos;
         //If the camera can follow (player is not fast in time) or if there is no orbiting planet then follow the player
@@ -58,8 +58,8 @@ public class CameraManager : MonoBehaviour {
     //When the player holds on the button
     public void ToggleWideCamera()
     {
-		if(player.orbitingStar){
-			Vector3 newPos = player.orbitingStar.position;
+		if(player.currentOrbitingStar){
+			Vector3 newPos = player.currentOrbitingStar.transform.position;
 			newPos.z = wideCamera.transform.position.z;
 			wideCamera.transform.position = newPos;
 		}

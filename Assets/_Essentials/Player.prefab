@@ -393,7 +393,7 @@ MonoBehaviour:
   distanceFromStar: 0
   closestPlanet: {fileID: 0}
   orbitingNow: {fileID: 0}
-  orbitingStar: {fileID: 0}
+  currentOrbitingStar: {fileID: 0}
   hasArrived: 0
   attached: 0
   spawnWithForce: 0

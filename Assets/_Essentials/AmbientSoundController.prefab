@@ -46,19 +46,19 @@ MonoBehaviour:
   ambientSoundVolume: 0.26
   tracks:
   - name: Earth
-    clip: {fileID: 8300000, guid: fc3cdcdd8a5c2884cbc099db1ef52a52, type: 3}
+    clip: {fileID: 8300000, guid: fdddeecedf5bb174aab2439ddfd2f3af, type: 3}
     randomPortion: 0.5
   - name: 
-    clip: {fileID: 8300000, guid: ea9fd448d865c0f49abf1b7a0cb9d011, type: 3}
+    clip: {fileID: 8300000, guid: 0cd45e490a7411043bd8a0c3163be8e6, type: 3}
     randomPortion: 0.5
   - name: 
     clip: {fileID: 8300000, guid: 5dd14db6bab8c9b4db4d4c6a2c1a0cd2, type: 3}
     randomPortion: 0.5
   - name: Mercury
-    clip: {fileID: 8300000, guid: 46a2425327f1e604fadd7c5fd98535bb, type: 3}
+    clip: {fileID: 8300000, guid: 5bddc786d154f7540b6780de018c2fde, type: 3}
     randomPortion: 0.5
   - name: 
-    clip: {fileID: 8300000, guid: f02c3621a1b836d40b28ff573bc530ab, type: 3}
+    clip: {fileID: 8300000, guid: f890cfca2e0e8b645a1adede68465cb8, type: 3}
     randomPortion: 0.5
   - name: 
     clip: {fileID: 8300000, guid: 41dc80f527179364e894287f03b24df2, type: 3}

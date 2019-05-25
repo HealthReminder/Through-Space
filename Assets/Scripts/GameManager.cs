@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour {
 	[Header("GUI")]
 	public Image overlay;
 	[Header("System Information")]
-	public Transform currentSolarSystem;
+	public StarController currentSolarSystem;
     GameObject oldSolarSystem;
     [Header("Development")]
     [SerializeField]
@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour {
             if (currentLevel == 0)
             {
                     Debug.Log("Generating first level.");
-                    currentSolarSystem = Instantiate(levels[index], new Vector3(0, 0, 0), Quaternion.identity).transform;
+                    currentSolarSystem = Instantiate(levels[index], new Vector3(0, 0, 0), Quaternion.identity).GetComponent<StarController>();
             }
             else
             {
@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour {
                     Debug.Log("Generating longiquous star system.");
                     Vector3 newpos = player.transform.position + player.transform.right * 50*4;
                     
-                    currentSolarSystem = Instantiate(levels[index], newpos, Quaternion.identity).transform;
+                    currentSolarSystem = Instantiate(levels[index], newpos, Quaternion.identity).GetComponent<StarController>();
                     player.hasArrived = false;
                 }
 
@@ -117,10 +117,10 @@ public class GameManager : MonoBehaviour {
                 //Find angle using the rotation vector
                 float angle = Mathf.Atan2(v.x, v.y) * Mathf.Rad2Deg;
                 //Rotate system
-                currentSolarSystem.rotation = Quaternion.AngleAxis(-angle, Vector3.forward);
+                currentSolarSystem.transform.rotation = Quaternion.AngleAxis(-angle, Vector3.forward);
                 //Find the new planets it can orbit (performance)
                 player.UpdateAvailablePlanets();
-                player.orbitingStar = currentSolarSystem.transform;
+                player.currentOrbitingStar = currentSolarSystem;
                 Vector3 newCameraPos = currentSolarSystem.transform.position;
                 newCameraPos.z = player.camBehaviour.wideCamera.transform.position.z;
                 player.camBehaviour.wideCamera.transform.position = newCameraPos;

@@ -8,8 +8,9 @@ public class PlanetData : MonoBehaviour {
 
 	[Header("Information")]
 	public new string name;
-	public string howIsPronounced;
-	public Transform startSystem;
+	[SerializeField]	public Track ambientSound;
+	//public string howIsPronounced;
+	//public Transform startSystem;
 	[Header("Properties")]
 	
 	public float influenceRadius;

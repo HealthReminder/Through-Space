@@ -45,8 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 25
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1251481047398350
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,8 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planets:
+  rotationData:
   - {fileID: 114108620928165968}
+  planetDatas:
+  - {fileID: 114195651405062136}
 --- !u!1 &1333208706062276
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,9 +350,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f93e8c44546cc9499a5720432537500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 0}
+  name: 
+  ambientSound:
+    name: 
+    clip: {fileID: 8300000, guid: 55e694439120c2e4da06dca4be466312, type: 3}
+    randomPortion: 0.42
   influenceRadius: 8
   gravitationalForce: 2
 --- !u!1 &1439606833989526

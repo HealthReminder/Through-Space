@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour {
 	[Header("Environment Information")]
     public float distanceFromStar;
 	public PlanetData closestPlanet, orbitingNow;
-	public Transform orbitingStar;
+	public StarController currentOrbitingStar;
 	List<PlanetData> planetsAvailable;
     public bool hasArrived=true;
 
@@ -120,8 +120,8 @@ public class PlayerManager : MonoBehaviour {
 
 		if(orbitingNow)
 			sj.connectedAnchor = orbitingNow.transform.position;
-        if (orbitingStar){
-            distanceFromStar = Vector2.Distance(orbitingStar.position, transform.position);
+        if (currentOrbitingStar){
+            distanceFromStar = Vector2.Distance(currentOrbitingStar.transform.position, transform.position);
 			playerView.ChangeDistanceText(distanceFromStar.ToString("F2") +" au"); 
 		}
 		
@@ -146,7 +146,7 @@ public class PlayerManager : MonoBehaviour {
             {
                 hasArrived = true;
                 timeController.ChangeTime(1);
-				camBehaviour.AlignToStar(orbitingStar.transform);
+				camBehaviour.AlignToStar(currentOrbitingStar.transform);
                 //print(distanceFromStar + " haha");
             }else  if (distanceFromStar < 60)
             {
@@ -204,17 +204,9 @@ public class PlayerManager : MonoBehaviour {
 
 			//Find right music set
 			if(AmbientSoundManager.instance)
-				if(orbitingNow.GetComponent<BodyData>()){
-					Debug.Log(orbitingNow.GetComponent<BodyData>().ambientTrackName);
-					AmbientSoundManager.instance.StartAmbientSound(orbitingNow.GetComponent<BodyData>().ambientTrackName);
-				}
-				else{
-					BodyData bd = orbitingNow.transform.parent.GetComponent<BodyData>();
-					Debug.Log(bd.ambientTrackName);
-					if(bd != null)
-						if(!string.IsNullOrEmpty(bd.ambientTrackName))
-							AmbientSoundManager.instance.StartAmbientSound(bd.ambientTrackName);
-				}
+				if(orbitingNow.ambientSound != null)
+					AmbientSoundManager.instance.StartAmbientSound(orbitingNow.ambientSound);
+			
 				
 				
 			

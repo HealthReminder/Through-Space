@@ -29,7 +29,7 @@ Transform:
   m_Children:
   - {fileID: 4527963556277594}
   m_Father: {fileID: 4808934514074254}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1039984291075258
 GameObject:
@@ -59,7 +59,6 @@ Transform:
   m_LocalPosition: {x: 581, y: -176, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4892607784153166}
   - {fileID: 4076170515077198}
   - {fileID: 4649297716481596}
   - {fileID: 4396754505397052}
@@ -78,8 +77,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planets:
+  rotationData:
   - {fileID: 114236631453274388}
+  planetDatas:
+  - {fileID: 114884208617634322}
 --- !u!1 &1056353003742252
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,8 +305,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 0}
+  ambientSound:
+    name: 
+    clip: {fileID: 8300000, guid: 349e99d454525a34fae2aeb2afe7a429, type: 3}
+    randomPortion: 0.31
   influenceRadius: 4
   gravitationalForce: 1
 --- !u!1 &1085895851849560
@@ -418,7 +421,7 @@ Transform:
   m_Children:
   - {fileID: 4672205814209662}
   m_Father: {fileID: 4808934514074254}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &212416700131218238
 SpriteRenderer:
@@ -515,7 +518,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4808934514074254}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 387.88}
 --- !u!212 &212218612888317384
 SpriteRenderer:
@@ -604,36 +607,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevel: 20
---- !u!1 &1634882388024882
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4892607784153166}
-  m_Layer: 0
-  m_Name: Meteor Belt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4892607784153166
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1634882388024882}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35538998, y: 0.35538998, z: 0.35538998}
-  m_Children: []
-  m_Father: {fileID: 4808934514074254}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1767448830899952
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,5 +683,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 

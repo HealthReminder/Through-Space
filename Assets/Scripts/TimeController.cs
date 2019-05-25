@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class TimeController : MonoBehaviour {
 	public bool isOn;
@@ -26,6 +27,9 @@ public class TimeController : MonoBehaviour {
 
 	public void PauseTime() {
 		Time.timeScale = 0;
+	}
+	public void RestartScene(){
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 	
 }

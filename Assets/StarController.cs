@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEditor;
 public class StarController : MonoBehaviour {
 
-	public BodyData[] planets;
+	public BodyData[] rotationData;
+	[SerializeField]	public PlanetData[] planetDatas;
+ 
 	
 	void Update () {
-		foreach(BodyData b in planets)
-			b.transform.Rotate (0, 0, Time.deltaTime*b.rotationSpeed/5);
+		foreach(BodyData b in rotationData)
+			b.transform.Rotate (0, 0, Time.deltaTime*b.rotationSpeed/5);			
 	}
 
 }

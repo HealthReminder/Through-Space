@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -542,8 +542,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -15
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &20922711
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,8 +590,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &21932021
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,8 +740,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 1
 --- !u!96 &22487828
@@ -1124,8 +1122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &41877965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,8 +1203,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &50053069
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,8 +1754,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 45
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &64997010
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,8 +2010,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 1
 --- !u!96 &72094195
@@ -2250,8 +2244,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &78069077
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,11 +2414,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5968531332851791892, guid: 568c5087da4986b41aacdc7f9256c8af,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5967843920018562540, guid: 568c5087da4986b41aacdc7f9256c8af,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -2441,6 +2428,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968531332851791892, guid: 568c5087da4986b41aacdc7f9256c8af,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5498427042585661867, guid: 568c5087da4986b41aacdc7f9256c8af,
         type: 3}
@@ -3305,7 +3297,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1039984291075258, guid: 0948615e7281ad84db0c9e4a27808215, type: 3}
       propertyPath: m_Name
-      value: F3
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 4808934514074254, guid: 0948615e7281ad84db0c9e4a27808215, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3351,11 +3343,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114884208617634322, guid: 0948615e7281ad84db0c9e4a27808215,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0948615e7281ad84db0c9e4a27808215, type: 3}
 --- !u!1 &139677618
@@ -3856,8 +3843,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -20
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &166249962
 GameObject:
   m_ObjectHideFlags: 0
@@ -3906,8 +3891,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 25
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &168559390
 GameObject:
   m_ObjectHideFlags: 0
@@ -3956,8 +3939,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &170584696
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,8 +4000,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -45
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &174611365
 GameObject:
   m_ObjectHideFlags: 0
@@ -4272,8 +4251,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 2
 --- !u!96 &184709879
@@ -5002,8 +4983,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 25
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &229291861
 GameObject:
   m_ObjectHideFlags: 0
@@ -5576,8 +5555,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 25
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &245895165
 GameObject:
   m_ObjectHideFlags: 0
@@ -5894,8 +5871,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 25
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &265421196
 GameObject:
   m_ObjectHideFlags: 0
@@ -7745,7 +7720,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1226431745069328, guid: a9a75955152d0464a900769bd8c1c024, type: 3}
       propertyPath: m_Name
-      value: Q5
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4452191396742328, guid: a9a75955152d0464a900769bd8c1c024, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7791,16 +7766,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114400440582378232, guid: a9a75955152d0464a900769bd8c1c024,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
-    - target: {fileID: 114455778257630202, guid: a9a75955152d0464a900769bd8c1c024,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9a75955152d0464a900769bd8c1c024, type: 3}
 --- !u!1 &332817140
@@ -8283,8 +8248,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 3
   gravitationalForce: 2
 --- !u!96 &339355252
@@ -8517,8 +8484,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 2
 --- !u!96 &340999516
@@ -8752,8 +8721,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 20
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &353690169
 GameObject:
   m_ObjectHideFlags: 0
@@ -9941,7 +9908,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1460824064085900, guid: 1c2b9dcca2591e14d95ad992b734f7f1, type: 3}
       propertyPath: m_Name
-      value: BR
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4598762495524608, guid: 1c2b9dcca2591e14d95ad992b734f7f1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9987,16 +9954,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114860727391202662, guid: 1c2b9dcca2591e14d95ad992b734f7f1,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
-    - target: {fileID: 114966259758659390, guid: 1c2b9dcca2591e14d95ad992b734f7f1,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c2b9dcca2591e14d95ad992b734f7f1, type: 3}
 --- !u!1 &382189969
@@ -10403,8 +10360,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 25
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &391347329
 GameObject:
   m_ObjectHideFlags: 0
@@ -10589,8 +10544,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 20
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1001 &401388115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10600,7 +10553,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1477378298758606, guid: a8b5e687585a47642aa4c45ce0907bb7, type: 3}
       propertyPath: m_Name
-      value: B
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4672604458658694, guid: a8b5e687585a47642aa4c45ce0907bb7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10690,7 +10643,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1852043924279478, guid: 92d22c3568d8be44292a87875edec21d, type: 3}
       propertyPath: m_Name
-      value: Q3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4470642055107790, guid: 92d22c3568d8be44292a87875edec21d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10736,21 +10689,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114693509902063850, guid: 92d22c3568d8be44292a87875edec21d,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
-    - target: {fileID: 114974230878257286, guid: 92d22c3568d8be44292a87875edec21d,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
-    - target: {fileID: 114815859233606424, guid: 92d22c3568d8be44292a87875edec21d,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92d22c3568d8be44292a87875edec21d, type: 3}
 --- !u!1 &412281957
@@ -10888,8 +10826,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1322252069}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 4
   gravitationalForce: 1
 --- !u!96 &425257261
@@ -11397,8 +11337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -35
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &459926000
 GameObject:
   m_ObjectHideFlags: 0
@@ -11621,8 +11559,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 15
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &462935789
 GameObject:
   m_ObjectHideFlags: 0
@@ -12529,8 +12465,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 1
 --- !u!96 &494650736
@@ -13078,8 +13016,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 0}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 3
   gravitationalForce: 3
 --- !u!96 &500089610
@@ -13872,8 +13812,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 20
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &529313678
 GameObject:
   m_ObjectHideFlags: 0
@@ -13955,8 +13893,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 20
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1001 &545232969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13966,7 +13902,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1106741398111542, guid: ee875a5944e828c4dacbc4f19ea575fe, type: 3}
       propertyPath: m_Name
-      value: GS1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4240667608677924, guid: ee875a5944e828c4dacbc4f19ea575fe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14012,16 +13948,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114579047130660186, guid: ee875a5944e828c4dacbc4f19ea575fe,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
-    - target: {fileID: 114967964206657152, guid: ee875a5944e828c4dacbc4f19ea575fe,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee875a5944e828c4dacbc4f19ea575fe, type: 3}
 --- !u!1 &545638738
@@ -14073,8 +13999,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -25
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &549233003
 GameObject:
   m_ObjectHideFlags: 0
@@ -14566,7 +14490,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1312406402149650, guid: f1d744ac04136b24d95a0e8e6e420c4c, type: 3}
       propertyPath: m_Name
-      value: FR2
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4671722045077078, guid: f1d744ac04136b24d95a0e8e6e420c4c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14612,16 +14536,56 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114072575404102956, guid: f1d744ac04136b24d95a0e8e6e420c4c,
+    - target: {fileID: 1076672939770520357, guid: f1d744ac04136b24d95a0e8e6e420c4c,
         type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
-    - target: {fileID: 114357797152330846, guid: f1d744ac04136b24d95a0e8e6e420c4c,
+      propertyPath: m_LocalRotation.z
+      value: -0.8372481
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076672939770520357, guid: f1d744ac04136b24d95a0e8e6e420c4c,
         type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
+      propertyPath: m_LocalRotation.w
+      value: 0.5468232
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076672939770520357, guid: f1d744ac04136b24d95a0e8e6e420c4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -113.701004
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076672939770520357, guid: f1d744ac04136b24d95a0e8e6e420c4c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076672939770520357, guid: f1d744ac04136b24d95a0e8e6e420c4c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -29.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6265781753690909030, guid: f1d744ac04136b24d95a0e8e6e420c4c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.79403746
+      objectReference: {fileID: 0}
+    - target: {fileID: 6265781753690909030, guid: f1d744ac04136b24d95a0e8e6e420c4c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.60786897
+      objectReference: {fileID: 0}
+    - target: {fileID: 6265781753690909030, guid: f1d744ac04136b24d95a0e8e6e420c4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -105.129005
+      objectReference: {fileID: 0}
+    - target: {fileID: 6265781753690909030, guid: f1d744ac04136b24d95a0e8e6e420c4c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6265781753690909030, guid: f1d744ac04136b24d95a0e8e6e420c4c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -30.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1d744ac04136b24d95a0e8e6e420c4c, type: 3}
 --- !u!1 &564191717
@@ -15074,8 +15038,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1322252069}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 5
   gravitationalForce: 1
 --- !u!96 &590625053
@@ -15592,7 +15558,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1056883890309932, guid: 15b19ea2642d7bc45bce840f20953a4f, type: 3}
       propertyPath: m_Name
-      value: GS3
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4325016569614636, guid: 15b19ea2642d7bc45bce840f20953a4f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15638,21 +15604,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -86.902
       objectReference: {fileID: 0}
-    - target: {fileID: 114084931587580368, guid: 15b19ea2642d7bc45bce840f20953a4f,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
-    - target: {fileID: 114813690065706522, guid: 15b19ea2642d7bc45bce840f20953a4f,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
-    - target: {fileID: 114312108758198808, guid: 15b19ea2642d7bc45bce840f20953a4f,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15b19ea2642d7bc45bce840f20953a4f, type: 3}
 --- !u!4 &641004745
@@ -16072,8 +16023,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1592925554}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 1
 --- !u!96 &654578295
@@ -16676,8 +16629,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 25
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &685419537
 GameObject:
   m_ObjectHideFlags: 0
@@ -17832,8 +17783,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1001 &732081600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17843,7 +17792,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1420127880086392, guid: 544ab7672f09e414d976b61c1ebe81f2, type: 3}
       propertyPath: m_Name
-      value: FR1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4728152997789852, guid: 544ab7672f09e414d976b61c1ebe81f2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17889,11 +17838,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114551777140562156, guid: 544ab7672f09e414d976b61c1ebe81f2,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 544ab7672f09e414d976b61c1ebe81f2, type: 3}
 --- !u!1 &735610858
@@ -18080,8 +18024,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 2
 --- !u!96 &744398086
@@ -18512,8 +18458,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &764657298
 GameObject:
   m_ObjectHideFlags: 0
@@ -19246,8 +19190,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 2
 --- !u!96 &799292778
@@ -20517,8 +20463,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 10
   gravitationalForce: 4
 --- !u!96 &843478271
@@ -20770,8 +20718,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 2
 --- !u!96 &863217894
@@ -21063,7 +21013,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1803097288949316, guid: b65170f5c1bd4fa488807465490f9b15, type: 3}
       propertyPath: m_Name
-      value: Q4
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4219990314912672, guid: b65170f5c1bd4fa488807465490f9b15, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21109,11 +21059,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114747636296042006, guid: b65170f5c1bd4fa488807465490f9b15,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b65170f5c1bd4fa488807465490f9b15, type: 3}
 --- !u!1 &871007391
@@ -21590,7 +21535,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1529026025309952, guid: a6a1b9e17d0acd948854156360ba7f27, type: 3}
       propertyPath: m_Name
-      value: GC3
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4373221853708216, guid: a6a1b9e17d0acd948854156360ba7f27, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21636,11 +21581,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114821258149167998, guid: a6a1b9e17d0acd948854156360ba7f27,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6a1b9e17d0acd948854156360ba7f27, type: 3}
 --- !u!1 &902706430
@@ -21993,8 +21933,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 1
   gravitationalForce: 1
 --- !u!96 &906072416
@@ -22645,8 +22587,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 4
   gravitationalForce: 4
 --- !u!96 &930577153
@@ -22877,8 +22821,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &935418052
 GameObject:
   m_ObjectHideFlags: 0
@@ -22927,8 +22869,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &936589827
 GameObject:
   m_ObjectHideFlags: 0
@@ -23178,8 +23118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &956927440
 GameObject:
   m_ObjectHideFlags: 0
@@ -23230,8 +23168,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 1
 --- !u!96 &956927443
@@ -23464,8 +23404,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 0}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 3
   gravitationalForce: 3
 --- !u!96 &958650322
@@ -23696,8 +23638,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &974930831
 GameObject:
   m_ObjectHideFlags: 0
@@ -23782,8 +23722,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -55
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1000776715
 GameObject:
   m_ObjectHideFlags: 0
@@ -24216,8 +24154,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 917590194}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 3
   gravitationalForce: 1
 --- !u!96 &1007546272
@@ -24793,8 +24733,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 15
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1047720954
 GameObject:
   m_ObjectHideFlags: 0
@@ -24843,8 +24781,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 45
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1050957192
 GameObject:
   m_ObjectHideFlags: 0
@@ -24895,8 +24831,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 1
   gravitationalForce: 1
 --- !u!96 &1050957195
@@ -25327,8 +25265,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1069564082
 GameObject:
   m_ObjectHideFlags: 0
@@ -25561,8 +25497,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 1
   gravitationalForce: 1
 --- !u!96 &1074611578
@@ -26428,8 +26366,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1117303869
 GameObject:
   m_ObjectHideFlags: 0
@@ -26478,8 +26414,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -55
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!4 &1117972984
 Transform:
   m_ObjectHideFlags: 0
@@ -26880,8 +26814,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1134813930
 GameObject:
   m_ObjectHideFlags: 0
@@ -27069,8 +27001,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 25
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1137447272
 GameObject:
   m_ObjectHideFlags: 0
@@ -27336,8 +27266,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 2
 --- !u!96 &1137516466
@@ -27928,8 +27860,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1592925554}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 1
   gravitationalForce: 1
 --- !u!96 &1166647293
@@ -28160,8 +28094,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1171073900
 GameObject:
   m_ObjectHideFlags: 0
@@ -29195,8 +29127,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 2
 --- !u!96 &1201593239
@@ -29585,8 +29519,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1223723961
 GameObject:
   m_ObjectHideFlags: 0
@@ -29719,8 +29651,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 1
 --- !u!96 &1231920426
@@ -30101,8 +30035,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -20
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1253232703
 GameObject:
   m_ObjectHideFlags: 0
@@ -30909,8 +30841,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1276134070
 GameObject:
   m_ObjectHideFlags: 0
@@ -31210,8 +31140,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 1
   gravitationalForce: 1
 --- !u!96 &1291122099
@@ -31444,8 +31376,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 2
 --- !u!96 &1299531909
@@ -32345,8 +32279,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 1
 --- !u!96 &1335421012
@@ -32885,8 +32821,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 2
 --- !u!96 &1346883360
@@ -33434,8 +33372,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 4
   gravitationalForce: 1
 --- !u!96 &1365044605
@@ -33635,6 +33575,63 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &1367352122
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1059716574916954, guid: 352dba539a16d2549ab7dd6216365fbc, type: 3}
+      propertyPath: m_Name
+      value: SoundtrackManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684277992163066, guid: 352dba539a16d2549ab7dd6216365fbc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 670.4528
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684277992163066, guid: 352dba539a16d2549ab7dd6216365fbc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 95.91321
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684277992163066, guid: 352dba539a16d2549ab7dd6216365fbc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684277992163066, guid: 352dba539a16d2549ab7dd6216365fbc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684277992163066, guid: 352dba539a16d2549ab7dd6216365fbc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684277992163066, guid: 352dba539a16d2549ab7dd6216365fbc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684277992163066, guid: 352dba539a16d2549ab7dd6216365fbc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684277992163066, guid: 352dba539a16d2549ab7dd6216365fbc, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684277992163066, guid: 352dba539a16d2549ab7dd6216365fbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684277992163066, guid: 352dba539a16d2549ab7dd6216365fbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684277992163066, guid: 352dba539a16d2549ab7dd6216365fbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 352dba539a16d2549ab7dd6216365fbc, type: 3}
 --- !u!1 &1371572673
 GameObject:
   m_ObjectHideFlags: 0
@@ -34156,6 +34153,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224867420563719866, guid: df4b33c8eef0af24c89e0cf9aea302f4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114431109606661766, guid: df4b33c8eef0af24c89e0cf9aea302f4,
         type: 3}
       propertyPath: overrideLevel
@@ -34164,12 +34166,7 @@ PrefabInstance:
     - target: {fileID: 114431109606661766, guid: df4b33c8eef0af24c89e0cf9aea302f4,
         type: 3}
       propertyPath: newLevel
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224867420563719866, guid: df4b33c8eef0af24c89e0cf9aea302f4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df4b33c8eef0af24c89e0cf9aea302f4, type: 3}
@@ -34515,7 +34512,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1255202922204426, guid: fd14b0cdb0e9d254e855f24b728fac31, type: 3}
       propertyPath: m_Name
-      value: Q2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4472152162840516, guid: fd14b0cdb0e9d254e855f24b728fac31, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34561,16 +34558,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114287357099926916, guid: fd14b0cdb0e9d254e855f24b728fac31,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
-    - target: {fileID: 114121157948334792, guid: fd14b0cdb0e9d254e855f24b728fac31,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd14b0cdb0e9d254e855f24b728fac31, type: 3}
 --- !u!4 &1388861898 stripped
@@ -35178,8 +35165,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1402462440
 GameObject:
   m_ObjectHideFlags: 0
@@ -35228,8 +35213,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -35
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1403468878
 GameObject:
   m_ObjectHideFlags: 0
@@ -35480,8 +35463,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 0}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 3
   gravitationalForce: 3
 --- !u!96 &1409082551
@@ -35848,8 +35833,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1412127461
 GameObject:
   m_ObjectHideFlags: 0
@@ -36017,8 +36000,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1419770090
 GameObject:
   m_ObjectHideFlags: 0
@@ -36318,8 +36299,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 0}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 3
   gravitationalForce: 3
 --- !u!96 &1451770336
@@ -36665,8 +36648,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 45
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1472321728
 GameObject:
   m_ObjectHideFlags: 0
@@ -36715,8 +36696,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 45
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1478281567
 GameObject:
   m_ObjectHideFlags: 0
@@ -37178,6 +37157,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1490761968
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4179182892019767063, guid: 81d2f6f4defad984d96889305c697980,
+        type: 3}
+      propertyPath: m_Name
+      value: AmbientSoundController
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179182892019767061, guid: 81d2f6f4defad984d96889305c697980,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 274.29547
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179182892019767061, guid: 81d2f6f4defad984d96889305c697980,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1577.2406
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179182892019767061, guid: 81d2f6f4defad984d96889305c697980,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.0691886
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179182892019767061, guid: 81d2f6f4defad984d96889305c697980,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179182892019767061, guid: 81d2f6f4defad984d96889305c697980,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179182892019767061, guid: 81d2f6f4defad984d96889305c697980,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179182892019767061, guid: 81d2f6f4defad984d96889305c697980,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179182892019767061, guid: 81d2f6f4defad984d96889305c697980,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179182892019767061, guid: 81d2f6f4defad984d96889305c697980,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179182892019767061, guid: 81d2f6f4defad984d96889305c697980,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179182892019767061, guid: 81d2f6f4defad984d96889305c697980,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 81d2f6f4defad984d96889305c697980, type: 3}
 --- !u!1 &1505227606
 GameObject:
   m_ObjectHideFlags: 0
@@ -38233,8 +38281,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 0}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 3
   gravitationalForce: 3
 --- !u!96 &1536226380
@@ -39099,8 +39149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1582664262
 GameObject:
   m_ObjectHideFlags: 0
@@ -39449,8 +39497,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -10
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!4 &1592925554
 Transform:
   m_ObjectHideFlags: 0
@@ -39532,8 +39578,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1604868759
 GameObject:
   m_ObjectHideFlags: 0
@@ -39584,8 +39628,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 2
 --- !u!96 &1604868762
@@ -40183,8 +40229,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 35
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1624982335
 GameObject:
   m_ObjectHideFlags: 0
@@ -40328,7 +40372,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1528252595170832, guid: 5760c3cdf41bba749bf90f4552165469, type: 3}
       propertyPath: m_Name
-      value: GC2
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4287939924272326, guid: 5760c3cdf41bba749bf90f4552165469, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40379,11 +40423,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ec15fa6a9ed97a84cbb02e271a257bfd, type: 2}
-    - target: {fileID: 114207427548387358, guid: 5760c3cdf41bba749bf90f4552165469,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5760c3cdf41bba749bf90f4552165469, type: 3}
 --- !u!1 &1629079288
@@ -40654,8 +40693,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 35
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1637534324
 GameObject:
   m_ObjectHideFlags: 0
@@ -41558,8 +41595,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 5
   gravitationalForce: 4
 --- !u!96 &1662191276
@@ -41990,8 +42029,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 20
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1694777750
 GameObject:
   m_ObjectHideFlags: 0
@@ -43517,8 +43554,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1748788596
 GameObject:
   m_ObjectHideFlags: 0
@@ -43770,8 +43805,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 1
 --- !u!96 &1765074186
@@ -44336,8 +44373,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1779670294
 GameObject:
   m_ObjectHideFlags: 0
@@ -44547,7 +44582,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1236776354845954, guid: 6c95d7ec7572e8447a6b21675f971adc, type: 3}
       propertyPath: m_Name
-      value: F1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4692524452632094, guid: 6c95d7ec7572e8447a6b21675f971adc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -44645,8 +44680,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 2
 --- !u!96 &1789382562
@@ -45077,8 +45114,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -55
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1805725489
 GameObject:
   m_ObjectHideFlags: 0
@@ -45846,8 +45881,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 25
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1847183767
 GameObject:
   m_ObjectHideFlags: 0
@@ -46234,8 +46267,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 2
 --- !u!96 &1855752466
@@ -47338,6 +47373,49 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 870873647}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1906160390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1906160392}
+  - component: {fileID: 1906160391}
+  m_Layer: 0
+  m_Name: DevSystemOSTPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1906160391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906160390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c8f9a8214591e489b480d50cceacc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1906160392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906160390}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1189.9103, y: -542.3755, z: 23.853132}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1912703506
 GameObject:
   m_ObjectHideFlags: 0
@@ -47386,8 +47464,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -55
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1916854965
 GameObject:
   m_ObjectHideFlags: 0
@@ -47536,8 +47612,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1933138350
 GameObject:
   m_ObjectHideFlags: 0
@@ -48096,8 +48170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1959013312
 GameObject:
   m_ObjectHideFlags: 0
@@ -48341,7 +48413,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1555375256259194, guid: b4f946fad48ea934a8a84e9f657b691e, type: 3}
       propertyPath: m_Name
-      value: FB
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4309617330567588, guid: b4f946fad48ea934a8a84e9f657b691e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48387,16 +48459,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114859224768364088, guid: b4f946fad48ea934a8a84e9f657b691e,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
-    - target: {fileID: 114768885805948684, guid: b4f946fad48ea934a8a84e9f657b691e,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4f946fad48ea934a8a84e9f657b691e, type: 3}
 --- !u!1 &1990918345
@@ -48608,7 +48670,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1013845591112434, guid: 9ab70d02ed003644cbfc3c2310377b74, type: 3}
       propertyPath: m_Name
-      value: Q1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4646358823969088, guid: 9ab70d02ed003644cbfc3c2310377b74, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48654,11 +48716,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114152038663803190, guid: 9ab70d02ed003644cbfc3c2310377b74,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ab70d02ed003644cbfc3c2310377b74, type: 3}
 --- !u!1 &1999691407
@@ -48741,7 +48798,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1256334078569712, guid: f28fc90301bd6ff4cbf5f961f4ac55b1, type: 3}
       propertyPath: m_Name
-      value: GS2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4210397099826958, guid: f28fc90301bd6ff4cbf5f961f4ac55b1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48787,11 +48844,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114167698623432962, guid: f28fc90301bd6ff4cbf5f961f4ac55b1,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f28fc90301bd6ff4cbf5f961f4ac55b1, type: 3}
 --- !u!1 &2007632642
@@ -49269,7 +49321,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1373343002544122, guid: fa47bccaa34d06141bb5d5a850f8ff92, type: 3}
       propertyPath: m_Name
-      value: GC1
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4225588491423768, guid: fa47bccaa34d06141bb5d5a850f8ff92, type: 3}
       propertyPath: m_LocalPosition.x
@@ -49315,11 +49367,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114445585863130182, guid: fa47bccaa34d06141bb5d5a850f8ff92,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa47bccaa34d06141bb5d5a850f8ff92, type: 3}
 --- !u!1 &2038115472
@@ -50530,8 +50577,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 2
   gravitationalForce: 1
 --- !u!96 &2060700291
@@ -50968,8 +51017,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &2085131786
 GameObject:
   m_ObjectHideFlags: 0
@@ -51079,7 +51126,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1069377823468804, guid: 13f4a4c0e71a5fe47a4156f479dcaf7b, type: 3}
       propertyPath: m_Name
-      value: F2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4401074333664280, guid: 13f4a4c0e71a5fe47a4156f479dcaf7b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -51392,8 +51439,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 1613891478}
+  ambientSound:
+    name: 
+    clip: {fileID: 0}
+    randomPortion: 0
   influenceRadius: 5
   gravitationalForce: 4
 --- !u!96 &2092466856
@@ -51856,8 +51905,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &2109063506
 GameObject:
   m_ObjectHideFlags: 0
@@ -52093,8 +52140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 45
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &2129499426
 GameObject:
   m_ObjectHideFlags: 0
@@ -52520,7 +52565,7 @@ PrefabInstance:
     - target: {fileID: 8499878043731775239, guid: bb2eb1b759a97884e9f19115d3e35ae2,
         type: 3}
       propertyPath: m_Name
-      value: BHF
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5025116545966883856, guid: bb2eb1b759a97884e9f19115d3e35ae2,
         type: 3}
@@ -52577,11 +52622,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5404850975188920395, guid: bb2eb1b759a97884e9f19115d3e35ae2,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb2eb1b759a97884e9f19115d3e35ae2, type: 3}
 --- !u!1001 &3279950825815532716
@@ -52593,7 +52633,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1259898425042458, guid: b5c8010193dda2041a246cf3bda0eb2d, type: 3}
       propertyPath: m_Name
-      value: Q0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4226790799933056, guid: b5c8010193dda2041a246cf3bda0eb2d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52639,11 +52679,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114195651405062136, guid: b5c8010193dda2041a246cf3bda0eb2d,
-        type: 3}
-      propertyPath: startSystem
-      value: 
-      objectReference: {fileID: 1613891478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5c8010193dda2041a246cf3bda0eb2d, type: 3}
 --- !u!4 &5025116545966883856 stripped

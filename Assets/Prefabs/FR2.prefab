@@ -857,11 +857,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planets:
+  rotationData:
   - {fileID: 114122408810951382}
   - {fileID: 114550275209029402}
   - {fileID: 114569808808736026}
   - {fileID: 114319741807786206}
+  planetDatas:
+  - {fileID: 114357797152330846}
+  - {fileID: 114072575404102956}
 --- !u!1 &1321092354804252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,6 +1326,8 @@ Transform:
   - {fileID: 4036566264886170}
   - {fileID: 4549047531531804}
   - {fileID: 4017102902517038}
+  - {fileID: 1076672939770520357}
+  - {fileID: 6265781753690909030}
   m_Father: {fileID: 4015929874780322}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -238.742}
@@ -1339,8 +1344,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 25
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1458313941492758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1693,8 +1696,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 0}
+  ambientSound:
+    name: 
+    clip: {fileID: 8300000, guid: 3f5fb97930e1bbf438eccd12080ee5be, type: 3}
+    randomPortion: 0.3
   influenceRadius: 4
   gravitationalForce: 2
 --- !u!1 &1561158120870768
@@ -1939,9 +1944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae183905ac597945b21fa565b0ccce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 45
-  musicSetName: 
-  typeOfPlanet: 
+  rotationSpeed: 44
 --- !u!1 &1627375117760450
 GameObject:
   m_ObjectHideFlags: 0
@@ -2626,8 +2629,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1754873941823910
 GameObject:
   m_ObjectHideFlags: 0
@@ -3254,8 +3255,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 0}
+  ambientSound:
+    name: 
+    clip: {fileID: 8300000, guid: 6c2de16baef632a458e15af49a2c2254, type: 3}
+    randomPortion: 0.5
   influenceRadius: 4
   gravitationalForce: 2
 --- !u!1 &1817257707647038
@@ -3302,9 +3305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae183905ac597945b21fa565b0ccce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 45
-  musicSetName: 
-  typeOfPlanet: 
+  rotationSpeed: 40
 --- !u!1 &1867232716952358
 GameObject:
   m_ObjectHideFlags: 0
@@ -3680,6 +3681,198 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987425028996726}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.01, y: -0.02}
+  m_Size: {x: 0.79, y: 2.26}
+  m_Direction: 0
+--- !u!1 &5593908276213137438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1076672939770520357}
+  - component: {fileID: 6035934633480787271}
+  - component: {fileID: 4795254044617243738}
+  m_Layer: 0
+  m_Name: Meteor (7)
+  m_TagString: surface
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1076672939770520357
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5593908276213137438}
+  m_LocalRotation: {x: -0, y: -0, z: -0.82566595, w: 0.5641594}
+  m_LocalPosition: {x: -9.56, y: -29.1, z: 0}
+  m_LocalScale: {x: 2.3718731, y: 2.3718731, z: 2.3718722}
+  m_Children: []
+  m_Father: {fileID: 4030919469680946}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -111.312004}
+--- !u!212 &6035934633480787271
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5593908276213137438}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 100
+  m_Sprite: {fileID: 21300008, guid: d520a3b994c341d4c968520aa8387bfb, type: 3}
+  m_Color: {r: 0.14901961, g: 0.8745099, b: 0.43529415, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.76, y: 1.76}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!70 &4795254044617243738
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5593908276213137438}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.01, y: -0.02}
+  m_Size: {x: 0.79, y: 2.26}
+  m_Direction: 0
+--- !u!1 &9057099028563121864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6265781753690909030}
+  - component: {fileID: 4874185135521478436}
+  - component: {fileID: 1586113808044481637}
+  m_Layer: 0
+  m_Name: Meteor (8)
+  m_TagString: surface
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6265781753690909030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9057099028563121864}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7811916, w: 0.6242914}
+  m_LocalPosition: {x: -4.02, y: -31.17, z: 0}
+  m_LocalScale: {x: 2.3718736, y: 2.3718736, z: 2.371873}
+  m_Children: []
+  m_Father: {fileID: 4030919469680946}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -102.740005}
+--- !u!212 &4874185135521478436
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9057099028563121864}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 100
+  m_Sprite: {fileID: 21300010, guid: d520a3b994c341d4c968520aa8387bfb, type: 3}
+  m_Color: {r: 0.14901961, g: 0.8745099, b: 0.43529415, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.76, y: 1.76}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!70 &1586113808044481637
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9057099028563121864}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}

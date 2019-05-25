@@ -45,8 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1073043956884704
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,8 +300,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 0}
+  ambientSound:
+    name: 
+    clip: {fileID: 8300000, guid: f7ada6d455e433642a2e5ce995605f6d, type: 3}
+    randomPortion: 0.37
   influenceRadius: 4
   gravitationalForce: 2
 --- !u!1 &1155974461474528
@@ -680,8 +680,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1501275967688502
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,8 +966,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1557116025340662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,8 +1011,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  musicSetName: 
-  typeOfPlanet: 
 --- !u!1 &1725471390220732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,8 +1331,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 0}
+  ambientSound:
+    name: 
+    clip: {fileID: 8300000, guid: 0fc95d3be74748c4dad4f24a34be0c42, type: 3}
+    randomPortion: 0.3
   influenceRadius: 6
   gravitationalForce: 3
 --- !u!1 &1736985369367012
@@ -1484,11 +1480,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planets:
+  rotationData:
   - {fileID: 114776643553808776}
   - {fileID: 114654004853148066}
   - {fileID: 114254515048985518}
   - {fileID: 114841232289792334}
+  planetDatas:
+  - {fileID: 114747636296042006}
+  - {fileID: 114641200527266170}
+  - {fileID: 114623487153096578}
 --- !u!1 &1862044806103508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1810,8 +1810,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Tera
-  howIsPronounced: 
-  startSystem: {fileID: 0}
+  ambientSound:
+    name: 
+    clip: {fileID: 8300000, guid: 9ceb2a06f773ad04f92669a377086e75, type: 3}
+    randomPortion: 0.314
   influenceRadius: 6
   gravitationalForce: 3
 --- !u!1 &1961088207917770
