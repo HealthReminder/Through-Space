@@ -1461,8 +1461,8 @@ MonoBehaviour:
   name: Tera
   ambientSound:
     name: 
-    clip: {fileID: 8300000, guid: a60360cd7fdecfd4e8f154a7a63d0ad6, type: 3}
-    randomPortion: 0.236
+    clip: {fileID: 8300000, guid: 0048206de20cb2b4aa46d04bf02d750f, type: 3}
+    randomPortion: 0.3
   influenceRadius: 4
   gravitationalForce: 1
 --- !u!1 &1329511954200484
@@ -2398,7 +2398,7 @@ MonoBehaviour:
   ambientSound:
     name: 
     clip: {fileID: 8300000, guid: 2539bb1ae9b6b1e4d8f81dbb2f9342a7, type: 3}
-    randomPortion: 0.338
+    randomPortion: 0.3
   influenceRadius: 4
   gravitationalForce: 2
 --- !u!1 &1793256108795998

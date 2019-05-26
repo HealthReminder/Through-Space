@@ -344,6 +344,7 @@ public class PlayerManager : MonoBehaviour {
     public void Die() {
 		if(isDead)
 			return;
+		AmbientSoundManager.instance.StopAmbientSound();
 		isDead = true;
 		playerView.OnDeath();
 		timeController.isOn = false;

@@ -24,14 +24,14 @@ public class SupportDevelopersBehaviour : MonoBehaviour
         if(switchTo){
             container.gameObject.SetActive(true);
             while(isOn){
-                if(container.localPosition.y > 0)
-                    container.localPosition += new Vector3(0,-10,0);
+                if(container.localPosition.x < 0)
+                    container.localPosition += new Vector3(10,0,0);
                 yield return null;
             }
         }else
         while(!isOn){
-            if(container.localPosition.y > -1000)
-                container.localPosition += new Vector3(0,-10,0);
+            if(container.localPosition.x < 1000)
+                container.localPosition += new Vector3(10,0,0);
             else 
                 container.gameObject.SetActive(false);
             yield return null;

@@ -9,8 +9,9 @@ TextureImporter:
     21300008: PlayerGUI_4
     21300010: PlayerGUI_5
     21300012: PlayerGUI_6
+    21300014: PlayerGUI_7
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -237,6 +238,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ab8062a90037b104bae6b6856c54532c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerGUI_7
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 285
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56e92839c0fb2043ba04f47b7bd6ca3
       vertices: []
       indices: 
       edges: []
