@@ -46,10 +46,10 @@ public class SoundtrackManager : MonoBehaviour {
 			instance = this;
 			DontDestroyOnLoad(gameObject);
 		}
-		
+	}
+	private void Start() {
 		Setup();
 	}
-
 	void Update()
 	{
 		//This function is responsable for not letting the game be silent ever

@@ -37,15 +37,15 @@ public class MenuManager : MonoBehaviour {
 		//Get current max level reached
 		maxLevel = PlayerPrefs.GetInt("maxLevel");
 
-        UpdateMenuButtons();
+        StartCoroutine(UpdateMenuButtons());
         
-        //Play menu soundtrack
-        SoundtrackManager.instance.ChangeSet("Menu");
+        
     }
 	
     //This funtion turns on the rightful menu buttons
-	void UpdateMenuButtons () {
+	IEnumerator UpdateMenuButtons () {
         print("Updating buttons");
+        yield return new WaitForSeconds(Time.deltaTime*10);
 		//Make the right buttons become interactable accordingly to the max level the player reached before
         Debug.Log("Max level is " + maxLevel);
         for(int a = 0; a < buttons.Length; a++)
@@ -65,8 +65,10 @@ public class MenuManager : MonoBehaviour {
                     attachedGUIs[a].SetActive(false);
             }
                
-           
+           yield return new WaitForSeconds(Time.deltaTime*10);
         }
+
+        yield break;
 	}
    
 	//This class will be called by the buttons to load a new scene
