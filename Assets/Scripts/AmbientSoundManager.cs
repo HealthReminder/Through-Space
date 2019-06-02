@@ -36,7 +36,6 @@ public class AmbientSoundManager : MonoBehaviour {
 		else
 		{
 			instance = this;
-			DontDestroyOnLoad(gameObject);
 		}
 
 		Setup();

@@ -6,20 +6,45 @@ using UnityEngine.UI;
 public class FadeBehaviour : MonoBehaviour {
 
 	public float initialDelay = 1;
+	
 	public Image[] images;
 
-	void Start () {
 		//Play intro ost
-        SoundtrackManager.instance.ChangeSet("Intro");
-		StartCoroutine (FadeOut ());
+        
+	
+	bool hasStarted = false;
+	bool hasStartedFading = false;
+	private void Update() {
+		if(!hasStarted){
+			SoundtrackManager.instance.ChangeSet("Intro");
+			StartCoroutine (FadeOut ());
+			hasStarted = true;
+		}else if(Input.anyKeyDown||Input.touchCount > 0)
+			if(hasStartedFading){
+				hasStartedFading = false;
+				StopCoroutine(FadeOut());
+				for (int i = 0; i < images.Length; i++)
+				images[i].gameObject.SetActive(false);
+				//Play menu soundtrack
+				SoundtrackManager.instance.ChangeSet("Menu");
+			}
+
+
 	}
+
 	IEnumerator FadeOut() {
+		Debug.Log(".");
+		yield return null;
 		if(images.Length <= 0)
 			yield break;
 		for (int i = 0; i < images.Length; i++)
 			images[i].gameObject.SetActive(true);
+		Debug.Log(".");
+		yield return new WaitForSeconds(0.1f);
 
-		yield return new WaitForSeconds(initialDelay);
+		hasStartedFading = true;
+		Debug.Log(".");
+		yield return new WaitForSeconds(2.1f);
 			
 		while (images[0].color.a > 0) {
 			for (int i = 0; i < images.Length; i++)
@@ -28,10 +53,14 @@ public class FadeBehaviour : MonoBehaviour {
 			}
 			yield return new WaitForSeconds(Time.deltaTime*2);
 		}
-		
+		Debug.Log(".");
 		for (int i = 0; i < images.Length; i++)
 			images[i].gameObject.SetActive(false);
 		//Play menu soundtrack
-        SoundtrackManager.instance.ChangeSet("Menu");
+		yield return null;
+		if(hasStartedFading)
+        	SoundtrackManager.instance.ChangeSet("Menu");
+		hasStartedFading = false;
+		yield break;
 	}
 }

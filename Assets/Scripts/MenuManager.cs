@@ -54,18 +54,18 @@ public class MenuManager : MonoBehaviour {
             {
                 buttons[a].interactable = true;
                 //buttons[a].gameObject.SetActive(true);
-                if (attachedGUIs[a])
+                if (!attachedGUIs[a].activeSelf)
                     attachedGUIs[a].SetActive(true);
             }
             else
             {
                 buttons[a].interactable = false;
                 //buttons[a].gameObject.SetActive(false);
-                if (attachedGUIs[a])
+                if (attachedGUIs[a].activeSelf)
                     attachedGUIs[a].SetActive(false);
             }
                
-           yield return new WaitForSeconds(Time.deltaTime*10);
+           yield return new WaitForSeconds(Time.deltaTime);
         }
 
         yield break;
@@ -100,10 +100,14 @@ public class MenuManager : MonoBehaviour {
     
     //DEBUGGING
     private void Update() {
-        if(Input.touchCount == 6 || Input.GetKeyDown(KeyCode.P))
-            ResetLevels(); 
-        if(Input.touchCount == 7 ||Input.GetKeyDown(KeyCode.O))
+        if(Input.touchCount == 6 || Input.GetKeyDown(KeyCode.P)){
+            ResetLevels();
+            StartCoroutine(UpdateMenuButtons());
+        }
+        if(Input.touchCount == 7 ||Input.GetKeyDown(KeyCode.O)){
             UnlockLevels();
+            StartCoroutine(UpdateMenuButtons());
+        }
     }
      private void ResetLevels()
     {
