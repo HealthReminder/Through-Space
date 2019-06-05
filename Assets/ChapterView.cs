@@ -26,8 +26,9 @@ public class ChapterView : MonoBehaviour
     bool isWorking = false;
 
     float explosionProgress = 0;
-    float titleDelay = 2;
+    float titleDelay;
     int currentPhase = 0;
+    bool hasEnabledUI = false;
     IEnumerator WorkTitle(string title, Color color) {
         isWorking = false;
         
@@ -43,31 +44,41 @@ public class ChapterView : MonoBehaviour
             } else if(currentPhase == 1){
                 if(explosionProgress < 1) {
                     explosionContainer.localScale = new Vector3(1,explosionCurve.Evaluate(explosionProgress),1);
-                    explosionProgress+= Time.deltaTime*3;
+                    if(explosionProgress > 0.3f){
+                        explosionImage.color+= new Color(0,0,0,-0.005f);
+                        if(!hasEnabledUI){
+                            hasEnabledUI = true;
+                            titleText.enabled = true;
+                            titleBackground.color = new Color(0,0,0,0.8f);
+                        }
+                    }
+                    if(explosionProgress <0.6f)
+                    explosionProgress+= Time.deltaTime*3f;
+                    else
+                    explosionProgress+= Time.deltaTime*1.5f;
+                   
                 }else{
-                    titleText.enabled = true;
-                    titleBackground.color = new Color(0,0,0,1f);
                     currentPhase = 2;
                 }
             }  else if(currentPhase == 2){
                 if(explosionImage.color.a > 0f)
-                    explosionImage.color+= new Color(0,0,0,-0.02f);
+                    explosionImage.color+= new Color(0,0,0,-0.005f);
                 else{
                     currentPhase = 3;
                 }
             } else if(currentPhase == 3){
-                if(titleDelay >= 2) 
+                if(titleDelay >= 0) 
                     titleDelay -= Time.deltaTime;
                 else {
                     currentPhase = 4;
                 }
             }else if(currentPhase == 4){
                 if(titleBackground.color.a > 0f){
-                    titleBackground.color+= new Color(0,0,0,-0.02f);
-                    titleText.color += new Color(0,0,0,-0.02f);
+                    titleBackground.color+= new Color(0,0,0,-0.01f);
+                    titleText.color += new Color(0,0,0,-0.01f);
                 } 
                 if(titleText.color.a > 0f){
-                    titleText.color += new Color(0,0,0,-0.02f);
+                    titleText.color += new Color(0,0,0,-0.01f);
                 }else{
                     titleText.enabled = false;
                     currentPhase = 5;
@@ -101,8 +112,9 @@ public class ChapterView : MonoBehaviour
         titleText.color += new Color(0,0,0,1f);
         yield return null;
         explosionProgress = 0;
-        titleDelay = 0;
+        titleDelay = 0.5f;
         currentPhase = 0;
+        hasEnabledUI = false;
         yield return null;
     }
 }
