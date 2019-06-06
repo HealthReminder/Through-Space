@@ -1084,6 +1084,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Goliath Minor
+  mainColor: {r: 0.18431371, g: 1, b: 0.92756397, a: 1}
+  detailColor: {r: 0.5990566, g: 0.9305032, b: 1, a: 1}
   rotationData:
   - {fileID: 114414183647689734}
   - {fileID: 114941990829730972}

@@ -486,6 +486,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Ahraq Alpha
+  mainColor: {r: 0.9058824, g: 0.454902, b: 0.08235294, a: 1}
+  detailColor: {r: 1, g: 0.6784314, b: 0.23529413, a: 1}
   rotationData:
   - {fileID: 114185038623329372}
   - {fileID: 114288995704653142}

@@ -1480,6 +1480,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Rezonanze
+  mainColor: {r: 0.3066038, g: 1, b: 0.8811322, a: 1}
+  detailColor: {r: 1, g: 0.8170367, b: 0.25943398, a: 1}
   rotationData:
   - {fileID: 114776643553808776}
   - {fileID: 114654004853148066}

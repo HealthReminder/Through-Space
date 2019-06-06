@@ -718,6 +718,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Neptune
+  mainColor: {r: 0.3254717, g: 0.6910117, b: 1, a: 1}
+  detailColor: {r: 0.18396229, g: 0.98216325, b: 1, a: 1}
   rotationData:
   - {fileID: 114641430633746668}
   - {fileID: 114052174666640036}

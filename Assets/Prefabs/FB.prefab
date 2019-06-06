@@ -682,6 +682,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Nix
+  mainColor: {r: 1, g: 0.17661026, b: 0.16509432, a: 1}
+  detailColor: {r: 1, g: 0.43136978, b: 0.33490568, a: 1}
   rotationData:
   - {fileID: 114909326342018434}
   - {fileID: 114584092079907654}

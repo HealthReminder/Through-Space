@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEditor;
 public class StarController : MonoBehaviour {
 
+	public string name;
+	public Color mainColor; public Color detailColor;
 	public BodyData[] rotationData;
 	[SerializeField]	public PlanetData[] planetDatas;
  

@@ -1845,6 +1845,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Gemini
+  mainColor: {r: 1, g: 0.8717779, b: 0.08962262, a: 1}
+  detailColor: {r: 0.61960787, g: 0.91372555, b: 0.98823535, a: 1}
   rotationData:
   - {fileID: 114772861338190120}
   - {fileID: 114000215682519630}

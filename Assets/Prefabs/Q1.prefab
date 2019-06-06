@@ -257,6 +257,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Centauri
+  mainColor: {r: 1, g: 0.44705886, b: 0.0627451, a: 1}
+  detailColor: {r: 0.98039216, g: 0.65882355, b: 0.20784314, a: 1}
   rotationData:
   - {fileID: 114645513620470290}
   - {fileID: 114343148865401864}

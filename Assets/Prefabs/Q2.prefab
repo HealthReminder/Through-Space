@@ -91,6 +91,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Alruba
+  mainColor: {r: 0.7877804, g: 0.990566, b: 0.3037113, a: 1}
+  detailColor: {r: 0.78823537, g: 0.9921569, b: 0.3019608, a: 1}
   rotationData:
   - {fileID: 114141903923060902}
   - {fileID: 114889717540872082}

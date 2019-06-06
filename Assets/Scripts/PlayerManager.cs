@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour {
 	Rigidbody2D rb;
 	//bool dead = false;
 	public bool isInFirstLevel = false;
+	public ChapterView chapterView;
 	
 	[Header("Environment Information")]
     public float distanceFromStar;
@@ -130,20 +131,21 @@ public class PlayerManager : MonoBehaviour {
 			
 			if(distanceFromStar < 20)
 				playerView.ToggleDistanceFromStar(0);
-			else if (distanceFromStar >= 50)
+			else if (distanceFromStar >= 60)
             {
                 // print(distanceFromStar + " TOO FAR");
                 Die();
             }
-            else if (distanceFromStar >= 40)
+            else if (distanceFromStar >= 45)
             {
                  //print(distanceFromStar + " CAREFUL");
             }
         } else
         {
 			playerView.ToggleDistanceFromStar(1);
-            if (distanceFromStar < 25)
+            if (distanceFromStar < 45)
             {
+				StartCoroutine(ShowTitle());
                 hasArrived = true;
                 timeController.ChangeTime(1);
 				camBehaviour.AlignToStar(currentOrbitingStar.transform);
@@ -162,6 +164,17 @@ public class PlayerManager : MonoBehaviour {
         }
 		
     }
+	IEnumerator ShowTitle() {
+		chapterView.ShowTitle(currentOrbitingStar.name,currentOrbitingStar.mainColor,currentOrbitingStar.detailColor);
+		playerView.ToggleGUIContainer(0);
+		yield return null;
+		camBehaviour.ToggleWideCamera();
+		yield return new WaitForSeconds(4);
+		camBehaviour.ToggleFollowCamera();
+		yield return null;
+		playerView.ToggleGUIContainer(1);
+		yield break;
+	}
 	#region Player Interaction
     public void PressedOnScreen()
     {
@@ -196,7 +209,7 @@ public class PlayerManager : MonoBehaviour {
             rb.AddForce(transform.right * closestPlanet.gravitationalForce * closestPlanet.gravitationalForce * 4);
             Debug.DrawRay(transform.position, transform.right * closestPlanet.gravitationalForce,Color.blue, 10);
 
-			//sj.frequency = (float)closestPlanet.gravitationalForce/4;
+			//sj.frequency = (float)closestPlanet.gravitationalForcchapterViewe/4;
 			//The distances must be lower for less dense planet
 			//sj.distance = Vector2.Distance (transform.position+new Vector3(rb.velocity.x,rb.velocity.y,0)*3, closestPlanet.transform.position);
 			sj.distance = Vector2.Distance (transform.position, closestPlanet.transform.position);

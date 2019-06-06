@@ -46,6 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Ahraq Beta
+  mainColor: {r: 1, g: 0.6682045, b: 0.18396229, a: 1}
+  detailColor: {r: 1, g: 0.83371484, b: 0.32549024, a: 1}
   rotationData:
   - {fileID: 114278199872613476}
   planetDatas:

@@ -3189,6 +3189,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Ahalu
+  mainColor: {r: 1, g: 0.4669811, b: 0.888066, a: 1}
+  detailColor: {r: 1, g: 0.5707547, b: 0.66844505, a: 1}
   rotationData:
   - {fileID: 114539621492796128}
   - {fileID: 114972712868856166}

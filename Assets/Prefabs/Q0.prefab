@@ -123,6 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Sirius
+  mainColor: {r: 0.9528302, g: 0.22921856, b: 0.34840158, a: 1}
+  detailColor: {r: 0.95294124, g: 0.227451, b: 0.34901962, a: 1}
   rotationData:
   - {fileID: 114108620928165968}
   planetDatas:
@@ -702,7 +705,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3527658166851063865
 RectTransform:
   m_ObjectHideFlags: 0

@@ -558,6 +558,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Krasachni
+  mainColor: {r: 0.5896226, g: 0.73735857, b: 1, a: 1}
+  detailColor: {r: 0.90283275, g: 1, b: 0.4470588, a: 1}
   rotationData:
   - {fileID: 114963456248475282}
   - {fileID: 114565805049623594}

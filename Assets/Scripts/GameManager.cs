@@ -172,7 +172,7 @@ public class GameManager : MonoBehaviour {
 		while(overlay.color.a < 1){
 			
 			overlay.color+= new Color(0,0,0,+0.05f);
-			yield return new WaitForSeconds(Time.deltaTime*5);
+			yield return new WaitForSeconds(Time.deltaTime*2);
 		}
 
 		yield return new WaitForSeconds(0.5f);

@@ -284,6 +284,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Virgo
+  mainColor: {r: 1, g: 0.9075829, b: 0.25, a: 1}
+  detailColor: {r: 1, g: 0.9607844, b: 0.6431373, a: 1}
   rotationData:
   - {fileID: 114352920277548884}
   - {fileID: 114157709967914670}

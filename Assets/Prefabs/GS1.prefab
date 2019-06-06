@@ -532,6 +532,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Tepler
+  mainColor: {r: 0.1764706, g: 1, b: 0.56078434, a: 1}
+  detailColor: {r: 0.4764151, g: 1, b: 0.7860622, a: 1}
   rotationData:
   - {fileID: 114635243989823520}
   - {fileID: 114550262301799550}

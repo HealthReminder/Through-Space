@@ -77,6 +77,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Alphard
+  mainColor: {r: 0.9339623, g: 0.59313476, b: 0.14538093, a: 1}
+  detailColor: {r: 1, g: 0.7136515, b: 0.3915094, a: 1}
   rotationData:
   - {fileID: 114236631453274388}
   planetDatas:

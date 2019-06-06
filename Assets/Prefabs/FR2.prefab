@@ -857,6 +857,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Pluvius
+  mainColor: {r: 0.73029345, g: 0.6084906, b: 1, a: 1}
+  detailColor: {r: 0.19241722, g: 0.8679245, b: 0.45864654, a: 1}
   rotationData:
   - {fileID: 114122408810951382}
   - {fileID: 114550275209029402}

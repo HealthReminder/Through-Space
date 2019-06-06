@@ -222,6 +222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7621e5565af310847b42a47c4b8e3cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Polaris
+  mainColor: {r: 0.9433962, g: 0.15839358, b: 0.14684942, a: 1}
+  detailColor: {r: 0.8491456, g: 0.8867924, b: 0.8867924, a: 1}
   rotationData:
   - {fileID: 114598729495742790}
   planetDatas:
