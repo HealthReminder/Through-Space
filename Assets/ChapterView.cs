@@ -65,7 +65,7 @@ public class ChapterView : MonoBehaviour
                 }
             }  else if(currentPhase == 2){
                 if(explosionImage.color.a > 0f)
-                    explosionImage.color+= new Color(0,0,0,-Time.deltaTime*4);
+                    explosionImage.color+= new Color(0,0,0,-Time.deltaTime*1);
                 else{
                     currentPhase = 3;
                 }

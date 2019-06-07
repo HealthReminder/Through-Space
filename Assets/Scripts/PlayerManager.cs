@@ -202,7 +202,7 @@ public class PlayerManager : MonoBehaviour {
 
 	void Attach() {
 		if (closestPlanet) {
-			
+			AudioManager.instance.Play("Attached");
 			attached = true;
 			sj.enabled = true;	
 			sj.connectedAnchor = closestPlanet.transform.position;
@@ -271,6 +271,7 @@ public class PlayerManager : MonoBehaviour {
 			if(orbitingNow){
 				playerView.ShowOrbit(true);
 				playerView.ToggleOrbit(k,orbitingNow.transform.position);
+				//AudioManager.instance.Play("InRange");
 			}
 			else
 			{
@@ -284,6 +285,7 @@ public class PlayerManager : MonoBehaviour {
 		
 	}
 	void Detach() {
+		AudioManager.instance.Play("Detached");
         attached = false;
 		sj.enabled = false;	
 		orbitingNow = null;

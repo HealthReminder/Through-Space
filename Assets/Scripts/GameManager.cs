@@ -150,6 +150,7 @@ public class GameManager : MonoBehaviour {
 
 	public IEnumerator Ending()
 	{
+        //AudioManager.instance.Play("OnEnd");
 		Time.timeScale = 1;
         yield return new WaitForSeconds(3f);
 		overlay.color = new Color(0,0,0,0);
@@ -166,6 +167,7 @@ public class GameManager : MonoBehaviour {
 
     public IEnumerator Death()
 	{
+        AudioManager.instance.Play("OnDeath");
 		Time.timeScale = 1;
 		overlay.color = new Color(0,0,0,0);
         yield return new WaitForSeconds(1f);
@@ -182,6 +184,7 @@ public class GameManager : MonoBehaviour {
 
 	public IEnumerator Intro()
 	{
+        AudioManager.instance.Play("StartShip");
 		overlay.color = new Color(0,0,0,1);
 		while(overlay.color.a > 0){
 			
