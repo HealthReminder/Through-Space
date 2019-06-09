@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour {
 	[HideInInspector]
 	public static AudioManager instance;
 	public AnimationCurve rollOfCurve;
+	public float audioManagerVolume = 1;
 	public int sourceQuantity;
 	public int currentSource = 0;
 	AudioSource[] sources;
@@ -21,6 +22,8 @@ public class AudioManager : MonoBehaviour {
 		public float volume = 1;
 		[Range(0.01f,3)]
 		public float pitch = 1;
+		[Range(0,1)]
+		public float pitchVariation = 0;
 		
 		[Header("Clipping")]
 		public Vector2 startAt;
@@ -61,15 +64,15 @@ public class AudioManager : MonoBehaviour {
 				if(s.name == name)
 					currentTrack = s;
 			}
-			StartCoroutine(PlayTrack(currentTrack.track,currentTrack.pitch,currentTrack.volume,currentTrack.startAt,currentTrack.endAt));
+			StartCoroutine(PlayTrack(currentTrack.track,currentTrack.pitch,currentTrack.pitchVariation,currentTrack.volume*audioManagerVolume,currentTrack.startAt,currentTrack.endAt));
 		}
 
 		//}
 		
 	}
 
-	IEnumerator PlayTrack(AudioClip s, float pitch, float volume, Vector2 startAt, float endAt) {
-		sources[currentSource].pitch = pitch;
+	IEnumerator PlayTrack(AudioClip s, float pitch, float pitchVariation, float volume, Vector2 startAt, float endAt) {
+		sources[currentSource].pitch = pitch+ Random.Range(-pitchVariation,pitchVariation);
 		sources[currentSource].volume = volume;
 		sources[currentSource].clip = s;
 		sources[currentSource].time = Random.Range(startAt.x,startAt.y);

@@ -73,6 +73,7 @@ public class MenuManager : MonoBehaviour {
    
 	//This class will be called by the buttons to load a new scene
 	public void SetGoToLevel(int levelID) {
+        AudioManager.instance.Play("Menu_Button");
 		currentLevel = levelID;
 		PlayerPrefs.SetInt("currentLevel", currentLevel);
         SoundtrackManager.instance.ChangeSet("Calm");

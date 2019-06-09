@@ -11,6 +11,7 @@ public class ChapterView : MonoBehaviour
     public Image explosionImage;
     public Transform explosionContainer;
     public AnimationCurve explosionCurve;
+    [HideInInspector] public bool isThisNewLevel = true;
     public static ChapterView instance;
 
 
@@ -37,9 +38,12 @@ public class ChapterView : MonoBehaviour
         
         if(isWorking == false)
         yield return Setup(title,mainColor,detailColor);
-
+        
         yield return null;
         isWorking = true;
+
+        if(isThisNewLevel)
+            AudioManager.instance.Play("Game_Chapter");
 
         while(isWorking) {
             if(currentPhase == 0) {

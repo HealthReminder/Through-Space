@@ -78,6 +78,7 @@ public class GameManager : MonoBehaviour {
 
     public void SpawnSystem(int index)
     {
+        AudioManager.instance.Play("Game_Next");
         if (lastLevel != index) { 
         lastLevel = currentLevel;
         currentLevel = index;
@@ -143,14 +144,20 @@ public class GameManager : MonoBehaviour {
             print("Same level?");
         }
         Debug.DrawRay(player.transform.position, player.transform.right.normalized * 50, Color.cyan, 100000);
-        if (currentLevel > maxLevel)
+        if (currentLevel > maxLevel){
             maxLevel = currentLevel;
+            if(ChapterView.instance)
+                ChapterView.instance.isThisNewLevel = true;
+        } else{
+            if(ChapterView.instance)
+                ChapterView.instance.isThisNewLevel = false;
+        }
         player.CheckForProgress();
     }
 
 	public IEnumerator Ending()
 	{
-        //AudioManager.instance.Play("OnEnd");
+        AudioManager.instance.Play("Game_End");
 		Time.timeScale = 1;
         yield return new WaitForSeconds(3f);
 		overlay.color = new Color(0,0,0,0);
@@ -167,7 +174,6 @@ public class GameManager : MonoBehaviour {
 
     public IEnumerator Death()
 	{
-        AudioManager.instance.Play("OnDeath");
 		Time.timeScale = 1;
 		overlay.color = new Color(0,0,0,0);
         yield return new WaitForSeconds(1f);

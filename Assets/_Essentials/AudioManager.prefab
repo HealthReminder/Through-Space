@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5225751748706384739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5225751748706384741}
+  - component: {fileID: 5225751748706384738}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5225751748706384741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5225751748706384739}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 269.35202, y: 267.86453, z: 0.09417662}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5225751748706384738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5225751748706384739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07364167a75935344aa022e27627c9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rollOfCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  audioManagerVolume: 0.6
+  sourceQuantity: 6
+  currentSource: 0
+  tracks:
+  - name: Player_Attached
+    track: {fileID: 8300000, guid: 6224a1f3707d9cf42af28aaab5aa54bf, type: 3}
+    volume: 1
+    pitch: 1
+    pitchVariation: 0
+    startAt: {x: 0, y: 0}
+    endAt: 0
+  - name: Player_Detached
+    track: {fileID: 8300000, guid: 750bb58ea50b6e047acf528df05f8560, type: 3}
+    volume: 1
+    pitch: 1
+    pitchVariation: 0
+    startAt: {x: 0, y: 0}
+    endAt: 0
+  - name: Player_Start
+    track: {fileID: 8300000, guid: 073a727f14883664fa90c282616a5708, type: 3}
+    volume: 1
+    pitch: 1
+    pitchVariation: 0
+    startAt: {x: 0, y: 0}
+    endAt: 0
+  - name: Game_Chapter
+    track: {fileID: 8300000, guid: 073a727f14883664fa90c282616a5708, type: 3}
+    volume: 1
+    pitch: 1
+    pitchVariation: 0.1
+    startAt: {x: 0, y: 0}
+    endAt: 0
+  - name: Game_Next
+    track: {fileID: 8300000, guid: 4276ed95198215049b5df054179ff0c4, type: 3}
+    volume: 1.5
+    pitch: 1
+    pitchVariation: 0
+    startAt: {x: 0, y: 0}
+    endAt: 0
+  - name: Player_Death
+    track: {fileID: 8300000, guid: 520c47c5edd28b549ab31e796dc8f55a, type: 3}
+    volume: 1
+    pitch: 1
+    pitchVariation: 0
+    startAt: {x: 0, y: 0}
+    endAt: 0
+  - name: Menu_Button
+    track: {fileID: 8300000, guid: fff31c4ccd5897e438c37c8d59709a67, type: 3}
+    volume: 0.25
+    pitch: 1
+    pitchVariation: 0
+    startAt: {x: 0, y: 0}
+    endAt: 0

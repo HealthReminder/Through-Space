@@ -54,6 +54,7 @@ public class PlayerManager : MonoBehaviour {
         if (spawnWithForce)
             rb.AddForce(transform.right*300);
 
+		//AudioManager.instance.Play("Player_Start");
 	}
 
 	public void UpdateAvailablePlanets()
@@ -202,7 +203,7 @@ public class PlayerManager : MonoBehaviour {
 
 	void Attach() {
 		if (closestPlanet) {
-			AudioManager.instance.Play("Attached");
+			AudioManager.instance.Play("Player_Attached");
 			attached = true;
 			sj.enabled = true;	
 			sj.connectedAnchor = closestPlanet.transform.position;
@@ -285,7 +286,7 @@ public class PlayerManager : MonoBehaviour {
 		
 	}
 	void Detach() {
-		AudioManager.instance.Play("Detached");
+		AudioManager.instance.Play("Player_Detached");
         attached = false;
 		sj.enabled = false;	
 		orbitingNow = null;
@@ -359,6 +360,7 @@ public class PlayerManager : MonoBehaviour {
     public void Die() {
 		if(isDead)
 			return;
+		AudioManager.instance.Play("Player_Death");
 		AmbientSoundManager.instance.StopAmbientSound();
 		isDead = true;
 		playerView.OnDeath();
