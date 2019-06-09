@@ -6299,7 +6299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &864740238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6371,9 +6371,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1, y: -190}
-  m_SizeDelta: {x: 23.709991, y: -264.56}
+  m_AnchorMax: {x: 1, y: 0.48241523}
+  m_AnchoredPosition: {x: -1, y: -27}
+  m_SizeDelta: {x: 23.709991, y: 61.440002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &866879932
 GameObject:
@@ -9683,7 +9683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1341099018
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9698,10 +9698,10 @@ RectTransform:
   m_Father: {fileID: 265623930}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.48241523}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.7000122, y: 172.03}
-  m_SizeDelta: {x: 23.709991, y: -264.56}
+  m_AnchoredPosition: {x: -1.7000122, y: 20.029999}
+  m_SizeDelta: {x: 23.709991, y: 39.440002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1341099019
 Animator:
@@ -13771,7 +13771,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d818b817fb4509f43836b9dac37b7ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clearConfig: 0
   buttonContainer: {fileID: 1628623624}
   barSize: 1500
   maxLevel: 3
@@ -14284,32 +14283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5225751748706384738, guid: 4131f43fcdbb8334aa1c5d455e0fe0f8,
         type: 3}
-      propertyPath: tracks.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5225751748706384738, guid: 4131f43fcdbb8334aa1c5d455e0fe0f8,
-        type: 3}
-      propertyPath: tracks.Array.data[5].volume
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5225751748706384738, guid: 4131f43fcdbb8334aa1c5d455e0fe0f8,
-        type: 3}
-      propertyPath: tracks.Array.data[7].name
-      value: Game_End
-      objectReference: {fileID: 0}
-    - target: {fileID: 5225751748706384738, guid: 4131f43fcdbb8334aa1c5d455e0fe0f8,
-        type: 3}
-      propertyPath: tracks.Array.data[7].track
-      value: 
-      objectReference: {fileID: 8300000, guid: e8eb662ecb3a62d448c546717ba302b9, type: 3}
-    - target: {fileID: 5225751748706384738, guid: 4131f43fcdbb8334aa1c5d455e0fe0f8,
-        type: 3}
-      propertyPath: tracks.Array.data[7].volume
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 5225751748706384738, guid: 4131f43fcdbb8334aa1c5d455e0fe0f8,
-        type: 3}
-      propertyPath: tracks.Array.data[7].pitch
+      propertyPath: tracks.Array.data[6].volume
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

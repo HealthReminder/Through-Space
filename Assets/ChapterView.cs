@@ -11,10 +11,12 @@ public class ChapterView : MonoBehaviour
     public Image explosionImage;
     public Transform explosionContainer;
     public AnimationCurve explosionCurve;
-    [HideInInspector] public bool isThisNewLevel = true;
+    [HideInInspector] public bool isThisNewLevel;
     public static ChapterView instance;
 
-
+    private void Awake() {
+        instance = this;
+    }
     
     void Update()
     {
@@ -52,7 +54,8 @@ public class ChapterView : MonoBehaviour
                 if(explosionProgress < 1) {
                     explosionContainer.localScale = new Vector3(1,explosionCurve.Evaluate(explosionProgress),1);
                     if(explosionProgress > 0.3f){
-                        explosionImage.color+= new Color(0,0,0,Time.deltaTime*2);
+                        if(explosionImage.color.a <= 0.8f)
+                            explosionImage.color+= new Color(0,0,0,Time.deltaTime*2);
                         if(!hasEnabledUI){
                             hasEnabledUI = true;
                             titleText.enabled = true;

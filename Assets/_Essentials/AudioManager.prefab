@@ -100,7 +100,7 @@ MonoBehaviour:
     startAt: {x: 0, y: 0}
     endAt: 0
   - name: Game_Next
-    track: {fileID: 8300000, guid: 4276ed95198215049b5df054179ff0c4, type: 3}
+    track: {fileID: 8300000, guid: fff31c4ccd5897e438c37c8d59709a67, type: 3}
     volume: 1.5
     pitch: 1
     pitchVariation: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
     endAt: 0
   - name: Player_Death
     track: {fileID: 8300000, guid: 520c47c5edd28b549ab31e796dc8f55a, type: 3}
-    volume: 1
+    volume: 2
     pitch: 1
     pitchVariation: 0
     startAt: {x: 0, y: 0}
@@ -116,6 +116,13 @@ MonoBehaviour:
   - name: Menu_Button
     track: {fileID: 8300000, guid: fff31c4ccd5897e438c37c8d59709a67, type: 3}
     volume: 0.25
+    pitch: 1
+    pitchVariation: 0
+    startAt: {x: 0, y: 0}
+    endAt: 0
+  - name: Game_End
+    track: {fileID: 8300000, guid: e8eb662ecb3a62d448c546717ba302b9, type: 3}
+    volume: 0.75
     pitch: 1
     pitchVariation: 0
     startAt: {x: 0, y: 0}

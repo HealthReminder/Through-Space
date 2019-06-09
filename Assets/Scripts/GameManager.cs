@@ -146,9 +146,11 @@ public class GameManager : MonoBehaviour {
         Debug.DrawRay(player.transform.position, player.transform.right.normalized * 50, Color.cyan, 100000);
         if (currentLevel > maxLevel){
             maxLevel = currentLevel;
+            Debug.Log("This level is being discovered.");
             if(ChapterView.instance)
                 ChapterView.instance.isThisNewLevel = true;
         } else{
+             Debug.Log("This level was already discovered.");
             if(ChapterView.instance)
                 ChapterView.instance.isThisNewLevel = false;
         }

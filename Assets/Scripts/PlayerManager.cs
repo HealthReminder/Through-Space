@@ -348,11 +348,11 @@ public class PlayerManager : MonoBehaviour {
     {
         if (!gameManager)
             gameManager = FindObjectOfType<GameManager>();
-        print("Current max level changed from " + PlayerPrefs.GetInt("maxLevel") + " to: " + gameManager.maxLevel);
         PlayerPrefs.SetInt("currentLevel", gameManager.currentLevel);
         if (gameManager.maxLevel > PlayerPrefs.GetInt("maxLevel"))
         {
-            print("You are on a higher level");
+            print("You are on a higher level!");
+			ChapterView.instance.isThisNewLevel = true;
            PlayerPrefs.SetInt("maxLevel", gameManager.currentLevel);
         }
           

@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour {
-    [Header("Dev Only")]
-    [SerializeField]    bool clearConfig;
 
     [SerializeField]    Transform buttonContainer;
     [SerializeField]    float barSize;
@@ -25,15 +23,6 @@ public class MenuManager : MonoBehaviour {
 
 
     void Start() {
-
-        //Dev Only 
-        if (clearConfig)
-        {
-            PlayerPrefs.SetInt("currentLevel", 0);
-            PlayerPrefs.SetInt("maxLevel", 0);
-        }
-       
-
 		//Get current max level reached
 		maxLevel = PlayerPrefs.GetInt("maxLevel");
 
@@ -73,7 +62,7 @@ public class MenuManager : MonoBehaviour {
    
 	//This class will be called by the buttons to load a new scene
 	public void SetGoToLevel(int levelID) {
-        AudioManager.instance.Play("Menu_Button");
+        //AudioManager.instance.Play("Menu_Button");
 		currentLevel = levelID;
 		PlayerPrefs.SetInt("currentLevel", currentLevel);
         SoundtrackManager.instance.ChangeSet("Calm");
