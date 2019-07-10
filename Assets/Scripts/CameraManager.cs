@@ -26,6 +26,8 @@ public class CameraManager : MonoBehaviour {
 	}
 	void Update ()
 	{
+		if(!player.currentOrbitingStar)
+			return;
 		Vector3 pos = player.currentOrbitingStar.transform.position;
 		pos.z = transform.position.z;
 		transform.position = pos;
