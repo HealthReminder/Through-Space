@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 5a23f6c87af20e3429fc92693a410039
+guid: 93595bcf3b527b84f978774eb901c965
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5855829160437976221
-    second: NebulaeTest_0
+      213: 1824937138561752712
+    second: RingsAndNebulae_0
   - first:
-      213: -6565968101203024222
-    second: NebulaeTest_1
+      213: 5405329268373970258
+    second: RingsAndNebulae_1
+  - first:
+      213: 8507977153327633266
+    second: RingsAndNebulae_2
+  - first:
+      213: -1053670847674695592
+    second: RingsAndNebulae_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -116,43 +122,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NebulaeTest_0
+      name: RingsAndNebulae_0
       rect:
         serializedVersion: 2
-        x: 154
-        y: 341
-        width: 693
-        height: 653
-      alignment: 9
-      pivot: {x: 0.50630844, y: 0.50892645}
+        x: 0
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0112a0998ab8f504e8458a64ab00491c
-      internalID: -5855829160437976221
+      spriteID: e152223e28ebba24f806c518408d0e74
+      internalID: 1824937138561752712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NebulaeTest_1
+      name: RingsAndNebulae_1
       rect:
         serializedVersion: 2
-        x: 1001
-        y: 297
-        width: 738
-        height: 723
-      alignment: 9
-      pivot: {x: 0.49750683, y: 0.5}
+        x: 512
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f6ec3c1259664e4494ed857ad30fca0
-      internalID: -6565968101203024222
+      spriteID: a3f15620b6a198145994209b846d4afa
+      internalID: 5405329268373970258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingsAndNebulae_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8da050ddc6a40b94c973f5dd93c41e7c
+      internalID: 8507977153327633266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingsAndNebulae_3
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c673e9cc1c174bf4ca742a1fc74cfd2a
+      internalID: -1053670847674695592
       vertices: []
       indices: 
       edges: []
