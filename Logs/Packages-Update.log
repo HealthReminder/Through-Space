@@ -43,3 +43,16 @@ The following packages were updated:
   com.unity.package-manager-ui from version 2.0.7 to 2.2.0
   com.unity.purchasing from version 2.0.3 to 2.0.6
   com.unity.render-pipelines.lightweight from version 4.1.0-preview to 6.5.2
+
+=== Thu Jul 11 18:06:09 2019
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.ide.visualstudio from version 1.0.10 to 1.0.11
+  com.unity.multiplayer-hlapi from version 1.0.2 to 1.0.4
+  com.unity.test-framework from version 1.0.13 to 1.0.14
+  com.unity.xr.legacyinputhelpers from version 2.0.2 to 2.0.4
+The following packages were removed:
+  com.unity.package-manager-ui@2.2.0
