@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour {
-
+    public StarController[] levelInfos;
     [SerializeField]    Transform buttonContainer;
     [SerializeField]    float barSize;
     [Header("player Information")]
@@ -19,9 +19,11 @@ public class MenuManager : MonoBehaviour {
     float lastLevelIY;
     [Header("Buttons")]
     [SerializeField]    Button[] buttons;
-    [SerializeField]    GameObject[] attachedGUIs;
 
-
+    public static MenuManager instance;
+    private void Awake() {
+        instance = this;
+    }
     void Start() {
 		//Get current max level reached
 		maxLevel = PlayerPrefs.GetInt("maxLevel");
@@ -39,20 +41,15 @@ public class MenuManager : MonoBehaviour {
         Debug.Log("Max level is " + maxLevel);
         for(int a = 0; a < buttons.Length; a++)
         {
+            LevelButtonBehaviour b = buttons[a].GetComponent<LevelButtonBehaviour>();
             if (a <= maxLevel)
             {
-                buttons[a].interactable = true;
-                //buttons[a].gameObject.SetActive(true);
-                if (!attachedGUIs[a].activeSelf)
-                    attachedGUIs[a].SetActive(true);
+                b.levelIndex = a;
+                b.UpdateView(levelInfos[a]);
             }
             else
-            {
-                buttons[a].interactable = false;
-                //buttons[a].gameObject.SetActive(false);
-                if (attachedGUIs[a].activeSelf)
-                    attachedGUIs[a].SetActive(false);
-            }
+                b.DisableView();
+            
                
            yield return new WaitForSeconds(Time.deltaTime);
         }

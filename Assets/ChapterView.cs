@@ -52,7 +52,7 @@ public class ChapterView : MonoBehaviour
                 currentPhase = 1;
             } else if(currentPhase == 1){
                 if(explosionProgress < 1) {
-                    explosionContainer.localScale = new Vector3(1,explosionCurve.Evaluate(explosionProgress),1);
+                    explosionContainer.localScale = new Vector3(3,explosionCurve.Evaluate(explosionProgress),1);
                     if(explosionProgress > 0.3f){
                         if(explosionImage.color.a <= 0.8f)
                             explosionImage.color+= new Color(0,0,0,Time.deltaTime*2);
@@ -95,7 +95,7 @@ public class ChapterView : MonoBehaviour
                     currentPhase = 5;
                 }
             } else {
-                explosionContainer.localScale= new Vector3(1,0,1);
+                explosionContainer.localScale= new Vector3(3,0,1);
                 container.SetActive(false);
                 isWorking = false;
             }

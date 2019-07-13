@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class FadeBehaviour : MonoBehaviour {
 
 	public float initialDelay = 1;
+	float currentDelay;
 	
 	public Image[] images;
 
@@ -15,19 +16,21 @@ public class FadeBehaviour : MonoBehaviour {
 	bool hasStarted = false;
 	bool hasStartedFading = false;
 	private void Update() {
+		currentDelay += Time.deltaTime;
 		if(!hasStarted){
 			SoundtrackManager.instance.ChangeSet("Intro");
 			StartCoroutine (FadeOut ());
 			hasStarted = true;
-		}else if(Input.anyKeyDown||Input.touchCount > 0)
-			if(hasStartedFading){
-				hasStartedFading = false;
-				StopCoroutine(FadeOut());
-				for (int i = 0; i < images.Length; i++)
-				images[i].gameObject.SetActive(false);
-				//Play menu soundtrack
-				SoundtrackManager.instance.ChangeSet("Menu");
-			}
+		}else if(currentDelay >= initialDelay)
+			if(Input.anyKeyDown||Input.touchCount > 0)
+				if(hasStartedFading){
+					hasStartedFading = false;
+					StopCoroutine(FadeOut());
+					for (int i = 0; i < images.Length; i++)
+					images[i].gameObject.SetActive(false);
+					//Play menu soundtrack
+					SoundtrackManager.instance.ChangeSet("Menu");
+				}
 
 
 	}
