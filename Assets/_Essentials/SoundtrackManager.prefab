@@ -43,15 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd15eec8f13ff3c4eb25b720b193647e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundtrackVolume: 1
-  sourceQuantity: 10
+  soundtrackVolume: 0.5
   volumeRate: 0.01
+  sourceQuantity: 10
   sets:
   - name: Calm
     tracks:
-    - clip: {fileID: 8300000, guid: 72c94b8573fa6ba4eb9ce767c1cc9f33, type: 3}
+    - clip: {fileID: 8300000, guid: ada0f9f68941c984fa684380eb9432ed, type: 3}
       startFrom: 0
-    - clip: {fileID: 8300000, guid: 50612b20857a5ef448e0b1a3aef647ce, type: 3}
+    - clip: {fileID: 8300000, guid: 10038f0d43f2e0a45b003accb67ee3f8, type: 3}
       startFrom: 0
     - clip: {fileID: 8300000, guid: 6353e05f0437bed47896604660850610, type: 3}
       startFrom: 0
@@ -59,11 +59,15 @@ MonoBehaviour:
       startFrom: 0
     - clip: {fileID: 8300000, guid: 06f100a8c042b2144a3918047065afc1, type: 3}
       startFrom: 0
-    - clip: {fileID: 8300000, guid: 10038f0d43f2e0a45b003accb67ee3f8, type: 3}
+    - clip: {fileID: 8300000, guid: b5b1a6a4b0935bd40ba0e8bed01ce3a2, type: 3}
       startFrom: 0
-    - clip: {fileID: 8300000, guid: ada0f9f68941c984fa684380eb9432ed, type: 3}
+    - clip: {fileID: 8300000, guid: 2b8d8321c8adf1143bd81fb9ff9c8ade, type: 3}
       startFrom: 0
   - name: Menu
     tracks:
     - clip: {fileID: 8300000, guid: 23331bad7ad6df741b40d0f392677e67, type: 3}
       startFrom: 0
+  - name: Intro
+    tracks:
+    - clip: {fileID: 8300000, guid: 6477c791bc989c947a5ae237372cad98, type: 3}
+      startFrom: 6.85
