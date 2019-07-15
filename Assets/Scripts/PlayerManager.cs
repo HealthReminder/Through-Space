@@ -34,7 +34,6 @@ public class PlayerManager : MonoBehaviour {
 	PlayerView playerView;
 	public TimeController timeController;
 	
-	
 
 	#region Setup and System
 	void Start () {
