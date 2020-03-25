@@ -123,7 +123,7 @@ public class PlayerManager : MonoBehaviour {
 			sj.connectedAnchor = orbitingNow.transform.position;
         if (currentOrbitingStar){
             distanceFromStar = Vector2.Distance(currentOrbitingStar.transform.position, transform.position);
-			playerView.ChangeDistanceText(distanceFromStar.ToString("F2") +" au"); 
+			playerView.ChangeDistanceText((distanceFromStar*0.1f).ToString("F2") +" au"); 
 		}
 		
         if (hasArrived)

@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{611B72B7-0AA9-C595-7B2F-07209D83DD1D}</ProjectGuid>
+    <ProjectGuid>{F02E67E6-D337-045D-5E7C-8A93F2DD859B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -85,40 +85,40 @@
      <Compile Include="Assets\Testing\VerticalParallaxController.cs" />
      <Compile Include="Assets\TurnOffOnStartBehaviour.cs" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>B:/Projetos/2019/3/Through-Space-Fix/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>B:/Projetos/2020/2/Through-Space/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>B:/Projetos/2019/3/Through-Space-Fix/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>B:/Projetos/2020/2/Through-Space/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>B:/Projetos/2019/3/Through-Space-Fix/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>B:/Projetos/2020/2/Through-Space/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>B:/Projetos/2019/3/Through-Space-Fix/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>B:/Projetos/2020/2/Through-Space/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>B:/Projetos/2019/3/Through-Space-Fix/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>B:/Projetos/2020/2/Through-Space/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>B:/Projetos/2019/3/Through-Space-Fix/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>B:/Projetos/2020/2/Through-Space/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>B:/Projetos/2019/3/Through-Space-Fix/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>B:/Projetos/2020/2/Through-Space/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>B:/Projetos/2019/3/Through-Space-Fix/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ <HintPath>B:/Projetos/2020/2/Through-Space/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Tilemap.Editor">
- <HintPath>B:/Projetos/2019/3/Through-Space-Fix/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+ <HintPath>B:/Projetos/2020/2/Through-Space/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>B:/Projetos/2019/3/Through-Space-Fix/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>B:/Projetos/2020/2/Through-Space/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>B:/Projetos/2019/3/Through-Space-Fix/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>B:/Projetos/2020/2/Through-Space/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>B:/Projetos/2019/3/Through-Space-Fix/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>B:/Projetos/2020/2/Through-Space/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0a7/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
