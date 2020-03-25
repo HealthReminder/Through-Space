@@ -6,25 +6,37 @@ using UnityEngine.UI;
 public class LevelButtonBehaviour : MonoBehaviour
 {
     [HideInInspector] public int levelIndex;
-    public Button thisButton;
-    public Image starImage;
-    public Text nameText;
+    Button button;
+    public Image image_star;
+    Text text_name;
+    Image button_bg;
+    void Start()
+    {
+        button = GetComponent<Button>();
+        button_bg = transform.GetChild(0).GetComponent<Image>();
+        text_name = transform.GetChild(1).GetComponent<Text>();
+        image_star = GetComponent<Image>();
+
+    }
     public void Activate() {
         MenuManager.instance.SetGoToLevel(levelIndex);
     }
 
     public void UpdateView(StarController star){
-        nameText.text = star.name;
-        starImage.color = star.mainColor;
-        nameText.color = star.detailColor;
+        text_name.text = star.name;
+        image_star.color = star.mainColor;
+        text_name.color = star.detailColor;
+        button_bg.color = star.mainColor + new Color(0,0,0,-0.8f);
 
-        nameText.enabled = true;
-        starImage.enabled = true;
-        thisButton.enabled = true;
+        text_name.enabled = true;
+        image_star.enabled = true;
+        button.enabled = true;
+        button_bg.enabled = true;
     }
     public void DisableView(){
-        nameText.enabled = false;
-        starImage.enabled = false;
-        thisButton.enabled = false;
+        text_name.enabled = false;
+        image_star.enabled = false;
+        button.enabled = false;
+        button_bg.enabled = false;
     }
 }

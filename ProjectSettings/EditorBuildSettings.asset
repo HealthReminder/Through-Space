@@ -5,15 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/_Scenes/IntroScene.unity
-    guid: 1da6ee1c66bff024087c04c5a89b3601
   - enabled: 1
     path: Assets/_Scenes/MainMenu.unity
     guid: 790d83dd87dfe05449d83dbeb02ecbb5
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/_Scenes/SpaceTravel.unity
     guid: 223b1cb69d8ae8a46991d32db5e380a5
