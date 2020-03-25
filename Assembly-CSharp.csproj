@@ -65,6 +65,7 @@
      <Compile Include="Assets\LookAtBehaviour.cs" />
      <Compile Include="Assets\MeteorBehaviour.cs" />
      <Compile Include="Assets\PlayerView.cs" />
+     <Compile Include="Assets\PopUpBehaviour.cs" />
      <Compile Include="Assets\RotationBehaviour.cs" />
      <Compile Include="Assets\Scripts\AmbientSoundManager.cs" />
      <Compile Include="Assets\Scripts\AudioManager.cs" />
