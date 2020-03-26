@@ -36,7 +36,7 @@ public class PopUpBehaviour : MonoBehaviour
         {
             float v = size_curve.Evaluate(progress);
             transform.localScale = new Vector3(v, v, v);
-            progress -= 0.04f;
+            progress -= 0.01f;
             yield return null;
         }
 
