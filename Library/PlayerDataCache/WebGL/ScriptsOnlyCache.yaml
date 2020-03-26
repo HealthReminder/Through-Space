@@ -19,6 +19,7 @@ ScriptsOnlyBuild:
     - PlanetData
     - PlayerManager
     - PlayerView
+    - PopUpBehaviour
     - RotationBehaviour
     - SoundtrackManager
     - StarController
@@ -94,53 +95,55 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11210}
     - Class: 114
-      Script: {instanceID: 11552}
+      Script: {instanceID: 11298}
     - Class: 114
-      Script: {instanceID: 11570}
+      Script: {instanceID: 11554}
     - Class: 114
-      Script: {instanceID: 11582}
+      Script: {instanceID: 11572}
     - Class: 114
-      Script: {instanceID: 11614}
+      Script: {instanceID: 11584}
     - Class: 114
-      Script: {instanceID: 11732}
+      Script: {instanceID: 11616}
     - Class: 114
-      Script: {instanceID: 11762}
+      Script: {instanceID: 11734}
     - Class: 114
-      Script: {instanceID: 11794}
+      Script: {instanceID: 11764}
     - Class: 114
-      Script: {instanceID: 11824}
+      Script: {instanceID: 11796}
     - Class: 114
-      Script: {instanceID: 11872}
+      Script: {instanceID: 11826}
     - Class: 114
       Script: {instanceID: 11874}
     - Class: 114
-      Script: {instanceID: 11966}
+      Script: {instanceID: 11876}
     - Class: 114
-      Script: {instanceID: 11996}
+      Script: {instanceID: 11968}
     - Class: 114
-      Script: {instanceID: 12064}
+      Script: {instanceID: 11998}
     - Class: 114
-      Script: {instanceID: 12174}
+      Script: {instanceID: 12066}
     - Class: 114
-      Script: {instanceID: 12326}
+      Script: {instanceID: 12176}
     - Class: 114
-      Script: {instanceID: 12402}
+      Script: {instanceID: 12328}
     - Class: 114
-      Script: {instanceID: 12456}
+      Script: {instanceID: 12404}
     - Class: 114
-      Script: {instanceID: 12476}
+      Script: {instanceID: 12458}
     - Class: 114
-      Script: {instanceID: 12588}
+      Script: {instanceID: 12478}
     - Class: 114
-      Script: {instanceID: 12682}
+      Script: {instanceID: 12590}
     - Class: 114
-      Script: {instanceID: 12756}
+      Script: {instanceID: 12684}
     - Class: 114
-      Script: {instanceID: 12804}
+      Script: {instanceID: 12758}
     - Class: 114
-      Script: {instanceID: 12836}
+      Script: {instanceID: 12806}
     - Class: 114
-      Script: {instanceID: 12840}
+      Script: {instanceID: 12838}
+    - Class: 114
+      Script: {instanceID: 12842}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -213,41 +216,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11210}
     - Class: 114
-      Script: {instanceID: 11552}
+      Script: {instanceID: 11298}
     - Class: 114
-      Script: {instanceID: 11570}
+      Script: {instanceID: 11554}
     - Class: 114
-      Script: {instanceID: 11582}
+      Script: {instanceID: 11572}
     - Class: 114
-      Script: {instanceID: 11726}
+      Script: {instanceID: 11584}
     - Class: 114
-      Script: {instanceID: 11732}
+      Script: {instanceID: 11728}
     - Class: 114
-      Script: {instanceID: 11872}
+      Script: {instanceID: 11734}
     - Class: 114
       Script: {instanceID: 11874}
     - Class: 114
-      Script: {instanceID: 11966}
+      Script: {instanceID: 11876}
     - Class: 114
-      Script: {instanceID: 12174}
+      Script: {instanceID: 11968}
     - Class: 114
-      Script: {instanceID: 12326}
+      Script: {instanceID: 12176}
     - Class: 114
-      Script: {instanceID: 12456}
+      Script: {instanceID: 12328}
     - Class: 114
-      Script: {instanceID: 12476}
+      Script: {instanceID: 12458}
     - Class: 114
-      Script: {instanceID: 12588}
+      Script: {instanceID: 12478}
     - Class: 114
-      Script: {instanceID: 12682}
+      Script: {instanceID: 12590}
     - Class: 114
-      Script: {instanceID: 12756}
+      Script: {instanceID: 12684}
     - Class: 114
-      Script: {instanceID: 12804}
+      Script: {instanceID: 12758}
     - Class: 114
-      Script: {instanceID: 12840}
+      Script: {instanceID: 12806}
     - Class: 114
-      Script: {instanceID: 12916}
+      Script: {instanceID: 12842}
+    - Class: 114
+      Script: {instanceID: 12918}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -413,6 +418,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalAsset
+  - hash:
+      serializedVersion: 2
+      Hash: d3e2c88928e0cb131efc4246db0cfc2e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PopUpBehaviour
   - hash:
       serializedVersion: 2
       Hash: 0dbc3be398b4869a5c8d0d8481ee402c
@@ -873,4 +884,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/_Scenes/MainMenu.unity
   - Assets/_Scenes/SpaceTravel.unity
-  playerPath: C:/Users/V/Desktop/Through-Space-Build/ItchioBuilds/Build-March-2020
+  playerPath: C:/Users/V/Desktop/Through-Space-Build/ItchioBuilds/Build-Martch-2020-02

@@ -253,7 +253,7 @@ public class PlayerManager : MonoBehaviour {
 		
 		closestPlanet = closest;
 		//Change line according to result
-		if(closestPlanet){A0FF09
+		if(closestPlanet){
 			//if(!playerView.isProximityOn)
 				//playerView.ShowProximity(true);
 			
