@@ -266,8 +266,7 @@ public class PlayerManager : MonoBehaviour {
 			if(k >= 0.75f)
 				if(orbitingNow)
 			    	timeController.ChangeTime(1);
-			//playerView.UpdateProximity(k,planetPos);
-			//playerView.UpdateProximity(k,planetPos);
+			playerView.UpdateProximity(k,planetPos);
 			if(orbitingNow){
 				playerView.ShowOrbit(true);
 				playerView.ToggleOrbit(k,orbitingNow.transform.position);

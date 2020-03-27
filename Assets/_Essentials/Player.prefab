@@ -12087,7 +12087,6 @@ MonoBehaviour:
   isProximityOn: 0
   isOrbitOn: 0
   viewContainer: {fileID: 2687320687896669348}
-  proximityGUI: {fileID: 3874753917014691083}
   lineClosest: {fileID: 418623773510139802}
   lineOrbiting: {fileID: 857178502739124871}
   lineDirection: {fileID: 1146568332177347484}

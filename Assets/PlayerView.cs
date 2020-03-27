@@ -8,7 +8,7 @@ public class PlayerView : MonoBehaviour
     public bool isProximityOn = false;
     public bool isOrbitOn = false;
     public GameObject viewContainer;
-    public Image proximityGUI;
+    //public Image proximityGUI;
     public LineRenderer lineClosest, lineOrbiting, lineDirection;
     [Header("Spaceship")]
     public SpriteRenderer spaceshipSprite;
@@ -63,10 +63,10 @@ public class PlayerView : MonoBehaviour
 
     public void UpdateProximity (float percentage, Vector3 closestPlanetPosition){
         //Change the color of the GUI indicator
-        float hue = Mathf.Lerp(-0.065f,0.45f,1-percentage);
+        //float hue = Mathf.Lerp(-0.065f,0.45f,1-percentage);
         //Debug.Log(percentage);
-        proximityGUI.color = Color.HSVToRGB(hue,1,1);
-        proximityGUI.transform.RotateAround(proximityGUI.transform.position,Vector3.forward,(1-percentage)*2);
+        //proximityGUI.color = Color.HSVToRGB(hue,1,1);
+        //proximityGUI.transform.RotateAround(proximityGUI.transform.position,Vector3.forward,(1-percentage)*2);
 
         //Work the line that indicates the closes planet
         lineClosest.SetPosition(0,transform.position);
@@ -78,13 +78,14 @@ public class PlayerView : MonoBehaviour
         
     }
     public void ShowProximity (bool isActive){
+        return;
         if(isProximityOn == isActive)
             return;
         isProximityOn = isActive;
-        if(!isProximityOn)
-            proximityGUI.gameObject.SetActive(false);
-        else
-            proximityGUI.gameObject.SetActive(true);
+        //if(!isProximityOn)
+            //proximityGUI.gameObject.SetActive(false);
+        //else
+            //proximityGUI.gameObject.SetActive(true);
     }
 
       public void ShowOrbit (bool isActive){
@@ -109,7 +110,7 @@ public class PlayerView : MonoBehaviour
 			lineOrbiting.SetPosition(1, closestPlanetPosition);
             // float H, S, V;
             //Color.RGBToHSV(new Color(percentage, 1 - percentage, 0, 1), out H, out S, out V);
-            proximityGUI.color = Color.HSVToRGB(hue,1,1);
+            //proximityGUI.color = Color.HSVToRGB(hue,1,1);
 
 			//lineOrbiting.startColor = new Color(percentage,1-percentage,0,1);
 			//lineOrbiting.endColor = new Color(percentage,1-percentage,0,1);

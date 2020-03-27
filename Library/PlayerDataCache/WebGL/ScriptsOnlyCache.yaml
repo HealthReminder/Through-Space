@@ -780,7 +780,7 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
-      Hash: b41bb449352a72875938eb7ae370ee8e
+      Hash: f0da6f437a494aca51589a0fd633fe0b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerView
