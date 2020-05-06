@@ -745,8 +745,8 @@ RectTransform:
   m_Children:
   - {fileID: 1986310517}
   - {fileID: 2093042530}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 1007616921}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -764,7 +764,7 @@ GameObject:
   - component: {fileID: 1007616921}
   - component: {fileID: 1007616920}
   m_Layer: 0
-  m_Name: TitleMovementTest
+  m_Name: Intro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -788,39 +788,48 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: -1
-      inSlope: 15.500437
-      outSlope: 15.500437
+      inSlope: 14.175206
+      outSlope: 14.175206
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.07878153
     - serializedVersion: 3
-      time: 0.31732357
-      value: -0.02191075
-      inSlope: 0.9358942
-      outSlope: 0.9358942
+      time: 0.20683503
+      value: -0.015505975
+      inSlope: -2.0785127
+      outSlope: -2.0785127
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.38701838
+      inWeight: 0.8535937
+      outWeight: 1
     - serializedVersion: 3
-      time: 0.6573937
-      value: -0.008920446
-      inSlope: -0.68159294
-      outSlope: -0.68159294
+      time: 0.29232433
+      value: 0
+      inSlope: 0.055098813
+      outSlope: 0.055098813
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.28969163
+      inWeight: 0.4747898
+      outWeight: 0.8109084
     - serializedVersion: 3
-      time: 0.7566293
-      value: -0.00894931
-      inSlope: 2.7111886
-      outSlope: 2.7111886
+      time: 0.7081192
+      value: 0
+      inSlope: -0.013789952
+      outSlope: -0.013789952
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.76341975
+      inWeight: 0.6769374
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8107844
+      value: 0.010499094
+      inSlope: 3.991046
+      outSlope: 3.991046
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.6471895
+      outWeight: 0.5570102
     - serializedVersion: 3
       time: 0.9999695
       value: -0.99954224
@@ -927,9 +936,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1113.9009, y: 550.9866, z: -675.4719}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 829390263}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1086490088
 GameObject:
@@ -1295,7 +1305,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1944679855
 GameObject:
