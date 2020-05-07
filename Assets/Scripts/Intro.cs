@@ -30,7 +30,7 @@ public class Intro : MonoBehaviour
         StartCoroutine(TitleRoutine());
     }
 
-    float current_speed = 2f;
+    float current_speed = 3f;
     float skip_delay = 0;
     private void Update()
     {
@@ -38,7 +38,7 @@ public class Intro : MonoBehaviour
         if (skip_delay >= 1)
         {
             if (Input.anyKeyDown || Input.GetMouseButton(0))
-                current_speed = 5;
+                current_speed = 10;
         }
         else
             skip_delay += Time.deltaTime;
@@ -84,6 +84,7 @@ public class Intro : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         yield return new WaitForSeconds(Random.Range(0, 0.5f));
+        SoundtrackManager.instance.ChangeSet("Intro");
 
         float progress = 0;
         float y_amount = 1500;
@@ -104,10 +105,12 @@ public class Intro : MonoBehaviour
             title_transform.localPosition = initial_pos + new Vector3(0, title_movement_curve.Evaluate(progress)*y_amount,0);
             s = title_size_curve.Evaluate(progress);
             title_transform.localScale = new Vector3(s,s,s);
-            progress += Time.deltaTime * current_speed / 2;
-            yield return new WaitForSeconds(Time.deltaTime * 5);
+            progress += Time.deltaTime * current_speed / 8;
+            yield return new WaitForSeconds(Time.deltaTime * 2);
         }
-
+        AudioManager.instance.Play("Intro_Off");
+        yield return new WaitForSeconds(0.5f);
+        SoundtrackManager.instance.ChangeSet("Menu");
         StartCoroutine(MoveMapUp());
         StartCoroutine(BackClouds());
         yield break;
@@ -118,7 +121,7 @@ public class Intro : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(0, 0.5f));
 
         float progress = 0;
-        float movement_speed = 5f;
+        float movement_speed = 3f;
         float l_cache = moving_background.Length;
 
         //Parameters used by each iteration
@@ -139,7 +142,7 @@ public class Intro : MonoBehaviour
             progress += Time.deltaTime * movement_speed;
             if(progress > 1) 
                 progress = 0;
-            yield return new WaitForSeconds(Time.deltaTime*5);
+            yield return new WaitForSeconds(Time.deltaTime*3);
         }
 
         yield break;

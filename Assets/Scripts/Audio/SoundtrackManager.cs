@@ -46,10 +46,22 @@ public class SoundtrackManager : MonoBehaviour {
 			instance = this;
 			DontDestroyOnLoad(gameObject);
 		}
-	}
-	private void Start() {
 		Setup();
+
 	}
+	void Setup()
+	{
+		//Add the audioSources
+		audioSources = new AudioSource[sourceQuantity];
+		AudioSource aS;
+		for (int a = 0; a < sourceQuantity; a++)
+		{
+			aS = audioSources[a] = gameObject.AddComponent<AudioSource>();
+			aS.playOnAwake = false;
+			//aS.loop = true;
+		}
+	}
+
 	void Update()
 	{
 		//This function is responsable for not letting the game be silent ever
@@ -82,16 +94,6 @@ public class SoundtrackManager : MonoBehaviour {
 	}
 
 
-	void Setup() {
-		//Add the audioSources
-		audioSources = new AudioSource[sourceQuantity];
-		AudioSource aS;
-		for(int a = 0; a < sourceQuantity; a++){
-			aS = audioSources[a] = gameObject.AddComponent<AudioSource>();
-			aS.playOnAwake = false;
-			//aS.loop = true;
-		}
-	}
 
 	//This function is responsable for changing the music set is player
 	//To deliver the right mood
