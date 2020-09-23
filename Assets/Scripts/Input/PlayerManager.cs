@@ -10,7 +10,8 @@ public class PlayerManager : MonoBehaviour {
 	//bool dead = false;
 	public bool isInFirstLevel = false;
 	public ChapterView chapterView;
-	
+	public GameObject apperance_gameobject;
+
 	[Header("Environment Information")]
     public float distanceFromStar;
 	public PlanetData closestPlanet, orbitingNow;
@@ -365,7 +366,7 @@ public class PlayerManager : MonoBehaviour {
 		timeController.isOn = false;
 		Time.timeScale = 1;
         CheckForProgress();
-        GetComponent<SpriteRenderer> ().enabled = false;
+        apperance_gameobject.SetActive(false);
 		GetComponent<Rigidbody2D> ().simulated = false;
 		StartCoroutine(gameManager.Death());
 	}

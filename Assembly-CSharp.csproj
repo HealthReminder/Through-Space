@@ -91,6 +91,7 @@
     <Compile Include="Assets\Scripts\PlayerView.cs" />
     <Compile Include="Assets\Scripts\PopUpBehaviour.cs" />
     <Compile Include="Assets\Scripts\RotationBehaviour.cs" />
+    <Compile Include="Assets\Scripts\ScaleToCamera.cs" />
     <Compile Include="Assets\Scripts\SemiLookAtBehaviour.cs" />
     <Compile Include="Assets\Scripts\StarManager.cs" />
     <Compile Include="Assets\Scripts\TestMeteor.cs" />
