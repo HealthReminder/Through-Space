@@ -121,7 +121,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 6.5
+  bundleVersion: 7.0
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -168,7 +168,7 @@ PlayerSettings:
     Android: com.EduardoFrancio.ThroughSpace
     Standalone: com.Company.ProductName
   buildNumber: {}
-  AndroidBundleVersionCode: 44
+  AndroidBundleVersionCode: 45
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
