@@ -8,14 +8,11 @@ public class LevelButtonBehaviour : MonoBehaviour
     [HideInInspector] public int levelIndex;
     Button button;
     public Image image_star;
-    Text text_name;
-    Image button_bg;
+    public Text text_name;
+    public Image button_bg;
     void Start()
     {
         button = GetComponent<Button>();
-        button_bg = transform.GetChild(0).GetComponent<Image>();
-        text_name = transform.GetChild(1).GetComponent<Text>();
-        image_star = GetComponent<Image>();
 
     }
     public void Activate() {
